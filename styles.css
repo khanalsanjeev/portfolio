@@ -12,13 +12,13 @@
     --line: #DBD5CB;
     --navy: #16324F;
     --navy-deep: #0E2136;
-    /* Material 3 green tonal values (seed ~ google green) */
-    --green: #1E8E3E;            /* M3 primary green · text accents on light */
-    --green-bright: #81C995;     /* M3 tonal 80 · accents on dark navy/ink */
-    --green-deep: #137333;       /* hover deepen */
-    --green-container: #CEEAD6;  /* soft container fill */
-    --hero-bg: #F0F5EF;
-    --grid-line: rgba(30, 142, 62, 0.16);
+    /* M3 tomato tonal values (seed #FF634A) */
+    --green: #FF634A;            /* signature tomato · buttons, bands, marks */
+    --green-bright: #FFB4A8;     /* M3 tonal 80 · accents on dark navy/ink */
+    --green-deep: #D02E1C;       /* hover deepen */
+    --green-container: #FFDAD5;  /* M3 tonal 90 · soft container fill */
+    --hero-bg: #FFF1EE;
+    --grid-line: rgba(255, 99, 74, 0.15);
     --white: #FDFCFA;
     --display: 'Space Grotesk', 'Inter', sans-serif;
     --body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -56,7 +56,7 @@ img { display: block; max-width: 100%; }
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(240, 245, 239, 0.92);
+    background: rgba(255, 241, 238, 0.92);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
@@ -194,7 +194,7 @@ img { display: block; max-width: 100%; }
     /* Slightly different background + analysis grid behind the text */
     background-color: var(--hero-bg);
     background-image:
-        radial-gradient(circle at 50% 35%, transparent 0%, rgba(240, 245, 239, 0.96) 72%),
+        radial-gradient(circle at 50% 35%, transparent 0%, rgba(255, 241, 238, 0.96) 72%),
         linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
         linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
     background-size: 100% 100%, 72px 72px, 72px 72px;
