@@ -24,6 +24,18 @@
                 <a href="#who">Who I am</a>
                 <a href="#talk" class="nav-cta">Let's talk</a>
             </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+        <!-- Mobile dropdown menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#work">What I take on</a>
+            <a href="#who">Who I am</a>
+            <a href="#talk" class="nav-cta">Let's talk</a>
         </div>
     </header>
 
@@ -172,6 +184,23 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile hamburger menu
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        navToggle.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+
+        // Close the menu when a link is tapped
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
     </script>
 </body>
 </html>

@@ -126,6 +126,65 @@ img { display: block; max-width: 100%; }
 .nav .nav-cta:hover { background: var(--green-deep); color: var(--white); }
 
 /* ============================================================
+   HAMBURGER TOGGLE + MOBILE MENU
+   ============================================================ */
+.nav-toggle {
+    display: none; /* hidden on desktop */
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 6px;
+    align-items: center;
+}
+
+.nav-toggle .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--ink);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem 1.5rem 1.25rem;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 0.75rem 0.5rem;
+}
+
+.mobile-menu a:hover { color: var(--green); }
+
+.mobile-menu .nav-cta {
+    color: var(--white);
+    background: var(--green);
+    border-radius: 0.6rem;
+    font-weight: 600;
+    padding: 0.75rem 1.1rem;
+    text-align: center;
+}
+.mobile-menu .nav-cta:hover { background: var(--green-deep); color: var(--white); }
+
+/* ============================================================
    HERO
    ============================================================ */
 .hero {
@@ -536,9 +595,10 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 640px) {
-    .nav { gap: 1rem; }
-    .nav a { font-size: 0.8rem; }
-    .nav .nav-cta { display: none; }
+    .nav { display: none; }               /* hide inline nav links on mobile */
+    .nav-toggle { display: flex; }        /* show hamburger */
+    .nav-toggle[aria-expanded="true"] + .mobile-menu,  /* (fallback) */
+    .mobile-menu.open { display: flex; }  /* show menu when open */
     .section { padding: 3.5rem 0; }
 
     /* Hero fits the viewport, content centered */
@@ -548,7 +608,7 @@ img { display: block; max-width: 100%; }
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 6.25rem 0 2.25rem;
+        padding: 3.5rem 0 2.25rem; /* less top gap so the image sits closer to the header */
         background-image: none; /* remove the grid lines: they misalign with centered content on a phone */
         background-color: var(--hero-bg);
     }
