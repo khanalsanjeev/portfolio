@@ -499,18 +499,18 @@ img { display: block; max-width: 100%; }
 }
 
 .text-link {
-    color: var(--navy);
+    color: var(--green);
     font-weight: 600;
     text-decoration: none;
-    border-bottom: 1px solid var(--navy);
+    border-bottom: 1px solid var(--green);
 }
-.text-link:hover { color: var(--ink); border-color: var(--ink); }
+.text-link:hover { color: var(--green-deep); border-color: var(--green-deep); }
 
 .who-credential {
     font-family: var(--display);
     font-weight: 600;
     font-size: 1.3rem !important;
-    color: var(--navy) !important;
+    color: var(--green) !important;
     margin-top: 1.75rem;
 }
 
