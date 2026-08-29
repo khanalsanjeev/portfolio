@@ -1,0 +1,568 @@
+﻿/* ============================================================
+   SANJEEV KHANAL Â· "I turn data into decisions"
+   Modern analyst Â· Space Grotesk Â· IBM Plex Mono Â· navy/ink/ivory
+   ============================================================ */
+
+:root {
+    --paper: #F6F3EE;
+    --paper-cream: #EEE9E1;
+    --ink: #11151A;
+    --ink-soft: #333A43;
+    --muted: #6C675F;
+    --line: #DBD5CB;
+    --navy: #16324F;
+    --navy-deep: #0E2136;
+    /* Material 3 green tonal values (seed ~ google green) */
+    --green: #1E8E3E;            /* M3 primary green · text accents on light */
+    --green-bright: #81C995;     /* M3 tonal 80 · accents on dark navy/ink */
+    --green-deep: #137333;       /* hover deepen */
+    --green-container: #CEEAD6;  /* soft container fill */
+    --hero-bg: #F0F5EF;
+    --grid-line: rgba(30, 142, 62, 0.16);
+    --white: #FDFCFA;
+    --display: 'Space Grotesk', 'Inter', sans-serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+a { color: inherit; }
+
+img { display: block; max-width: 100%; }
+
+.mono { font-family: var(--mono); }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(240, 245, 239, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--ink);
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.6rem;
+    background: var(--green);
+    color: var(--white);
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.brand-name {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    transition: color 0.2s ease;
+}
+
+.nav a:hover { color: var(--green); }
+
+.nav .nav-cta {
+    color: var(--white);
+    background: var(--green);
+    padding: 0.55rem 1.1rem;
+    border-radius: 0.6rem;
+    font-weight: 600;
+}
+.nav .nav-cta:hover { background: var(--green-deep); color: var(--white); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+    padding: 4.5rem 0 3rem;
+    border-bottom: 1px solid var(--line);
+
+    /* Slightly different background + analysis grid behind the text */
+    background-color: var(--hero-bg);
+    background-image:
+        radial-gradient(circle at 50% 35%, transparent 0%, rgba(240, 245, 239, 0.96) 72%),
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 100% 100%, 72px 72px, 72px 72px;
+    background-position: 0 0, 0 0, 0 0;
+    background-repeat: no-repeat, repeat, repeat;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 3.5rem;
+}
+
+.hero-copy {
+    max-width: 34rem;
+}
+
+.eyebrow {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 1.25rem;
+}
+
+.hero-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.75rem;
+    color: var(--ink);
+    max-width: 14em;
+}
+
+.hero-title em {
+    font-style: italic;
+    color: var(--green);
+}
+
+.hero-lede {
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    max-width: 34rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.7;
+}
+
+.hero-tags {
+    display: flex;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.25rem;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.9rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--line);
+    background: var(--white);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+.chip:hover {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+/* ============================================================
+   HERO FIGURE (right side)
+   ============================================================ */
+.hero-figure {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 20px 45px -25px rgba(17, 21, 26, 0.5);
+    width: min(300px, 100%);
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.hero-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+}
+
+.hero-figure figcaption {
+    padding: 0.75rem 1rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    background: var(--paper-cream);
+    border-top: 1px solid var(--line);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.6rem;
+    border-radius: 0.6rem;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    line-height: 1.2;
+}
+
+.btn-primary { background: var(--green); color: var(--white); }
+.btn-primary:hover { background: var(--green-deep); }
+
+.btn-ghost {
+    border: 1.5px solid var(--line);
+    color: var(--ink);
+    background: transparent;
+}
+.btn-ghost:hover { border-color: var(--green); color: var(--green); }
+
+.btn-light { background: var(--green); color: var(--white); }
+.btn-light:hover { background: var(--green-deep); }
+
+.btn-ghost-light {
+    border: 1.5px solid rgba(253, 252, 250, 0.35);
+    color: var(--white);
+    background: transparent;
+}
+.btn-ghost-light:hover { border-color: var(--green-bright); color: var(--green-bright); }
+/* ============================================================
+   STATS STRIP (the analyst signal)
+   ============================================================ */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: var(--white);
+    padding: 1.75rem 1.5rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.35rem;
+}
+
+.stat-num {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+/* ============================================================
+   STATEMENT BAR (centered)
+   ============================================================ */
+.statement {
+    padding: 4rem 0;
+    background: var(--green);
+    color: var(--white);
+    text-align: center;
+}
+
+.statement-text {
+    font-family: var(--display);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.4;
+    max-width: 40rem;
+    margin: 0 auto;
+    color: var(--white);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section { padding: 5rem 0; }
+
+.section-cream { background: var(--paper-cream); }
+
+.section-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 34rem;
+    margin-bottom: 3rem;
+}
+
+.section-title-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.eyebrow-center { text-align: center; }
+
+.section-title-light { color: var(--white); }
+.eyebrow-light { color: var(--green-bright); }
+
+/* ============================================================
+   WHAT I DO (THREE THINGS)
+   ============================================================ */
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.pillar {
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: var(--white);
+    padding: 1.75rem;
+}
+
+.pillar-num {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--green);
+    margin-bottom: 1rem;
+}
+
+.pillar h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin-bottom: 0.9rem;
+    letter-spacing: -0.01em;
+}
+
+.pillar p {
+    color: var(--muted);
+    font-size: 0.97rem;
+    line-height: 1.7;
+}
+
+.pillars-note {
+    margin-top: 2.5rem;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--green);
+}
+
+.pillars-note-center { text-align: center; }
+/* ============================================================
+   WHO I AM (centered)
+   ============================================================ */
+.who-body {
+    max-width: 44rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.who-body p {
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+}
+
+.text-link {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--navy);
+}
+.text-link:hover { color: var(--ink); border-color: var(--ink); }
+
+.who-credential {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.3rem !important;
+    color: var(--navy) !important;
+    margin-top: 1.75rem;
+}
+
+/* ============================================================
+   TALK (CONTACT)
+   ============================================================ */
+.talk {
+    background: var(--ink);
+    color: var(--white);
+    text-align: center;
+}
+
+.talk-inner { position: relative; }
+
+.talk .section-title {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40rem;
+}
+
+.talk-lede {
+    max-width: 40rem;
+    margin: 0 auto 2.5rem;
+    color: rgba(253, 252, 250, 0.75);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.talk-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.talk-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: rgba(253, 252, 250, 0.4);
+}
+.talk-links a {
+    color: rgba(253, 252, 250, 0.75);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.talk-links a:hover { color: var(--green-bright); }
+
+.dot-sep { color: rgba(253, 252, 250, 0.35); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+    padding: 1.75rem 0;
+    background: var(--ink);
+    border-top: 1px solid rgba(253, 252, 250, 0.1);
+}
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    color: rgba(253, 252, 250, 0.5);
+    font-size: 0.85rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-figure { max-width: 24rem; margin-left: auto; margin-right: auto; }
+    .pillars { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .nav { gap: 1rem; }
+    .nav a { font-size: 0.8rem; }
+    .nav .nav-cta { display: none; }
+    .section { padding: 3.5rem 0; }
+    .hero { padding: 3.5rem 0 2.5rem; }
+    .hero-title { font-size: clamp(2.2rem, 9vw, 3.2rem); }
+    .stats { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.5rem; }
+    .stat-num { font-size: 1.5rem; }
+    .stat-label { font-size: 0.75rem; }
+
+    /* Hide the portrait on mobile */
+    .hero-figure { display: none; }
+
+    /* Center everything in the hero on mobile */
+    .hero-copy { text-align: center; margin: 0 auto; }
+    .hero-copy .hero-title { margin-left: auto; margin-right: auto; }
+    .hero-copy .hero-lede { margin-left: auto; margin-right: auto; }
+    .hero-copy .hero-tags { justify-content: center; }
+
+    /* Single-word buttons sit side by side in a 2-column grid */
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+    .hero-actions .btn { width: 100%; }
+
+    /* Center pillar cards on mobile */
+    .pillar { text-align: center; }
+    .pillar .pillar-num { text-align: center; }
+
+    .talk-actions { flex-direction: column; }
+    .talk-actions .btn { width: 100%; }
+    .footer-inner { flex-direction: column; text-align: center; gap: 0.4rem; }
+}
+
