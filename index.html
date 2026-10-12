@@ -1,289 +1,130 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Sanjeev Khanal | Semi-Qualified CA</title>
-    <meta name="description" content="Official portfolio of Sanjeev Khanal, Chartered Accountancy Finalist (Semi-Qualified) working as a Financial Consultant based in Nepal. He has expertise in Statutory Audit, NFRS Compliance, Financial Planning, Modeling, and Business Analysis.">
-    <meta name="keywords" content="Sanjeev Khanal, Semi-Qualified CA, CA Finalist, Financial Consultant, Nepal, ICAN, Statutory Audit, NFRS, Financial Modeling, Financial Analysis">
-    <meta name="author" content="Sanjeev Khanal">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjeev Khanal</title>
+  <meta name="description" content="Sanjeev Khanal — Coming Soon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <!-- Open Graph for Social Sharing -->
-    <meta property="og:title" content="Sanjeev Khanal | Semi-Qualified CA & Financial Consultant">
-    <meta property="og:description" content="Chartered Accountancy Finalist and Financial Consultant specializing in audit & assurance, NFRS compliance, financial modeling, and corporate advisory in Nepal.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sanjeevkhanal.com.np">
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: #f7f6f4;
+      color: #2c2c2c;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #6b6b6b;
+      margin-bottom: 1.5rem;
+    }
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(2.4rem, 7vw, 4.2rem);
+      line-height: 1.15;
+      color: #1a1a1a;
+      margin-bottom: 0.6rem;
+    }
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        emerald: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                            800: '#065f46',
-                            900: '#064e3b',
-                        },
-                        slate: {
-                            900: '#0f172a',
-                            800: '#1e293b',
-                            700: '#334155',
-                            600: '#475569',
-                        }
-                    },
-                    animation: {
-                        'spotlight-float': 'spotlightFloat 16s ease-in-out infinite alternate',
-                    },
-                    keyframes: {
-                        spotlightFloat: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '50%': { transform: 'translate(80px, 40px) scale(1.15)' },
-                            '100%': { transform: 'translate(-40px, 70px) scale(0.95)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    .tagline {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 2.75rem;
+    }
 
-    <style>
-        /* Smooth height setup & background reset */
-        html, body {
-            height: 100%;
-            background-color: #FFFFFF;
-            color: #0F172A;
-            overflow-x: hidden;
-        }
+    .email-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: #fff;
+      border: 1px solid #e0deda;
+      border-radius: 10px;
+      padding: 0.7rem 1rem 0.7rem 1.15rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      user-select: none;
+    }
 
-        /* Continuous moving ambient green spotlight - single soft floating glow */
-        .ambient-spotlight {
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, rgba(5, 150, 105, 0.04) 52%, rgba(255, 255, 255, 0) 70%);
-            filter: blur(60px);
-            animation: floatGreenSpotlight 14s ease-in-out infinite alternate;
-        }
+    .email-wrap:hover {
+      border-color: #c8c5bf;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
 
-        @keyframes floatGreenSpotlight {
-            0% { transform: translate(0px, 0px) scale(1); }
-            33% { transform: translate(-140px, 90px) scale(1.15); }
-            66% { transform: translate(100px, -70px) scale(0.92); }
-            100% { transform: translate(-50px, 130px) scale(1.1); }
-        }
+    .email {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #2c2c2c;
+      letter-spacing: 0.01em;
+    }
 
-        /* Smooth Toast Notification animation */
-        @keyframes toastFade {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .toast-enter {
-            animation: toastFade 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-    </style>
+    .copy-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: #f0eeeb;
+      border-radius: 7px;
+      color: #555;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      flex-shrink: 0;
+    }
+
+    .email-wrap:hover .copy-btn {
+      background: #e8e5e0;
+      color: #1a1a1a;
+    }
+
+    .copy-btn svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .copied {
+      font-size: 0.8rem;
+      color: #3d7a4a;
+      margin-top: 0.85rem;
+      height: 1.2em;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .copied.show {
+      opacity: 1;
+    }
+  </style>
 </head>
-<body class="font-sans antialiased bg-white text-slate-900 h-full w-full relative flex items-center justify-center">
+<body>
+  <div class="badge">Coming Soon</div>
+  <h1>Sanjeev Khanal</h1>
+  <p class="tagline">Something new is on the way.</p>
 
-    <!-- Single Lighter Dynamic Moving Green Spotlight Ambient Background -->
-    <div class="fixed -top-16 -right-16 w-[600px] h-[600px] sm:w-[750px] sm:h-[750px] ambient-spotlight rounded-full pointer-events-none z-0"></div>
+  
 
-    <!-- Main 100vh Hero Wrapper -->
-    <main class="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-12 py-8 h-full flex flex-col justify-between">
-        
-        <!-- Center Grid (Mobile: Centered & Photo Top | Desktop: 2-Column Grid) -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center my-auto py-6">
-            
-            <!-- PHOTO COLUMN: Reordered to appear at top on mobile -->
-            <div class="order-first md:order-last md:col-span-5 flex justify-center md:justify-end">
-                <div class="relative w-36 h-36 md:w-64 md:h-72">
-                    <!-- Photo Container -->
-                    <div class="w-full h-full rounded-full md:rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 shadow-md transition-transform duration-300 hover:scale-[1.01]">
-                        <!-- Portrait Image -->
-                        <img 
-                            src="photo.webp" 
-                            alt="Profile Pic"
-                            class="w-full h-full object-cover object-top"
-                            onerror="this.onerror=null; this.style.display='none'; document.getElementById('clean-photo-fallback').classList.remove('hidden');"
-                        >
-
-                        <!-- Clean Image Fallback -->
-                        <div id="clean-photo-fallback" class="hidden w-full h-full flex flex-col items-center justify-center bg-slate-100 text-slate-700">
-                            <span class="text-2xl md:text-4xl font-bold tracking-wider text-slate-800">SK</span>
-                            <span class="text-[10px] md:text-xs uppercase tracking-widest text-slate-400 mt-1 md:mt-2 font-medium">Sanjeev Khanal</span>
-                        </div>
-                    </div>
-
-                    <!-- Active Badge (Positioned at Bottom Right of Image) -->
-                    <span class="absolute bottom-0 right-0 z-20 text-[10px] sm:text-xs font-bold tracking-widest uppercase text-emerald-800 bg-emerald-100/90 border border-emerald-300/80 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full inline-flex items-center gap-1.5 shadow-sm backdrop-blur-sm transform translate-x-1 translate-y-1 md:translate-x-0 md:translate-y-0">
-                        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-                        Active
-                    </span>
-                </div>
-            </div>
-
-            <!-- CONTENT COLUMN: Centered on mobile, Left-aligned on Desktop -->
-            <div class="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left space-y-5">
-                
-                <!-- Name & Title -->
-                <div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-2">
-                        Sanjeev Khanal
-                    </h1>
-                    <p class="text-lg sm:text-xl font-bold text-emerald-700 tracking-wide">
-                        Financial Consultant
-                    </p>
-                </div>
-
-                <!-- Short Intro (Justified Paragraph) -->
-                <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-xl text-justify">
-                    Chartered Accountancy Finalist with 5+ years of hands-on experience in statutory auditing, financial reporting, tax compliance, and finance systems specializing in corporate financial advisory, auditing, and data-driven solutions to support strategic decision-making.
-                </p>
-
-                <!-- Combined Skills Pills -->
-                <div class="pt-1 flex flex-col items-center md:items-start">
-                    <p class="text-[11px] uppercase tracking-wider font-bold text-slate-400 mb-2">Key Skills</p>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-2 items-center">
-                        <!-- Primary Skill Pills -->
-                        <span class="px-3 py-1.5 rounded-md bg-slate-100/90 text-slate-800 text-xs sm:text-sm font-semibold border border-slate-200/80">
-                            Financial Reporting
-                        </span>
-                        <span class="px-3 py-1.5 rounded-md bg-slate-100/90 text-slate-800 text-xs sm:text-sm font-semibold border border-slate-200/80">
-                            Financial Modelling
-                        </span>
-                        <span class="px-3 py-1.5 rounded-md bg-slate-100/90 text-slate-800 text-xs sm:text-sm font-semibold border border-slate-200/80">
-                            Business Analysis
-                        </span>
-                        <span class="px-3 py-1.5 rounded-md bg-slate-100/90 text-slate-800 text-xs sm:text-sm font-semibold border border-slate-200/80">
-                            Dataflow Design
-                        </span>
-                        <span class="px-3 py-1.5 rounded-md bg-slate-100/90 text-slate-800 text-xs sm:text-sm font-semibold border border-slate-200/80">
-                            SOP Design
-                        </span>
-
-                        <!-- Standard & Tool Pills in Deeper Emerald Styling -->
-                        <span class="px-2.5 py-1.5 rounded-md bg-emerald-100/90 text-emerald-900 text-xs sm:text-sm font-semibold border border-emerald-300/80">
-                            IFRS
-                        </span>
-                        <span class="px-2.5 py-1.5 rounded-md bg-emerald-100/90 text-emerald-900 text-xs sm:text-sm font-semibold border border-emerald-300/80">
-                            NFRS
-                        </span>
-                        <span class="px-2.5 py-1.5 rounded-md bg-emerald-100/90 text-emerald-900 text-xs sm:text-sm font-semibold border border-emerald-300/80">
-                            Power Query
-                        </span>
-                        <span class="px-2.5 py-1.5 rounded-md bg-emerald-100/90 text-emerald-900 text-xs sm:text-sm font-semibold border border-emerald-300/80">
-                            Power Pivot
-                        </span>
-                        <span class="px-2.5 py-1.5 rounded-md bg-emerald-100/90 text-emerald-900 text-xs sm:text-sm font-semibold border border-emerald-300/80">
-                            Data Model
-                        </span>
-                        <span class="px-2.5 py-1.5 rounded-md bg-emerald-100/90 text-emerald-900 text-xs sm:text-sm font-semibold border border-emerald-300/80">
-                            Visualization
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Email & LinkedIn Links -->
-                <div class="pt-3 flex flex-wrap justify-center md:justify-start items-center gap-4 sm:gap-6">
-                    <!-- Email & Copy Separate Capsule Button -->
-                    <div class="inline-flex items-center rounded-lg bg-slate-900 text-white text-xs sm:text-sm font-semibold shadow-sm overflow-hidden">
-                        <a 
-                            href="mailto:mail@sanjeevkhanal.com.np" 
-                            class="px-4 py-2.5 hover:text-emerald-300 transition-colors duration-200"
-                        >
-                            mail@sanjeevkhanal.com.np
-                        </a>
-                        <div class="w-[1px] h-4 bg-slate-700"></div>
-                        <button 
-                            type="button"
-                            onclick="copyEmailToClipboard(event)" 
-                            class="px-3 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors duration-200 flex items-center justify-center"
-                            title="Copy email address"
-                            aria-label="Copy email address"
-                        >
-                            <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 012-2v-8a2 2 0 01-2-2h-8a2 2 0 01-2 2v8a2 2 0 012 2z"></path>
-                            </svg>
-                        </button>
-                    </div>
-
-                    <a 
-                        href="https://linkedin.com/in/sanjeevkhanal" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-emerald-700 transition-colors duration-200 py-2.5"
-                    >
-                        <span>LinkedIn Profile</span>
-                        <span class="text-slate-400">↗</span>
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Bottom Minimal Footer -->
-        <footer class="w-full pb-2 sm:pb-4 flex items-center justify-between text-xs text-slate-400">
-            <p>© <span id="year"></span> Sanjeev Khanal</p>
-            <p>Lalitpur, Nepal</p>
-        </footer>
-
-    </main>
-
-    <!-- Toast Notification Container -->
-    <div id="toast-wrapper" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none"></div>
-
-    <script>
-        // Set year dynamically
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Copy email function with event containment
-        function copyEmailToClipboard(e) {
-            if (e) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-            const email = "mail@sanjeevkhanal.com.np";
-            
-            // Temporary input for iframe copy support
-            const el = document.createElement('textarea');
-            el.value = email;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-
-            showMinimalToast("Email copied to clipboard");
-        }
-
-        // Show minimal toast
-        function showMinimalToast(text) {
-            const wrapper = document.getElementById('toast-wrapper');
-            const toast = document.createElement('div');
-            toast.className = 'toast-enter px-4 py-2 rounded-md bg-slate-900 text-white text-xs font-medium shadow-lg border border-slate-800';
-            toast.textContent = text;
-            
-            wrapper.appendChild(toast);
-
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transition = 'opacity 0.2s ease';
-                setTimeout(() => toast.remove(), 200);
-            }, 2000);
-        }
-    </script>
+  
 </body>
 </html>
