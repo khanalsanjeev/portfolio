@@ -1,130 +1,431 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanjeev Khanal</title>
-  <meta name="description" content="Sanjeev Khanal — Coming Soon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjeev Khanal | Finance, Systems & Creative Experiments</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Caveat (Handwriting), Plus Jakarta Sans (Clean Modern Body) & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        cream: '#faf8f5',
+                        charcoal: '#18181b',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        hand: ['Caveat', 'cursive'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fdfbf7;
+            color: #27272a;
+        }
 
-    body {
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
-      background: #f7f6f4;
-      color: #2c2c2c;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1.5rem;
-      text-align: center;
-    }
+        /* Fun sketchy playful background grid */
+        .sketch-bg {
+            background-image: radial-gradient(#e4e4e7 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
 
-    .badge {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #6b6b6b;
-      margin-bottom: 1.5rem;
-    }
+        /* Playful twisted box styles */
+        .rotate-left {
+            transform: rotate(-1.5deg);
+        }
+        .rotate-right {
+            transform: rotate(1.8deg);
+        }
+        .rotate-slight-left {
+            transform: rotate(-0.8deg);
+        }
+        .rotate-slight-right {
+            transform: rotate(1.2deg);
+        }
 
-    h1 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-weight: 600;
-      font-size: clamp(2.4rem, 7vw, 4.2rem);
-      line-height: 1.15;
-      color: #1a1a1a;
-      margin-bottom: 0.6rem;
-    }
+        .handcrafted-card {
+            background: #ffffff;
+            border: 2px solid #18181b;
+            box-shadow: 4px 4px 0px #18181b;
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-    .tagline {
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: #555;
-      margin-bottom: 2.75rem;
-    }
+        .handcrafted-card:hover {
+            transform: translate(-3px, -3px) rotate(0deg) !important;
+            box-shadow: 8px 8px 0px #10b981;
+            border-color: #059669;
+        }
 
-    .email-wrap {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-      background: #fff;
-      border: 1px solid #e0deda;
-      border-radius: 10px;
-      padding: 0.7rem 1rem 0.7rem 1.15rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-      cursor: pointer;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      user-select: none;
-    }
+        .handcrafted-card-emerald {
+            background: #ecfdf5;
+            border: 2px solid #059669;
+            box-shadow: 5px 5px 0px #047857;
+        }
 
-    .email-wrap:hover {
-      border-color: #c8c5bf;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-
-    .email {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: #2c2c2c;
-      letter-spacing: 0.01em;
-    }
-
-    .copy-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border: none;
-      background: #f0eeeb;
-      border-radius: 7px;
-      color: #555;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      flex-shrink: 0;
-    }
-
-    .email-wrap:hover .copy-btn {
-      background: #e8e5e0;
-      color: #1a1a1a;
-    }
-
-    .copy-btn svg {
-      width: 15px;
-      height: 15px;
-    }
-
-    .copied {
-      font-size: 0.8rem;
-      color: #3d7a4a;
-      margin-top: 0.85rem;
-      height: 1.2em;
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-
-    .copied.show {
-      opacity: 1;
-    }
-  </style>
+        .highlight-marker {
+            background: linear-gradient(120deg, rgba(52, 211, 153, 0.3) 0%, rgba(16, 185, 129, 0.3) 100%);
+            border-radius: 4px;
+            padding: 0 4px;
+        }
+    </style>
 </head>
-<body>
-  <div class="badge">Coming Soon</div>
-  <h1>Sanjeev Khanal</h1>
-  <p class="tagline">Something new is on the way.</p>
+<body class="font-sans antialiased sketch-bg selection:bg-emerald-500 selection:text-white">
 
-  
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 bg-charcoal text-white px-5 py-3 rounded-2xl shadow-2xl border-2 border-emerald-500 flex items-center space-x-3 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toast-message" class="text-sm font-semibold">Copied to clipboard!</span>
+    </div>
 
-  
+    <!-- Clean Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b-2 border-charcoal">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo with Handwriting touch -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500 border-2 border-charcoal flex items-center justify-center font-extrabold text-charcoal shadow-[3px_3px_0px_#18181b] group-hover:rotate-12 transition-transform">
+                        SK
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl tracking-tight text-charcoal group-hover:text-emerald-600 transition-colors">
+                            Sanjeev Khanal
+                        </span>
+                        <span class="font-hand text-lg text-emerald-600 font-bold -mt-1.5">
+                            someone experimental ✌️
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Nav Links -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-bold text-charcoal">
+                    <a href="#intro" class="hover:text-emerald-600 transition-colors">Intro</a>
+                    <a href="#serious" class="hover:text-emerald-600 transition-colors">Serious Stuff</a>
+                    <a href="#spirituality" class="hover:text-emerald-600 transition-colors">Spirituality</a>
+                    <a href="#creative" class="hover:text-emerald-600 transition-colors">Songs 🎵</a>
+                    <a href="#contact" class="px-4 py-2 rounded-xl bg-emerald-500 border-2 border-charcoal text-charcoal shadow-[3px_3px_0px_#18181b] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
+                        Let's Connect! 💬
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-charcoal focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b-2 border-charcoal px-6 py-4 space-y-3 font-semibold">
+            <a href="#intro" class="block py-1 text-charcoal hover:text-emerald-600">Intro</a>
+            <a href="#serious" class="block py-1 text-charcoal hover:text-emerald-600">Serious Stuff</a>
+            <a href="#spirituality" class="block py-1 text-charcoal hover:text-emerald-600">Spirituality</a>
+            <a href="#creative" class="block py-1 text-charcoal hover:text-emerald-600">Songs 🎵</a>
+            <a href="#contact" class="inline-block px-4 py-2 mt-2 rounded-xl bg-emerald-500 border-2 border-charcoal text-charcoal">Let's Connect! 💬</a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+
+        <!-- [01] INTRO SECTION -->
+        <section id="intro" class="relative">
+            
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-100 border-2 border-emerald-600 text-xs text-emerald-800 font-bold mb-6 rotate-left">
+                <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
+                <span>Satdobato, Lalitpur, Nepal 🇳🇵</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-charcoal tracking-tight leading-tight mb-8">
+                Hey there, I'm <span class="text-emerald-600 underline decoration-wavy decoration-emerald-400">Sanjeev.</span> 👋
+            </h1>
+
+            <!-- Twisted Div Container -->
+            <div class="handcrafted-card p-6 sm:p-8 rounded-3xl rotate-slight-right space-y-4">
+                <p class="text-base sm:text-lg text-slate-800 leading-relaxed">
+                    <strong class="font-bold text-charcoal">By day,</strong> I deal with financial reporting, statutory audits, and compliance stuff. 📊
+                </p>
+                <p class="text-base sm:text-lg text-slate-800 leading-relaxed">
+                    <strong class="text-emerald-700 font-bold">By night, my mind goes on turbo 🚀</strong>: softwares (thanks to vibe-coding), spirituality, business models, songs (yeah... thanks to AI again), and way too many random ideas. Keeping track of them all is practically impossible 😅.
+                </p>
+                <div class="pt-4 border-t-2 border-dashed border-slate-200">
+                    <p class="font-hand text-2xl text-emerald-700 font-bold leading-snug">
+                        "If you came here looking for a textbook corporate robot, you might be in the wrong corner of the internet. But if you want proof that accountants aren't actually that boring: welcome!" 🎉
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- [02] SERIOUS STUFF (UNDER THE HOOD) -->
+        <section id="serious" class="scroll-mt-28">
+            <div class="flex items-center space-x-3 mb-8">
+                <span class="font-hand text-3xl font-bold text-emerald-600">01.</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal">💼 First, the serious adult stuff</h2>
+                <span class="font-hand text-xl text-slate-500 font-bold">(because HR is watching 👀)</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="handcrafted-card p-5 rounded-2xl rotate-left">
+                    <i class="fa-solid fa-calculator text-emerald-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold text-charcoal text-base mb-1">5+ Years Experience</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Navigating statutory audits, investigative accounting, financial projections & corporate financing.</p>
+                </div>
+
+                <div class="handcrafted-card p-5 rounded-2xl rotate-right">
+                    <i class="fa-solid fa-graduation-cap text-emerald-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold text-charcoal text-base mb-1">ICAN CA Finalist</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">CAP-III (Group 2 Cleared), CAP-II completed in 2019.</p>
+                </div>
+
+                <div class="handcrafted-card p-5 rounded-2xl rotate-slight-left">
+                    <i class="fa-solid fa-screwdriver-wrench text-emerald-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold text-charcoal text-base mb-1">Core Toolkit</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Financial modeling, NFRS frameworks, Power BI, Excel Data Models & full-stack vibe-coding.</p>
+                </div>
+            </div>
+
+            <div class="handcrafted-card p-6 sm:p-8 rounded-3xl rotate-slight-right space-y-4">
+                <h3 class="font-extrabold text-lg text-charcoal flex items-center space-x-2">
+                    <i class="fa-solid fa-code text-emerald-600"></i>
+                    <span>Things I've Built</span>
+                </h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- 1Pana -->
+                    <div class="p-4 rounded-2xl border-2 border-charcoal bg-slate-50">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-charcoal">1Pana Accounting</span>
+                            <a href="https://1pana.com" target="_blank" class="text-xs font-mono font-bold text-emerald-700 hover:underline">1pana.com ↗</a>
+                        </div>
+                        <p class="text-xs text-slate-600">A managed accounting platform MVP built using AI workflows, Firebase backend, NoSQL database design, and full-stack code.</p>
+                    </div>
+
+                    <!-- Nepal Venture -->
+                    <div class="p-4 rounded-2xl border-2 border-charcoal bg-slate-50">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-charcoal">Nepal Venture</span>
+                            <a href="https://nepalventure.com" target="_blank" class="text-xs font-mono font-bold text-emerald-700 hover:underline">nepalventure.com ↗</a>
+                        </div>
+                        <p class="text-xs text-slate-600">A startup-investor matching platform designed to bring clean structural logic and reporting frameworks to local capital markets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [03] SPIRITUALITY & THE BOOK -->
+        <section id="spirituality" class="scroll-mt-28">
+            <div class="flex items-center space-x-3 mb-8">
+                <span class="font-hand text-3xl font-bold text-emerald-600">02.</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal">🧠 What is life without spirituality?</h2>
+            </div>
+
+            <!-- Twisted Card -->
+            <div class="handcrafted-card p-6 sm:p-8 rounded-3xl rotate-slight-left space-y-5">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b-2 border-slate-200 pb-4 gap-2">
+                    <div>
+                        <span class="text-xs font-mono font-bold text-emerald-700 uppercase tracking-wider">Book Publication</span>
+                        <h3 class="text-2xl font-extrabold text-charcoal">The Awareness Framework</h3>
+                        <p class="text-xs font-mono text-slate-500">ISBN: 9789937192835 | Co-Authored with Raheel Budha</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <div class="px-4 py-2 rounded-xl bg-emerald-100 border-2 border-emerald-600 text-emerald-900 font-mono font-bold text-sm">
+                            R = O · M · P
+                        </div>
+                        <a href="https://book.sanjeevkhanal.com.np" target="_blank" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 border-2 border-charcoal text-charcoal font-bold text-sm shadow-[3px_3px_0px_#18181b] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all flex items-center space-x-2">
+                            <span>Get the Book</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="text-slate-800 text-sm sm:text-base leading-relaxed">
+                    Co-authored an actual published book exploring reality through the triad of <strong class="text-emerald-700">Observation (O)</strong>, <strong class="text-emerald-700">Memory (M)</strong>, and <strong class="text-emerald-700">Pattern (P)</strong>.
+                </p>
+
+                <!-- Playful Handwriting Box -->
+                <div class="p-5 rounded-2xl bg-amber-50 border-2 border-amber-400 rotate-right">
+                    <span class="font-hand text-2xl font-bold text-amber-900 block mb-1">💡 A Quick Note on Co-Authoring:</span>
+                    <p class="font-hand text-2xl text-slate-800 leading-snug">
+                        "If you ever catch yourself believing you think super deeply or analyze things exceptionally well: just look around. There might be a quiet guy wandering around in the corner. Try talking to him 🤣" <span class="text-slate-500 text-xl block mt-1">(shoutout to my co-author, Raheel!)</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- [04] SONGS & CREATIVITY -->
+        <section id="creative" class="scroll-mt-28">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="font-hand text-3xl font-bold text-emerald-600">03.</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal">🎵 Life needs some fun and creativity too</h2>
+            </div>
+            
+            <p class="text-slate-600 text-sm mb-8 font-medium">
+                When spreadsheets get too dry, I channel my late-night brain waves into AI-assisted media experiments on YouTube (<a href="https://www.youtube.com/@shanya_iq" target="_blank" class="text-emerald-600 font-bold underline">@shanya_iq</a>):
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Video 1: Free for a Price -->
+                <div class="handcrafted-card p-5 rounded-2xl rotate-left flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-video bg-slate-200 rounded-xl mb-4 overflow-hidden border-2 border-charcoal relative group">
+                            <img src="https://img.youtube.com/vi/mH3LNjzjihI/hqdefault.jpg" alt="Free for a Price" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <a href="https://www.youtube.com/watch?v=mH3LNjzjihI" target="_blank" class="absolute inset-0 bg-charcoal/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fa-solid fa-play text-white text-3xl"></i>
+                            </a>
+                        </div>
+                        <h3 class="font-bold text-charcoal text-base mb-1">Free for a Price</h3>
+                        <span class="text-xs font-hand text-emerald-700 font-bold block mb-2 text-lg">Work Anthem</span>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            A corporate work anthem asking why we built a cage of financial stress on top of a naturally free earth.
+                        </p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=mH3LNjzjihI" target="_blank" class="mt-4 font-bold text-xs text-emerald-700 hover:underline flex items-center space-x-1">
+                        <span>Watch on YouTube</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Video 2: Closer Than We Should Be -->
+                <div class="handcrafted-card p-5 rounded-2xl rotate-right flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-video bg-slate-200 rounded-xl mb-4 overflow-hidden border-2 border-charcoal relative group">
+                            <img src="https://img.youtube.com/vi/Toc0_ZDkmac/hqdefault.jpg" alt="Closer Than We Should Be" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <a href="https://www.youtube.com/watch?v=Toc0_ZDkmac" target="_blank" class="absolute inset-0 bg-charcoal/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fa-solid fa-play text-white text-3xl"></i>
+                            </a>
+                        </div>
+                        <h3 class="font-bold text-charcoal text-base mb-1">Closer Than We Should Be</h3>
+                        <span class="text-xs font-hand text-emerald-700 font-bold block mb-2 text-lg">Romantic track 😉</span>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            A moody, romantic track: because yeah, accountants can be romantic too 😉.
+                        </p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=Toc0_ZDkmac" target="_blank" class="mt-4 font-bold text-xs text-emerald-700 hover:underline flex items-center space-x-1">
+                        <span>Watch on YouTube</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Video 3: Shiva Rap -->
+                <div class="handcrafted-card p-5 rounded-2xl rotate-slight-left flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-video bg-slate-200 rounded-xl mb-4 overflow-hidden border-2 border-charcoal relative group">
+                            <img src="https://img.youtube.com/vi/jLtuYi0gqko/hqdefault.jpg" alt="Shiva Rap" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <a href="https://www.youtube.com/watch?v=jLtuYi0gqko" target="_blank" class="absolute inset-0 bg-charcoal/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fa-solid fa-play text-white text-3xl"></i>
+                            </a>
+                        </div>
+                        <h3 class="font-bold text-charcoal text-base mb-1">Shiva Rap | Drastaa</h3>
+                        <span class="text-xs font-hand text-emerald-700 font-bold block mb-2 text-lg">A thought experiment 🤣</span>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Basically a thought experiment on how God would feel seeing human stupidity today 🤣.
+                        </p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=jLtuYi0gqko" target="_blank" class="mt-4 font-bold text-xs text-emerald-700 hover:underline flex items-center space-x-1">
+                        <span>Watch on YouTube</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- [05] LET'S CONNECT (PRESERVED GREEN THEME) -->
+        <section id="contact" class="scroll-mt-28">
+            <div class="handcrafted-card-emerald p-8 sm:p-12 rounded-3xl rotate-slight-right text-center space-y-6">
+                
+                <span class="font-hand text-3xl font-bold text-emerald-800">04. Let's Connect</span>
+                
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-emerald-950 tracking-tight">
+                    💬 Let's Connect & Be Human!
+                </h2>
+
+                <p class="text-slate-800 text-base max-w-xl mx-auto leading-relaxed">
+                    Life is way too short to spend it all inside a single column on a balance sheet. <br>
+                    Whether you want to talk about financial advisory, vibe-coding apps, or why reality feels like an infinite recursive loop: my inbox is open.
+                </p>
+
+                <p class="font-hand text-3xl text-emerald-900 font-bold">
+                    "Let's enjoy life, connect, and be human (at least until AI takes over) 🤖"
+                </p>
+
+                <!-- Copy buttons -->
+                <div class="max-w-xs mx-auto pt-4 text-left">
+                    <button onclick="copyToClipboard('mail@sanjeevkhanal.com.np', 'Email copied!')" class="w-full p-4 rounded-2xl bg-white border-2 border-emerald-700 hover:bg-emerald-50 transition-all group shadow-[3px_3px_0px_#047857]">
+                        <div class="text-xs font-bold text-emerald-800 flex items-center justify-between">
+                            <span>Email Me</span>
+                            <i class="fa-regular fa-copy"></i>
+                        </div>
+                        <div class="font-mono text-xs sm:text-sm font-bold text-charcoal truncate mt-1">mail@sanjeevkhanal.com.np</div>
+                    </button>
+                </div>
+
+                <!-- Social links -->
+                <div class="flex items-center justify-center space-x-6 pt-4 text-xl">
+                    <a href="https://linkedin.com/in/sanjeev-khanal" target="_blank" class="w-12 h-12 rounded-2xl bg-white border-2 border-emerald-700 text-emerald-800 flex items-center justify-center hover:bg-emerald-700 hover:text-white transition-all shadow-[3px_3px_0px_#047857]">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@shanya_iq" target="_blank" class="w-12 h-12 rounded-2xl bg-white border-2 border-emerald-700 text-emerald-800 flex items-center justify-center hover:bg-emerald-700 hover:text-white transition-all shadow-[3px_3px_0px_#047857]">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://sanjeevkhanal.com.np" target="_blank" class="w-12 h-12 rounded-2xl bg-white border-2 border-emerald-700 text-emerald-800 flex items-center justify-center hover:bg-emerald-700 hover:text-white transition-all shadow-[3px_3px_0px_#047857]">
+                        <i class="fa-solid fa-globe"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-8 text-center text-xs font-mono text-slate-500 border-t-2 border-charcoal bg-white">
+        &copy; 2026 Sanjeev Khanal. Careful steps were taken to remove em-dashes and make it look like this was not vibe-coded. 😉
+    </footer>
+
+    <script>
+        // Copy to clipboard helper
+        function copyToClipboard(text, msg) {
+            navigator.clipboard.writeText(text);
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.innerText = msg;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
