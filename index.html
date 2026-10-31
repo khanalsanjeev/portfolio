@@ -1,431 +1,716 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjeev Khanal | Finance, Systems & Creative Experiments</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Caveat (Handwriting), Plus Jakarta Sans (Clean Modern Body) & JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        emerald: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                        },
-                        cream: '#faf8f5',
-                        charcoal: '#18181b',
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        hand: ['Caveat', 'cursive'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    }
-                }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sanjeev Khanal. Financial Advisory, Audit Support, and Systems in Nepal.">
+  <title>Sanjeev Khanal | Financial Advisory &amp; Systems</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#F9FAF9',
+              card: '#FFFFFF',
+              pillBg: '#E7F2EB',
+              mint: '#34A853',
+              darkGreen: '#1B4D3E',
+              accentGreen: '#2D8A68',
+              slateText: '#1E293B',
+              mutedText: '#64748B',
+              borderLight: '#E8EFEA'
             }
+          }
         }
-    </script>
-    <style>
-        body {
-            background-color: #fdfbf7;
-            color: #27272a;
-        }
+      }
+    }
+  </script>
 
-        /* Fun sketchy playful background grid */
-        .sketch-bg {
-            background-image: radial-gradient(#e4e4e7 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
+  <style>
+    body {
+      background-color: #F8FAF8;
+      color: #1E293B;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      letter-spacing: -0.011em;
+      line-height: 1.6;
+    }
 
-        /* Playful twisted box styles */
-        .rotate-left {
-            transform: rotate(-1.5deg);
-        }
-        .rotate-right {
-            transform: rotate(1.8deg);
-        }
-        .rotate-slight-left {
-            transform: rotate(-0.8deg);
-        }
-        .rotate-slight-right {
-            transform: rotate(1.2deg);
-        }
+    .editorial-border {
+      border-color: #E2EAE4;
+    }
 
-        .handcrafted-card {
-            background: #ffffff;
-            border: 2px solid #18181b;
-            box-shadow: 4px 4px 0px #18181b;
-            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+    /* Tab Switcher Logic */
+    .tab-content {
+      display: none !important;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
 
-        .handcrafted-card:hover {
-            transform: translate(-3px, -3px) rotate(0deg) !important;
-            box-shadow: 8px 8px 0px #10b981;
-            border-color: #059669;
-        }
+    .tab-content.active {
+      display: block !important;
+      opacity: 1;
+    }
 
-        .handcrafted-card-emerald {
-            background: #ecfdf5;
-            border: 2px solid #059669;
-            box-shadow: 5px 5px 0px #047857;
-        }
+    .nav-link {
+      position: relative;
+      transition: color 0.2s ease;
+    }
 
-        .highlight-marker {
-            background: linear-gradient(120deg, rgba(52, 211, 153, 0.3) 0%, rgba(16, 185, 129, 0.3) 100%);
-            border-radius: 4px;
-            padding: 0 4px;
-        }
-    </style>
+    .nav-link.active {
+      color: #1B4D3E;
+      font-weight: 600;
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #1B4D3E;
+    }
+
+    /* Accordion transitions */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), opacity 0.25s ease-out;
+      opacity: 0;
+    }
+
+    .accordion-item.active .accordion-content {
+      max-height: 1200px;
+      opacity: 1;
+      transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in;
+    }
+
+    .accordion-item.active .accordion-icon {
+      transform: rotate(45deg);
+    }
+  </style>
 </head>
-<body class="font-sans antialiased sketch-bg selection:bg-emerald-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#1B4D3E] selection:text-white">
 
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 bg-charcoal text-white px-5 py-3 rounded-2xl shadow-2xl border-2 border-emerald-500 flex items-center space-x-3 transition-all duration-300">
-        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
-        <span id="toast-message" class="text-sm font-semibold">Copied to clipboard!</span>
+  <!-- HEADER / NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-[#EFF4F0] border-b border-emerald-950/10">
+    <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Name -->
+      <a href="#home" onclick="switchTab('home'); return false;" class="flex flex-col">
+        <span class="font-bold text-[#1B4D3E] text-base tracking-tight">Sanjeev Khanal</span>
+        <span class="text-xs tracking-wider text-[#64748B] uppercase font-semibold">Financial Advisory &amp; Systems</span>
+      </a>
+
+      <!-- Minimal Nav (Desktop) -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <button onclick="switchTab('home')" id="tab-btn-home" class="nav-link active py-1">Home</button>
+        <button onclick="switchTab('about')" id="tab-btn-about" class="nav-link py-1">About</button>
+        <button onclick="switchTab('services')" id="tab-btn-services" class="nav-link py-1">Services</button>
+        <button onclick="switchTab('contact')" id="tab-btn-contact" class="nav-link py-1">Contact</button>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-4">
+        <button onclick="switchTab('contact')" class="text-xs font-semibold bg-[#1B4D3E] text-white hover:bg-[#2D8A68] px-5 py-2.5 rounded-full transition-all shadow-sm">
+          Get in touch &rarr;
+        </button>
+
+        <!-- Mobile Toggle -->
+        <button id="menu-toggle" class="md:hidden p-2 text-slate-700 hover:text-[#1B4D3E] focus:outline-none" aria-label="Toggle Navigation">
+          &#9776;
+        </button>
+      </div>
     </div>
 
-    <!-- Clean Header -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b-2 border-charcoal">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Logo with Handwriting touch -->
-                <a href="#" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-500 border-2 border-charcoal flex items-center justify-center font-extrabold text-charcoal shadow-[3px_3px_0px_#18181b] group-hover:rotate-12 transition-transform">
-                        SK
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-bold text-xl tracking-tight text-charcoal group-hover:text-emerald-600 transition-colors">
-                            Sanjeev Khanal
-                        </span>
-                        <span class="font-hand text-lg text-emerald-600 font-bold -mt-1.5">
-                            someone experimental ✌️
-                        </span>
-                    </div>
-                </a>
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#EFF4F0] border-b border-gray-200 px-6 py-4 flex-col gap-3 text-sm font-medium">
+      <button onclick="switchTab('home')" class="text-left py-1 text-slate-700 hover:text-[#1B4D3E]">Home</button>
+      <button onclick="switchTab('about')" class="text-left py-1 text-slate-700 hover:text-[#1B4D3E]">About</button>
+      <button onclick="switchTab('services')" class="text-left py-1 text-slate-700 hover:text-[#1B4D3E]">Services</button>
+      <button onclick="switchTab('contact')" class="text-left py-1 text-slate-700 hover:text-[#1B4D3E]">Contact</button>
+    </div>
+  </header>
 
-                <!-- Nav Links -->
-                <nav class="hidden md:flex items-center space-x-6 text-sm font-bold text-charcoal">
-                    <a href="#intro" class="hover:text-emerald-600 transition-colors">Intro</a>
-                    <a href="#serious" class="hover:text-emerald-600 transition-colors">Serious Stuff</a>
-                    <a href="#spirituality" class="hover:text-emerald-600 transition-colors">Spirituality</a>
-                    <a href="#creative" class="hover:text-emerald-600 transition-colors">Songs 🎵</a>
-                    <a href="#contact" class="px-4 py-2 rounded-xl bg-emerald-500 border-2 border-charcoal text-charcoal shadow-[3px_3px_0px_#18181b] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
-                        Let's Connect! 💬
-                    </a>
-                </nav>
+  <!-- MAIN EDITORIAL CONTAINER -->
+  <main class="flex-grow w-full">
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-charcoal focus:outline-none">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
+    <!-- ==================== HOME TAB ==================== -->
+    <section id="tab-home" class="tab-content active space-y-12">
+      
+      <!-- 1. FULL WIDTH HERO SECTION -->
+      <div class="bg-[#F2F6F3] border-b border-emerald-950/5 py-14 sm:py-20">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          
+          <!-- Mobile View: Centered Rounded Image placed on TOP -->
+          <div class="w-full lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2">
+            <div class="w-36 h-36 sm:w-44 sm:h-44 lg:w-full lg:max-w-[290px] lg:h-auto lg:aspect-[4/5] rounded-full lg:rounded-2xl overflow-hidden shadow-md bg-slate-200">
+              <img 
+                src="sanjeev.jpg" 
+                alt="Sanjeev Khanal" 
+                class="w-full h-full object-cover object-top"
+              >
             </div>
-        </div>
+          </div>
 
-        <!-- Mobile Navigation Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b-2 border-charcoal px-6 py-4 space-y-3 font-semibold">
-            <a href="#intro" class="block py-1 text-charcoal hover:text-emerald-600">Intro</a>
-            <a href="#serious" class="block py-1 text-charcoal hover:text-emerald-600">Serious Stuff</a>
-            <a href="#spirituality" class="block py-1 text-charcoal hover:text-emerald-600">Spirituality</a>
-            <a href="#creative" class="block py-1 text-charcoal hover:text-emerald-600">Songs 🎵</a>
-            <a href="#contact" class="inline-block px-4 py-2 mt-2 rounded-xl bg-emerald-500 border-2 border-charcoal text-charcoal">Let's Connect! 💬</a>
-        </div>
-    </header>
-
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
-
-        <!-- [01] INTRO SECTION -->
-        <section id="intro" class="relative">
-            
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-100 border-2 border-emerald-600 text-xs text-emerald-800 font-bold mb-6 rotate-left">
-                <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
-                <span>Satdobato, Lalitpur, Nepal 🇳🇵</span>
+          <!-- Left Hero Content -->
+          <div class="w-full lg:col-span-7 space-y-6 text-center lg:text-left order-2 lg:order-1">
+            <div class="space-y-2">
+              <span class="text-xs font-bold uppercase tracking-widest text-[#2D8A68]">Lalitpur, Nepal</span>
+              <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15]">
+                Hi, I am Sanjeev Khanal
+              </h1>
+              <p class="text-base sm:text-lg font-medium text-[#1B4D3E] pt-1">
+                Financial Advisory, Corporate Modelling &amp; Accounting Systems
+              </p>
             </div>
 
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-charcoal tracking-tight leading-tight mb-8">
-                Hey there, I'm <span class="text-emerald-600 underline decoration-wavy decoration-emerald-400">Sanjeev.</span> 👋
-            </h1>
-
-            <!-- Twisted Div Container -->
-            <div class="handcrafted-card p-6 sm:p-8 rounded-3xl rotate-slight-right space-y-4">
-                <p class="text-base sm:text-lg text-slate-800 leading-relaxed">
-                    <strong class="font-bold text-charcoal">By day,</strong> I deal with financial reporting, statutory audits, and compliance stuff. 📊
-                </p>
-                <p class="text-base sm:text-lg text-slate-800 leading-relaxed">
-                    <strong class="text-emerald-700 font-bold">By night, my mind goes on turbo 🚀</strong>: softwares (thanks to vibe-coding), spirituality, business models, songs (yeah... thanks to AI again), and way too many random ideas. Keeping track of them all is practically impossible 😅.
-                </p>
-                <div class="pt-4 border-t-2 border-dashed border-slate-200">
-                    <p class="font-hand text-2xl text-emerald-700 font-bold leading-snug">
-                        "If you came here looking for a textbook corporate robot, you might be in the wrong corner of the internet. But if you want proof that accountants aren't actually that boring: welcome!" 🎉
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- [02] SERIOUS STUFF (UNDER THE HOOD) -->
-        <section id="serious" class="scroll-mt-28">
-            <div class="flex items-center space-x-3 mb-8">
-                <span class="font-hand text-3xl font-bold text-emerald-600">01.</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal">💼 First, the serious adult stuff</h2>
-                <span class="font-hand text-xl text-slate-500 font-bold">(because HR is watching 👀)</span>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div class="handcrafted-card p-5 rounded-2xl rotate-left">
-                    <i class="fa-solid fa-calculator text-emerald-600 text-2xl mb-2"></i>
-                    <h3 class="font-bold text-charcoal text-base mb-1">5+ Years Experience</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Navigating statutory audits, investigative accounting, financial projections & corporate financing.</p>
-                </div>
-
-                <div class="handcrafted-card p-5 rounded-2xl rotate-right">
-                    <i class="fa-solid fa-graduation-cap text-emerald-600 text-2xl mb-2"></i>
-                    <h3 class="font-bold text-charcoal text-base mb-1">ICAN CA Finalist</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">CAP-III (Group 2 Cleared), CAP-II completed in 2019.</p>
-                </div>
-
-                <div class="handcrafted-card p-5 rounded-2xl rotate-slight-left">
-                    <i class="fa-solid fa-screwdriver-wrench text-emerald-600 text-2xl mb-2"></i>
-                    <h3 class="font-bold text-charcoal text-base mb-1">Core Toolkit</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Financial modeling, NFRS frameworks, Power BI, Excel Data Models & full-stack vibe-coding.</p>
-                </div>
-            </div>
-
-            <div class="handcrafted-card p-6 sm:p-8 rounded-3xl rotate-slight-right space-y-4">
-                <h3 class="font-extrabold text-lg text-charcoal flex items-center space-x-2">
-                    <i class="fa-solid fa-code text-emerald-600"></i>
-                    <span>Things I've Built</span>
-                </h3>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- 1Pana -->
-                    <div class="p-4 rounded-2xl border-2 border-charcoal bg-slate-50">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="font-bold text-charcoal">1Pana Accounting</span>
-                            <a href="https://1pana.com" target="_blank" class="text-xs font-mono font-bold text-emerald-700 hover:underline">1pana.com ↗</a>
-                        </div>
-                        <p class="text-xs text-slate-600">A managed accounting platform MVP built using AI workflows, Firebase backend, NoSQL database design, and full-stack code.</p>
-                    </div>
-
-                    <!-- Nepal Venture -->
-                    <div class="p-4 rounded-2xl border-2 border-charcoal bg-slate-50">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="font-bold text-charcoal">Nepal Venture</span>
-                            <a href="https://nepalventure.com" target="_blank" class="text-xs font-mono font-bold text-emerald-700 hover:underline">nepalventure.com ↗</a>
-                        </div>
-                        <p class="text-xs text-slate-600">A startup-investor matching platform designed to bring clean structural logic and reporting frameworks to local capital markets.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- [03] SPIRITUALITY & THE BOOK -->
-        <section id="spirituality" class="scroll-mt-28">
-            <div class="flex items-center space-x-3 mb-8">
-                <span class="font-hand text-3xl font-bold text-emerald-600">02.</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal">🧠 What is life without spirituality?</h2>
-            </div>
-
-            <!-- Twisted Card -->
-            <div class="handcrafted-card p-6 sm:p-8 rounded-3xl rotate-slight-left space-y-5">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b-2 border-slate-200 pb-4 gap-2">
-                    <div>
-                        <span class="text-xs font-mono font-bold text-emerald-700 uppercase tracking-wider">Book Publication</span>
-                        <h3 class="text-2xl font-extrabold text-charcoal">The Awareness Framework</h3>
-                        <p class="text-xs font-mono text-slate-500">ISBN: 9789937192835 | Co-Authored with Raheel Budha</p>
-                    </div>
-                    <div class="flex flex-wrap items-center gap-3">
-                        <div class="px-4 py-2 rounded-xl bg-emerald-100 border-2 border-emerald-600 text-emerald-900 font-mono font-bold text-sm">
-                            R = O · M · P
-                        </div>
-                        <a href="https://book.sanjeevkhanal.com.np" target="_blank" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 border-2 border-charcoal text-charcoal font-bold text-sm shadow-[3px_3px_0px_#18181b] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all flex items-center space-x-2">
-                            <span>Get the Book</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <p class="text-slate-800 text-sm sm:text-base leading-relaxed">
-                    Co-authored an actual published book exploring reality through the triad of <strong class="text-emerald-700">Observation (O)</strong>, <strong class="text-emerald-700">Memory (M)</strong>, and <strong class="text-emerald-700">Pattern (P)</strong>.
-                </p>
-
-                <!-- Playful Handwriting Box -->
-                <div class="p-5 rounded-2xl bg-amber-50 border-2 border-amber-400 rotate-right">
-                    <span class="font-hand text-2xl font-bold text-amber-900 block mb-1">💡 A Quick Note on Co-Authoring:</span>
-                    <p class="font-hand text-2xl text-slate-800 leading-snug">
-                        "If you ever catch yourself believing you think super deeply or analyze things exceptionally well: just look around. There might be a quiet guy wandering around in the corner. Try talking to him 🤣" <span class="text-slate-500 text-xl block mt-1">(shoutout to my co-author, Raheel!)</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- [04] SONGS & CREATIVITY -->
-        <section id="creative" class="scroll-mt-28">
-            <div class="flex items-center space-x-3 mb-6">
-                <span class="font-hand text-3xl font-bold text-emerald-600">03.</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal">🎵 Life needs some fun and creativity too</h2>
-            </div>
-            
-            <p class="text-slate-600 text-sm mb-8 font-medium">
-                When spreadsheets get too dry, I channel my late-night brain waves into AI-assisted media experiments on YouTube (<a href="https://www.youtube.com/@shanya_iq" target="_blank" class="text-emerald-600 font-bold underline">@shanya_iq</a>):
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto lg:mx-0">
+              I am a finance and accounting professional with over five years of practice. I help organisations and firms in Nepal prepare NFRS compliant statements, reconstruct incomplete financial records, build robust credit models for bank financing, and design software database architecture.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Video 1: Free for a Price -->
-                <div class="handcrafted-card p-5 rounded-2xl rotate-left flex flex-col justify-between">
-                    <div>
-                        <div class="aspect-video bg-slate-200 rounded-xl mb-4 overflow-hidden border-2 border-charcoal relative group">
-                            <img src="https://img.youtube.com/vi/mH3LNjzjihI/hqdefault.jpg" alt="Free for a Price" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                            <a href="https://www.youtube.com/watch?v=mH3LNjzjihI" target="_blank" class="absolute inset-0 bg-charcoal/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <i class="fa-solid fa-play text-white text-3xl"></i>
-                            </a>
-                        </div>
-                        <h3 class="font-bold text-charcoal text-base mb-1">Free for a Price</h3>
-                        <span class="text-xs font-hand text-emerald-700 font-bold block mb-2 text-lg">Work Anthem</span>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            A corporate work anthem asking why we built a cage of financial stress on top of a naturally free earth.
-                        </p>
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=mH3LNjzjihI" target="_blank" class="mt-4 font-bold text-xs text-emerald-700 hover:underline flex items-center space-x-1">
-                        <span>Watch on YouTube</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-
-                <!-- Video 2: Closer Than We Should Be -->
-                <div class="handcrafted-card p-5 rounded-2xl rotate-right flex flex-col justify-between">
-                    <div>
-                        <div class="aspect-video bg-slate-200 rounded-xl mb-4 overflow-hidden border-2 border-charcoal relative group">
-                            <img src="https://img.youtube.com/vi/Toc0_ZDkmac/hqdefault.jpg" alt="Closer Than We Should Be" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                            <a href="https://www.youtube.com/watch?v=Toc0_ZDkmac" target="_blank" class="absolute inset-0 bg-charcoal/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <i class="fa-solid fa-play text-white text-3xl"></i>
-                            </a>
-                        </div>
-                        <h3 class="font-bold text-charcoal text-base mb-1">Closer Than We Should Be</h3>
-                        <span class="text-xs font-hand text-emerald-700 font-bold block mb-2 text-lg">Romantic track 😉</span>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            A moody, romantic track: because yeah, accountants can be romantic too 😉.
-                        </p>
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=Toc0_ZDkmac" target="_blank" class="mt-4 font-bold text-xs text-emerald-700 hover:underline flex items-center space-x-1">
-                        <span>Watch on YouTube</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-
-                <!-- Video 3: Shiva Rap -->
-                <div class="handcrafted-card p-5 rounded-2xl rotate-slight-left flex flex-col justify-between">
-                    <div>
-                        <div class="aspect-video bg-slate-200 rounded-xl mb-4 overflow-hidden border-2 border-charcoal relative group">
-                            <img src="https://img.youtube.com/vi/jLtuYi0gqko/hqdefault.jpg" alt="Shiva Rap" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                            <a href="https://www.youtube.com/watch?v=jLtuYi0gqko" target="_blank" class="absolute inset-0 bg-charcoal/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <i class="fa-solid fa-play text-white text-3xl"></i>
-                            </a>
-                        </div>
-                        <h3 class="font-bold text-charcoal text-base mb-1">Shiva Rap | Drastaa</h3>
-                        <span class="text-xs font-hand text-emerald-700 font-bold block mb-2 text-lg">A thought experiment 🤣</span>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Basically a thought experiment on how God would feel seeing human stupidity today 🤣.
-                        </p>
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=jLtuYi0gqko" target="_blank" class="mt-4 font-bold text-xs text-emerald-700 hover:underline flex items-center space-x-1">
-                        <span>Watch on YouTube</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-
+            <div class="flex items-center justify-center lg:justify-start pt-2">
+              <button onclick="switchTab('services')" class="bg-[#1B4D3E] text-white text-xs font-semibold px-7 py-3 rounded-full hover:bg-[#2D8A68] transition-all shadow-sm">
+                Explore Services &rarr;
+              </button>
             </div>
-        </section>
+          </div>
 
-        <!-- [05] LET'S CONNECT (PRESERVED GREEN THEME) -->
-        <section id="contact" class="scroll-mt-28">
-            <div class="handcrafted-card-emerald p-8 sm:p-12 rounded-3xl rotate-slight-right text-center space-y-6">
-                
-                <span class="font-hand text-3xl font-bold text-emerald-800">04. Let's Connect</span>
-                
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-emerald-950 tracking-tight">
-                    💬 Let's Connect & Be Human!
-                </h2>
+        </div>
+      </div>
 
-                <p class="text-slate-800 text-base max-w-xl mx-auto leading-relaxed">
-                    Life is way too short to spend it all inside a single column on a balance sheet. <br>
-                    Whether you want to talk about financial advisory, vibe-coding apps, or why reality feels like an infinite recursive loop: my inbox is open.
-                </p>
+      <!-- CONTAINER FOR REMAINING HOME CONTENT -->
+      <div class="max-w-5xl mx-auto px-6 space-y-12 pb-8">
+        
+        <!-- 2. BENTO METRICS BAND -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 bg-transparent">
+          
+          <div class="bg-[#E3EFE7] border border-emerald-950/5 p-7 rounded-2xl space-y-2 hover:border-[#1B4D3E]/20 transition-all">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Credit Modelling</span>
+            <span class="block text-3xl font-bold text-slate-900">NPR 1 Cr+</span>
+            <p class="text-xs text-slate-600 leading-relaxed pt-1">
+              Financial projections and debt capacity models verified for approved credit facilities.
+            </p>
+          </div>
 
-                <p class="font-hand text-3xl text-emerald-900 font-bold">
-                    "Let's enjoy life, connect, and be human (at least until AI takes over) 🤖"
-                </p>
+          <div class="bg-[#E3EFE7] border border-emerald-950/5 p-7 rounded-2xl space-y-2 hover:border-[#1B4D3E]/20 transition-all">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Reporting Frameworks</span>
+            <span class="block text-3xl font-bold text-slate-900">NFRS &amp; NAS</span>
+            <p class="text-xs text-slate-600 leading-relaxed pt-1">
+              Financial statements prepared in accordance with standards applicable in Nepal.
+            </p>
+          </div>
 
-                <!-- Copy buttons -->
-                <div class="max-w-xs mx-auto pt-4 text-left">
-                    <button onclick="copyToClipboard('mail@sanjeevkhanal.com.np', 'Email copied!')" class="w-full p-4 rounded-2xl bg-white border-2 border-emerald-700 hover:bg-emerald-50 transition-all group shadow-[3px_3px_0px_#047857]">
-                        <div class="text-xs font-bold text-emerald-800 flex items-center justify-between">
-                            <span>Email Me</span>
-                            <i class="fa-regular fa-copy"></i>
-                        </div>
-                        <div class="font-mono text-xs sm:text-sm font-bold text-charcoal truncate mt-1">mail@sanjeevkhanal.com.np</div>
-                    </button>
-                </div>
+          <div class="bg-[#E3EFE7] border border-emerald-950/5 p-7 rounded-2xl space-y-2 hover:border-[#1B4D3E]/20 transition-all">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Practice Experience</span>
+            <span class="block text-3xl font-bold text-slate-900">5+ Years</span>
+            <p class="text-xs text-slate-600 leading-relaxed pt-1">
+              Statutory audit articleship training alongside independent financial advisory.
+            </p>
+          </div>
 
-                <!-- Social links -->
-                <div class="flex items-center justify-center space-x-6 pt-4 text-xl">
-                    <a href="https://linkedin.com/in/sanjeev-khanal" target="_blank" class="w-12 h-12 rounded-2xl bg-white border-2 border-emerald-700 text-emerald-800 flex items-center justify-center hover:bg-emerald-700 hover:text-white transition-all shadow-[3px_3px_0px_#047857]">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@shanya_iq" target="_blank" class="w-12 h-12 rounded-2xl bg-white border-2 border-emerald-700 text-emerald-800 flex items-center justify-center hover:bg-emerald-700 hover:text-white transition-all shadow-[3px_3px_0px_#047857]">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="https://sanjeevkhanal.com.np" target="_blank" class="w-12 h-12 rounded-2xl bg-white border-2 border-emerald-700 text-emerald-800 flex items-center justify-center hover:bg-emerald-700 hover:text-white transition-all shadow-[3px_3px_0px_#047857]">
-                        <i class="fa-solid fa-globe"></i>
-                    </a>
-                </div>
+        </div>
 
+        <!-- 3. FEATURED PRODUCT SHOWCASE -->
+        <div class="bg-[#1B4D3E] text-white p-8 sm:p-10 rounded-3xl shadow-md space-y-6">
+          <div class="flex items-center justify-between border-b border-emerald-800/80 pb-4">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-emerald-300">Managed Accounting MVP</span>
+              <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">1Pana Accounting</h2>
             </div>
-        </section>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 text-emerald-200 border border-emerald-700/50">
+              Functional Project
+            </span>
+          </div>
 
-    </main>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+              <p class="text-xs sm:text-sm text-emerald-100/90 leading-relaxed">
+                A functional managed accounting MVP developed across six months (three months of active core development followed by three months of operational refinement and testing).
+              </p>
+              <p class="text-xs text-emerald-200/80 leading-relaxed">
+                Demonstrates practical capability bridging accounting standards with modern software system architecture.
+              </p>
+              <div class="pt-2">
+                <a href="https://1pana.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold bg-white text-[#1B4D3E] hover:bg-emerald-50 px-6 py-3 rounded-full transition-all shadow-sm">
+                  <span>Visit 1pana.com</span>
+                  <span>&rarr;</span>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-7 overflow-hidden rounded-2xl border border-emerald-800/80 shadow-md bg-slate-900 max-h-[280px]">
+              <img 
+                src="1pana.png" 
+                alt="1Pana Accounting Dashboard" 
+                class="w-full h-full object-cover object-top"
+              >
+            </div>
+          </div>
+        </div>
 
-    <footer class="py-8 text-center text-xs font-mono text-slate-500 border-t-2 border-charcoal bg-white">
-        &copy; 2026 Sanjeev Khanal. Careful steps were taken to remove em-dashes and make it look like this was not vibe-coded. 😉
-    </footer>
+      </div>
 
-    <script>
-        // Copy to clipboard helper
-        function copyToClipboard(text, msg) {
-            navigator.clipboard.writeText(text);
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-message');
-            toastMsg.innerText = msg;
+    </section>
+
+    <!-- ==================== ABOUT TAB ==================== -->
+    <section id="tab-about" class="tab-content space-y-10">
+      
+      <!-- Page Header -->
+      <div class="bg-[#F2F6F3] border-b border-emerald-950/5 py-12 sm:py-16">
+        <div class="max-w-5xl mx-auto px-6 space-y-3">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#2D8A68]">Profile</span>
+          <h1 class="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">Professional Background</h1>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl">
+            Finance and accounting professional based in Lalitpur, Nepal, with over five years of practice covering statutory audit, NFRS financial statement preparation, investigative ledger reconstruction, corporate financial modelling, and software database design.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 space-y-10 pb-8">
+        
+        <!-- DETAILED TEXT COLUMNS -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+          
+          <div class="md:col-span-7 space-y-6 bg-white border editorial-border p-8 rounded-3xl shadow-sm">
+            <h2 class="text-xl font-bold text-slate-900 border-b border-gray-100 pb-4">Practice &amp; Approach</h2>
             
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              My work combines formal CA articleship training with direct project engagements. I have prepared financial statements under NFRS frameworks, reconstructed incomplete ledgers from primary source documents, and built corporate models for bank financing.
+            </p>
+
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              All engagements begin directly from verified records including bank statements, tax deduction records, and commercial agreements. The objective is to produce clean, defensible financial data suitable for institutional review.
+            </p>
+          </div>
+
+          <div class="md:col-span-5 space-y-6">
+            <div class="bg-[#E3EFE7] border border-emerald-950/5 p-8 rounded-3xl space-y-4 shadow-sm">
+              <span class="text-xs uppercase font-bold tracking-widest text-[#1B4D3E]">ICAN Education</span>
+              <h3 class="font-bold text-slate-900 text-base">Institute of Chartered Accountants of Nepal</h3>
+              
+              <div class="space-y-3 text-xs sm:text-sm text-slate-700 pt-3 border-t border-emerald-950/10">
+                <div class="flex justify-between py-1.5 border-b border-emerald-950/5">
+                  <span class="font-semibold text-slate-900">CAP III (Final)</span>
+                  <span class="text-slate-600">Group 2 Cleared</span>
+                </div>
+                <div class="flex justify-between py-1.5 border-b border-emerald-950/5">
+                  <span class="font-semibold text-slate-900">CAP II</span>
+                  <span class="text-slate-600">Passed 2019</span>
+                </div>
+                <div class="flex justify-between py-1.5">
+                  <span class="font-semibold text-slate-900">CAP I</span>
+                  <span class="text-slate-600">Passed 2015</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ACCORDION CAREER TIMELINE CONTAINER -->
+        <div class="bg-white border editorial-border p-8 sm:p-10 rounded-3xl shadow-sm space-y-6">
+          <h2 class="text-2xl font-bold text-slate-900 border-b border-gray-100 pb-4">Career History &amp; Engagement Details</h2>
+
+          <div class="divide-y divide-gray-100">
             
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 2500);
-        }
+            <!-- INDEPENDENT PRACTICE -->
+            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
+              <div class="flex items-center justify-between gap-4">
+                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">2023 - Present</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Financial Consultant &amp; Audit Support (Independent Practice)</h3>
+                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
+              </div>
+              <div class="accordion-content pt-4 space-y-3">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                  Independent advisory focused on financial modelling for bank facilities, financial statement preparation, NFRS/NAS adoption, and audit management:
+                </p>
+                <ul class="text-xs sm:text-sm text-slate-600 space-y-2 list-disc list-inside bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100">
+                  <li><strong>Corporate Financing Engagements</strong>: Built financial projections and financial models supporting credit approvals exceeding NPR 1 Cr in term loan and working capital facilities.</li>
+                  <li><strong>First-time Framework Implementation</strong>: Designed and implemented initial financial reporting frameworks for research and sector organizations.</li>
+                  <li><strong>NPO Audit &amp; NAS Adoption</strong>: Facilitated first-time NAS adoption for non-profit entities, finalized accounting statements, and coordinated external audit procedures.</li>
+                  <li><strong>Tax Compliance Support</strong>: Assisted with complex tax return preparation and statutory filings tailored for software export operations.</li>
+                </ul>
+              </div>
+            </div>
 
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+            <!-- M. KHANAL & CO -->
+            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
+              <div class="flex items-center justify-between gap-4">
+                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">2020 - 2023</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Articleship Trainee | M. Khanal &amp; Co., Chartered Accountants</h3>
+                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
+              </div>
+              <div class="accordion-content pt-4 space-y-3">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                  Executed statutory audits, investigative record reviews, donor project compilations, and internal control evaluations across multiple sectors:
+                </p>
+                <ul class="text-xs sm:text-sm text-slate-600 space-y-2 list-disc list-inside bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100">
+                  <li><strong>Investigative Audit Execution</strong>: Executed investigative audits to examine financial discrepancies and verify transactional records across internal ledgers.</li>
+                  <li><strong>Statutory Audit &amp; Record Reconstruction</strong>: Reconstructed incomplete accounting books by cross-referencing primary documentation, bank statements, and tax records.</li>
+                  <li><strong>Brokerage &amp; Financial Sector Audits</strong>: Conducted statutory audits for licensed capital market brokerages and evaluated internal reporting controls.</li>
+                  <li><strong>Commercial Entity Audits</strong>: Reconciled inter-group balances, verified VAT compliance, and managed statutory audit fieldwork for commercial entities.</li>
+                  <li><strong>Public Sector Department Audits</strong>: Audited branch operations and department records for statutory financial institutions, highlighting reporting gaps and control weaknesses.</li>
+                  <li><strong>Donor-Funded Project Statements</strong>: Compiled and prepared financial reporting packages for 20+ distinct donor-funded development projects.</li>
+                  <li><strong>Internal &amp; Vendor Audits</strong>: Executed large-volume vendor payment verifications and internal audit procedures across hydropower, healthcare, and capital market entities.</li>
+                </ul>
+              </div>
+            </div>
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            <!-- INDEPENDENT PROJECTS & PUBLICATIONS -->
+            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
+              <div class="flex items-center justify-between gap-4">
+                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">Projects</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Independent Systems &amp; Publishing Projects</h3>
+                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
+              </div>
+              <div class="accordion-content pt-4 space-y-3">
+                <ul class="text-xs sm:text-sm text-slate-600 space-y-2 list-disc list-inside bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100">
+                  <li><strong>1Pana Accounting (1pana.com)</strong>: Architected and built a functional managed accounting MVP across six months of development (three months of active core building followed by three months of operational refining and test runs). Configured NoSQL database schemas, Firebase backend logic, and full-stack deployment.</li>
+                  <li><strong>Nepal Venture (nepalventure.com)</strong>: Developed a startup-investor platform prototype, structuring core database architecture and reporting flows. Following initial web publication without public advertising, the platform attracted profiles from 15+ early-stage startups.</li>
+                  <li><strong>The Awareness Framework (Manuscript)</strong>: Co-authored a complete book manuscript (ISBN: 9789937192835) prepared for publication.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- ASB ENGAGEMENT -->
+            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
+              <div class="flex items-center justify-between gap-4">
+                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">Standards</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Accounting Standards Board (ASB) Engagement</h3>
+                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
+              </div>
+              <div class="accordion-content pt-4 space-y-3">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Independently engaged by the Accounting Standards Board (ASB) Nepal for technical review and finalization work on NFRS 2018 documentation following initial review assignments.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== SERVICES TAB (ACCORDION BASED WITH FULL DETAILS) ==================== -->
+    <section id="tab-services" class="tab-content space-y-10">
+      
+      <!-- Page Header -->
+      <div class="bg-[#F2F6F3] border-b border-emerald-950/5 py-12 sm:py-16">
+        <div class="max-w-5xl mx-auto px-6 space-y-3">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#2D8A68]">Practice Offerings</span>
+          <h1 class="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">Services &amp; Specialisations</h1>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-none">
+            Structured advisory and technical support across financial reporting, corporate modelling, audit management, operational accounting, and software systems.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 space-y-10 pb-8">
+        
+        <!-- ACCORDION CONTAINER FOR ALL SERVICES OFFERINGS -->
+        <div class="bg-white border editorial-border p-8 sm:p-10 rounded-3xl shadow-sm space-y-6">
+          <h2 class="text-2xl font-bold text-slate-900 border-b border-gray-100 pb-4">Service Offerings &amp; Engagement Scope</h2>
+
+          <div class="divide-y divide-gray-100">
+            
+            <!-- SERVICE OFFERING 1 -->
+            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
+              <div class="flex items-center justify-between gap-4">
+                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">01</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Financial Reporting &amp; Compliance</h3>
+                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
+              </div>
+              <div class="accordion-content pt-4 space-y-4">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                  Preparation of reliable, audit-ready financial statements in accordance with applicable accounting frameworks in Nepal:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
+                    <strong class="text-xs font-bold text-slate-900 block">Financial Statement Preparation</strong>
+                    <p class="text-xs text-slate-600 leading-relaxed">Preparation of complete financial statements under NFRS, NFRS for SMEs, and NAS for NPOs.</p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
+                      <li>Full balance sheet, income statement &amp; cash flow compilation</li>
+                      <li>Statement of changes in equity &amp; accounting policy notes</li>
+                      <li>Framework compliance check for statutory filings</li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
+                    <strong class="text-xs font-bold text-slate-900 block">Reconstruction of Incomplete Records</strong>
+                    <p class="text-xs text-slate-600 leading-relaxed">Investigative reconstruction of disordered books of accounts from source documents.</p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
+                      <li>Bank transaction matching &amp; TDS reconciliation</li>
+                      <li>Ledger rebuilding from bank statements &amp; invoices</li>
+                      <li>Establishing verifiable opening balances for audit</li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
+                    <strong class="text-xs font-bold text-slate-900 block">Audit Support &amp; Coordination</strong>
+                    <p class="text-xs text-slate-600 leading-relaxed">Comprehensive support to prepare for, coordinate, and expedite statutory or donor audits.</p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
+                      <li>Audit file compilation &amp; supporting schedule preparation</li>
+                      <li>Managing auditor queries and query resolution</li>
+                      <li>Liaison between management and statutory external auditors</li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
+                    <strong class="text-xs font-bold text-slate-900 block">Framework Implementation</strong>
+                    <p class="text-xs text-slate-600 leading-relaxed">Assisting organizations with the initial adoption and practical application of NFRS standards.</p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
+                      <li>Gap analysis of existing accounting policies</li>
+                      <li>Chart of accounts restructuring for NFRS/NAS alignment</li>
+                      <li>First-time adoption note disclosures and reconciliations</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SERVICE OFFERING 2 -->
+            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
+              <div class="flex items-center justify-between gap-4">
+                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">02</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Financial Planning &amp; Analysis</h3>
+                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
+              </div>
+              <div class="accordion-content pt-4 space-y-4">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                  Financial models and internal reporting structures designed to support corporate decision-making and institutional lending:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
+                    <strong class="text-xs font-bold text-slate-900 block">Corporate Financial Modelling</strong>
+                    <p class="text-xs text-slate-600 leading-relaxed">Integrated financial models and projections built for bank financing facilities and management planning.</p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
+                      <li>3-statement integrated forecast models (P&amp;L, BS, Cash Flow)</li>
+                      <li>Working capital limit justification &amp; term loan debt capacity models</li>
+                      <li>Sensitivity stress testing &amp; DSCR ratio analysis</li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
+                    <strong class="text-xs font-bold text-slate-900 block">Management Reporting &amp; Dashboards</strong>
+                    <p class="text-xs text-slate-600 leading-relaxed">Designing clear internal management reports and executive dashboards from raw ledger data.</p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
+                      <li>Monthly budget vs. actual variance analysis reporting</li>
+                      <li>Key performance metrics (KPI) tracking templates</li>
+                      <li>Executive summaries for board and leadership review</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SERVICE OFFERING 3 -->
+            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
+              <div class="flex items-center justify-between gap-4">
+                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">03</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Operational Accounting Support</h3>
+                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
+              </div>
+              <div class="accordion-content pt-4 space-y-4">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                  Hands-on support for core ledger operations, statutory payroll compliance, and standard operating procedures:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
+                    <strong class="text-xs font-bold text-slate-900 block">Accounts Receivable &amp; Payable Management</strong>
+                    <p class="text-xs text-slate-600 leading-relaxed">Structuring systematically tracked AR/AP ledgers to maintain cash flow control.</p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
+                      <li>Receivables ageing analysis &amp; overdue follow-up tracking</li>
+                      <li>Payable scheduling &amp; vendor reconciliation verification</li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
+                    <strong class="text-xs font-bold text-slate-900 block">Payroll Calculation &amp; Tax Compliance</strong>
+                    <p class="text-xs text-slate-600 leading-relaxed">Accurate payroll processing and statutory compliance calculations tailored for organisations in Nepal.</p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
+                      <li>Monthly staff payroll computation &amp; payslip generation</li>
+                      <li>Salary TDS withholding calculations &amp; SSF calculations</li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2 md:col-span-2">
+                    <strong class="text-xs font-bold text-slate-900 block">SOPs &amp; Workflow Engineering</strong>
+                    <p class="text-xs text-slate-600 leading-relaxed">Designing standard operating procedures and internal control workflows for accounting departments.</p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
+                      <li>Standard operating procedures (SOPs) for payment authorizations</li>
+                      <li>Inventory &amp; petty cash control workflow documentation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SERVICE OFFERING 4 -->
+            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
+              <div class="flex items-center justify-between gap-4">
+                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">04</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Systems &amp; Database Structure</h3>
+                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
+              </div>
+              <div class="accordion-content pt-4 space-y-4">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                  Technical advisory bridging traditional accounting logic with database schema design and software application architecture:
+                </p>
+                <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
+                  <strong class="text-xs font-bold text-slate-900 block">Database Modelling &amp; Application Planning</strong>
+                  <p class="text-xs text-slate-600 leading-relaxed">Designing relational and document database structures for financial tools, accounting platforms, and reporting applications.</p>
+                  <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
+                    <li>Ledger database architecture (PostgreSQL, Firebase NoSQL)</li>
+                    <li>Double-entry chart of accounts data model planning</li>
+                    <li>Workflow API structure &amp; automated reporting logic design</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT TAB ==================== -->
+    <section id="tab-contact" class="tab-content space-y-10">
+      <div class="bg-[#F2F6F3] border-b border-emerald-950/5 py-12 sm:py-16">
+        <div class="max-w-5xl mx-auto px-6 space-y-3">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#2D8A68]">Engagement</span>
+          <h1 class="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">Direct Contact</h1>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-none">
+            Available for financial advisory engagements, audit support assignments, and financial modelling projects.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 space-y-10 pb-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          
+          <div class="md:col-span-5 bg-white border editorial-border p-8 rounded-3xl shadow-sm space-y-6">
+            <h2 class="text-xl font-bold text-slate-900 border-b border-gray-100 pb-3">Contact Details</h2>
+            
+            <div class="space-y-4 text-xs sm:text-sm">
+              <div>
+                <span class="block text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Location</span>
+                <span class="text-slate-800 font-medium">Satdobato, Lalitpur, Nepal</span>
+              </div>
+              <div>
+                <span class="block text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Email</span>
+                <a href="mailto:mail@sanjeevkhanal.com.np" class="text-slate-800 font-medium hover:text-[#1B4D3E] underline">mail@sanjeevkhanal.com.np</a>
+              </div>
+              <div>
+                <span class="block text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Phone</span>
+                <a href="tel:+9779864278144" class="text-slate-800 font-medium hover:text-[#1B4D3E] underline">+977-9864278144</a>
+              </div>
+              <div>
+                <span class="block text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/sanjeev-khanal" target="_blank" rel="noopener" class="text-slate-800 font-medium hover:text-[#1B4D3E] underline">linkedin.com/in/sanjeev-khanal</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-7 bg-white border editorial-border p-4 rounded-3xl shadow-sm space-y-3">
+            <div class="px-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#1B4D3E]">Location Map: Satdobato, Lalitpur</span>
+            </div>
+            <div class="w-full h-[320px] rounded-2xl overflow-hidden border border-gray-200">
+              <iframe 
+                title="Location Map Satdobato Lalitpur"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14133.042539151528!2d85.321855!3d27.655243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19cdcc240db7%3A0x6b4020a597a488e!2sSatdobato%2C%20Lalitpur!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#1B4D3E] text-white border-t border-emerald-950/20 py-10 mt-12">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-emerald-100/80 gap-4">
+      <div>
+        <strong class="text-white block font-semibold text-sm">Sanjeev Khanal</strong>
+        <span>Financial Advisory &amp; Systems · Satdobato, Lalitpur</span>
+      </div>
+      <div>
+        &copy; <span id="current-year"></span> Sanjeev Khanal. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT FOR TABS & ACCORDION -->
+  <script>
+    function switchTab(tabId) {
+      // Hide all tabs
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Reset all nav link styles
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Activate target tab and button
+      const targetTab = document.getElementById('tab-' + tabId);
+      const targetBtn = document.getElementById('tab-btn-' + tabId);
+
+      if (targetTab) {
+        targetTab.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      if (targetBtn) {
+        targetBtn.classList.add('active');
+      }
+
+      // Close mobile drawer if open
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+      }
+    }
+
+    function toggleAccordion(element) {
+      const parent = element.closest('.accordion-item');
+      if (parent) {
+        parent.classList.toggle('active');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          mobileMenu.classList.toggle('flex');
         });
-    </script>
+      }
+    });
+  </script>
 </body>
 </html>
