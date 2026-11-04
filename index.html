@@ -1,716 +1,173 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sanjeev Khanal. Financial Advisory, Audit Support, and Systems in Nepal.">
-  <title>Sanjeev Khanal | Financial Advisory &amp; Systems</title>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              bg: '#F9FAF9',
-              card: '#FFFFFF',
-              pillBg: '#E7F2EB',
-              mint: '#34A853',
-              darkGreen: '#1B4D3E',
-              accentGreen: '#2D8A68',
-              slateText: '#1E293B',
-              mutedText: '#64748B',
-              borderLight: '#E8EFEA'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    body {
-      background-color: #F8FAF8;
-      color: #1E293B;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      letter-spacing: -0.011em;
-      line-height: 1.6;
-    }
-
-    .editorial-border {
-      border-color: #E2EAE4;
-    }
-
-    /* Tab Switcher Logic */
-    .tab-content {
-      display: none !important;
-      opacity: 0;
-      transition: opacity 0.25s ease-in-out;
-    }
-
-    .tab-content.active {
-      display: block !important;
-      opacity: 1;
-    }
-
-    .nav-link {
-      position: relative;
-      transition: color 0.2s ease;
-    }
-
-    .nav-link.active {
-      color: #1B4D3E;
-      font-weight: 600;
-    }
-
-    .nav-link.active::after {
-      content: "";
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background-color: #1B4D3E;
-    }
-
-    /* Accordion transitions */
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), opacity 0.25s ease-out;
-      opacity: 0;
-    }
-
-    .accordion-item.active .accordion-content {
-      max-height: 1200px;
-      opacity: 1;
-      transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in;
-    }
-
-    .accordion-item.active .accordion-icon {
-      transform: rotate(45deg);
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f8fa">
+<meta name="description" content="Sanjeev Khanal works across finance, accounting, audit and practical technology, turning complex business problems into useful financial systems and products.">
+<meta name="author" content="Sanjeev Khanal">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sanjeev Khanal | Finance, Business & Technology">
+<meta property="og:description" content="Accounting foundations. Systems thinking. Useful outcomes. Explore professional work, independent products and collaboration opportunities.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sanjeevkhanal.com.np/">
+<title>Sanjeev Khanal | Finance, Business & Technology</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<style>
+:root{--bg:#f7f8fa;--paper:#fff;--ink:#17243a;--muted:#647187;--line:#e2e7ef;--blue:#315eca;--soft:#e7efff;--navy:#17243a;--max:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 14px;border-radius:8px}
+.skip-link:focus{top:12px}
+:focus-visible{outline:3px solid #7c9ff5;outline-offset:3px}
+.wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:#f7f8faef;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.04em}.mark{background:var(--ink);color:#fff;border-radius:11px;width:38px;height:38px;display:grid;place-items:center;font-size:.85rem}.links{display:flex;gap:7px;align-items:center}.links a{padding:10px 14px;border-radius:30px;color:var(--muted);font-size:.9rem;font-weight:650}.links a:hover,.links a.active{background:var(--soft);color:var(--blue)}.links .cta{background:var(--blue);color:white}.toggle{display:none;background:white;border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.hero{padding:82px 0 68px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:stretch}.eyebrow,.tag{display:inline-flex;align-items:center;gap:8px;background:var(--soft);color:var(--blue);border-radius:30px;padding:7px 12px;font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:#36a56c}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2.8rem,6.2vw,5.2rem);line-height:1.03;letter-spacing:-.065em;margin:24px 0}h1 span{color:var(--blue)}.lead{font-size:1.1rem;color:var(--muted);max-width:660px;line-height:1.8}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;padding:13px 19px;border-radius:12px;font-weight:750;font-size:.92rem;transition:.2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--blue);color:white;box-shadow:0 8px 20px #315eca30}.secondary{background:white;border:1px solid var(--line)}.hero-panel{background:var(--navy);color:white;border-radius:25px;padding:30px;min-height:350px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.hero-panel:before,.hero-panel:after{content:"";position:absolute;border:1px solid #ffffff25;border-radius:50%;width:280px;height:280px;right:-100px;top:-100px}.hero-panel:after{width:190px;height:190px;right:-55px;top:-55px}.panel-kicker{color:#aebbd2;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;font-weight:800;position:relative}.panel-big{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:750;line-height:1.22;letter-spacing:-.04em;max-width:350px;position:relative}.panel-foot{display:flex;justify-content:space-between;color:#c4cee0;font-size:.84rem;position:relative}.star{font-size:2rem;color:#a9c2ff}
+section{scroll-margin-top:90px}.section{padding:72px 0}.kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.13em;color:var(--blue);font-weight:850;margin-bottom:10px}h2{font-size:clamp(2rem,4vw,3rem);line-height:1.12;letter-spacing:-.055em;margin-bottom:12px}.intro{color:var(--muted);max-width:690px;margin:0}.grid4{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.card{background:white;border:1px solid var(--line);border-radius:17px;padding:22px;transition:.2s}.card:hover,.project:hover{transform:translateY(-4px);box-shadow:0 15px 40px #17243a12;border-color:#cbd7ec}.icon{width:43px;height:43px;border-radius:12px;background:var(--soft);color:var(--blue);display:grid;place-items:center;font-size:1.25rem;margin-bottom:22px}.card h3{font-size:1.02rem;margin-bottom:7px}.card p{font-size:.88rem;color:var(--muted);margin:0}
+.tint{background:#eef2f8}.heading-row{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}.project{background:white;border:1px solid var(--line);border-radius:19px;overflow:hidden;transition:.2s}.visual{min-height:185px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#e8efff,#d6e3fc)}.visual.dark{background:linear-gradient(135deg,#1b2a45,#304d78)}.visual.green{background:linear-gradient(135deg,#e6f3ec,#cce8d8)}.orbit{position:absolute;width:230px;height:230px;border:1px solid #315eca35;border-radius:50%}.orbit:before,.orbit:after{content:"";position:absolute;inset:25px;border:1px solid #315eca30;border-radius:50%}.orbit:after{inset:58px}.letters{font-size:3.7rem;font-weight:900;letter-spacing:-.1em;color:var(--blue);z-index:1}.dark .letters{color:#c3d4ff}.green .letters{color:#27734d}.chip{position:absolute;right:18px;bottom:17px;background:#ffffffd9;border-radius:30px;padding:6px 10px;font-size:.72rem;font-weight:800}.project-body{padding:22px}.meta{font-size:.73rem;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);font-weight:850}.project h3{margin:7px 0;font-size:1.3rem;letter-spacing:-.03em}.project p{color:var(--muted);font-size:.9rem;margin-bottom:13px}.note{border-top:1px solid var(--line);padding-top:12px;color:var(--muted);font-size:.77rem}.link-btn{display:inline-flex;align-items:center;gap:4px;font-size:.84rem;font-weight:750;color:var(--blue);margin-top:10px}.link-btn:hover{text-decoration:underline}
+.highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}.highlight{background:white;border:1px solid var(--line);border-radius:16px;padding:21px}.highlight strong{display:block;font-size:1.8rem;letter-spacing:-.05em;color:var(--blue);margin-bottom:4px}.highlight span{font-size:.87rem;color:var(--muted)}
+.journey{display:grid;grid-template-columns:.7fr 1.3fr;gap:50px;align-items:start}.timeline{border-left:2px solid var(--line);margin:8px 0 0 8px}.timeline article{padding:0 0 27px 26px;position:relative}.timeline article:before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:3px solid var(--bg)}.timeline h3{font-size:1.05rem;margin:0 0 5px}.timeline p{color:var(--muted);font-size:.9rem;margin:0}.journey-note{background:white;border:1px solid var(--line);border-radius:19px;padding:26px}.journey-note p{color:var(--muted);font-size:.92rem}.journey-note p:last-child{margin-bottom:0}
+.band{background:var(--navy);color:white;border-radius:23px;padding:35px;display:flex;justify-content:space-between;align-items:center;gap:25px}.band h2{max-width:650px}.band p{color:#c4cee0;margin:0}.band .btn{background:white;color:var(--ink);white-space:nowrap}
+.contactgrid{display:grid;grid-template-columns:1fr .8fr;gap:20px}.contactbox,.sidebox{background:white;border:1px solid var(--line);border-radius:20px;padding:28px}.contactbox h2{max-width:570px}.contactbox p,.sidebox p{color:var(--muted)}.contactlink{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-top:1px solid var(--line);font-weight:700}.contactlink span:last-child{color:var(--blue);text-align:right}.op{padding:14px 0;border-bottom:1px solid var(--line)}.op:last-child{border:0}.op b{display:block}.op span{color:var(--muted);font-size:.87rem}
+.thinking-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.thinking-card{background:white;border:1px solid var(--line);border-radius:17px;padding:22px}
+.thinking-card .number{font-size:.75rem;color:var(--blue);font-weight:850;letter-spacing:.12em}
+.thinking-card h3{font-size:1rem;margin:12px 0 7px}
+.thinking-card p{font-size:.88rem;color:var(--muted);margin:0}
+.case-details{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+.case-detail{background:#f7f8fa;border-radius:12px;padding:13px}
+.case-detail b{display:block;font-size:.76rem;color:var(--blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.case-detail span{font-size:.84rem;color:var(--muted)}
+.project .visual{min-height:205px}.project .visual img{display:block;width:100%;height:100%;min-height:205px;position:absolute;inset:0;object-fit:cover}.project .visual .chip{z-index:2}
+.visual-label{position:relative;z-index:1;text-align:center}
+.visual-label small{display:block;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:#52698e;margin-top:7px}
+.dark .visual-label small{color:#d4def1}
+.green .visual-label small{color:#27734d}
+.pathways{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}
+.pathway{background:white;border:1px solid var(--line);border-radius:16px;padding:20px}
+.pathway h3{font-size:1rem;margin:0 0 7px}
+.pathway p{font-size:.87rem;color:var(--muted);margin:0}
+.identity-note{max-width:690px;margin-top:22px;padding:18px 20px;border-left:3px solid var(--blue);background:#fff;border-radius:0 12px 12px 0;color:var(--muted)}
+.privacy-note{margin-top:20px;padding:14px 18px;background:var(--soft);border-radius:12px;font-size:.84rem;color:var(--blue);font-weight:600}
+footer{border-top:1px solid var(--line);padding:28px 0 35px;color:var(--muted);font-size:.84rem}.foot{display:flex;justify-content:space-between;gap:15px}.footlinks{display:flex;gap:17px}
+@media(max-width:900px){.hero-grid,.journey,.contactgrid{grid-template-columns:1fr}.grid4{grid-template-columns:1fr}.thinking-grid{grid-template-columns:repeat(2,1fr)}.pathways{grid-template-columns:1fr}}
+@media(max-width:640px){.thinking-grid,.case-details{grid-template-columns:1fr}.wrap{width:calc(100% - 30px)}.toggle{display:block}.links{display:none;position:absolute;top:68px;left:0;right:0;padding:12px 15px 17px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}.links.open{display:flex}.links a{padding:12px}.hero{padding:52px 0 45px}h1{font-size:clamp(2.55rem,13vw,4rem)}.hero-panel{min-height:255px;padding:24px}.section{padding:50px 0}.grid4,.projects,.highlights{grid-template-columns:1fr}.heading-row{display:block}.band{display:block;padding:26px}.band .btn{margin-top:20px}.contactbox,.sidebox{padding:22px}.foot{display:block}.footlinks{margin-top:12px}.contactlink{display:block}.contactlink span{display:block}.contactlink span:last-child{text-align:left;margin-top:4px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Sanjeev Khanal",
+ "url": "https://sanjeevkhanal.com.np/",
+ "email": "mailto:mail@sanjeevkhanal.com.np",
+ "sameAs": ["https://www.linkedin.com/in/sanjeev-khanal/"],
+ "knowsAbout": [
+ "Financial reporting",
+ "Audit support",
+ "Financial modelling",
+ "Accounting systems",
+ "Database architecture",
+ "Product development"
+ ]
+}
+</script>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-[#1B4D3E] selection:text-white">
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><div class="wrap"><nav aria-label="Main navigation">
+<a class="brand" href="#home"><span class="mark">SK.</span><span>Sanjeev Khanal</span></a>
+<button class="toggle" id="toggle" type="button" aria-label="Toggle navigation" aria-controls="links" aria-expanded="false">☰</button>
+<div class="links" id="links"><a href="#home" class="active">Home</a><a href="#capabilities">Capabilities</a><a href="#approach">My Approach</a><a href="#work">Selected Work</a><a href="#journey">Journey</a><a class="cta" href="#contact">Let's Connect ↗</a></div>
+</nav></div></header>
+<main id="main-content">
+<section id="home"><div class="wrap hero"><div class="hero-grid"><div>
+<div class="eyebrow"><span class="dot"></span> Finance · Audit · Systems</div>
+<h1>Bridging accounting practice<br><span>with practical technology.</span></h1>
+<p class="lead">Finance and accounting professional with 5+ years of experience in financial reporting, audit, modelling and consulting. I work at the intersection of traditional practice and modern systems, understanding business problems, structuring the numbers and building practical tools that help work get done.</p>
+<div class="actions"><a class="btn primary" href="#work">Explore selected work ↗</a><a class="btn secondary" href="#contact">Get in touch</a></div>
+</div><aside class="hero-panel"><div class="panel-kicker">A practical, multidisciplinary approach</div><div class="panel-big">Accounting foundations.<br>Systems thinking.<br>Useful outcomes.</div><div class="panel-foot"><span>Curious by nature. Practical by approach.</span><span class="star">✳</span></div></aside></div></div></section>
 
-  <!-- HEADER / NAVIGATION -->
-  <header class="sticky top-0 z-50 bg-[#EFF4F0] border-b border-emerald-950/10">
-    <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
-      
-      <!-- Brand Name -->
-      <a href="#home" onclick="switchTab('home'); return false;" class="flex flex-col">
-        <span class="font-bold text-[#1B4D3E] text-base tracking-tight">Sanjeev Khanal</span>
-        <span class="text-xs tracking-wider text-[#64748B] uppercase font-semibold">Financial Advisory &amp; Systems</span>
-      </a>
+<section id="capabilities" class="section"><div class="wrap"><div class="kicker">Capabilities</div><h2>Where I can contribute.</h2><p class="intro">A combination of professional experience, practical skills and areas I continue to develop. Depth varies across these domains, I prefer to be clear about what I know and what I am still learning.</p>
+<div class="grid4">
+<article class="card"><div class="icon">⌁</div><h3>Financial Reporting & Audit</h3><p>Financial statement preparation, first-time framework adoption, account reconstruction, investigative work, audit support and coordination across NPOs, SMEs and commercial entities.</p></article>
+<article class="card"><div class="icon">⌘</div><h3>Modelling & Analysis</h3><p>Corporate financing models, financial projections, Excel-based analysis (including Power Pivot and data models), and structured approaches to complex financial questions.</p></article>
+<article class="card"><div class="icon">↗</div><h3>Systems & Product Work</h3><p>Database architecture, application workflows, AI-assisted full-stack development, and connecting financial processes with practical digital tools.</p></article>
+</div></div></section>
 
-      <!-- Minimal Nav (Desktop) -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-        <button onclick="switchTab('home')" id="tab-btn-home" class="nav-link active py-1">Home</button>
-        <button onclick="switchTab('about')" id="tab-btn-about" class="nav-link py-1">About</button>
-        <button onclick="switchTab('services')" id="tab-btn-services" class="nav-link py-1">Services</button>
-        <button onclick="switchTab('contact')" id="tab-btn-contact" class="nav-link py-1">Contact</button>
-      </nav>
+<section id="approach" class="section">
+<div class="wrap">
+<div class="kicker">How I think & work</div>
+<h2>Understand the problem. Make the solution useful.</h2>
+<p class="intro">My approach combines financial discipline with curiosity about how systems work. I value clear thinking, practical execution and honest learning.</p>
+<div class="thinking-grid">
+<article class="thinking-card"><div class="number">01 / UNDERSTAND</div><h3>Start with the real problem</h3><p>Understand the context, constraints, records and people involved before deciding what needs to change.</p></article>
+<article class="thinking-card"><div class="number">02 / STRUCTURE</div><h3>Make complexity workable</h3><p>Bring structure to financial information, workflows and decisions so that the next step becomes clearer.</p></article>
+<article class="thinking-card"><div class="number">03 / BUILD</div><h3>Prefer practical outcomes</h3><p>Turn analysis into usable models, better processes or working tools rather than stopping at recommendations.</p></article>
+<article class="thinking-card"><div class="number">04 / IMPROVE</div><h3>Learn through execution</h3><p>Test ideas, pay attention to feedback and keep improving. Be clear about what is proven and what is still developing.</p></article>
+</div>
+</div>
+</section>
 
-      <!-- Action Button -->
-      <div class="flex items-center gap-4">
-        <button onclick="switchTab('contact')" class="text-xs font-semibold bg-[#1B4D3E] text-white hover:bg-[#2D8A68] px-5 py-2.5 rounded-full transition-all shadow-sm">
-          Get in touch &rarr;
-        </button>
+<section id="work" class="section tint"><div class="wrap"><div class="heading-row"><div><div class="kicker">Selected Work</div><h2>Some things I’ve worked on.</h2><p class="intro">A selection of professional contributions and independent explorations. These examples show how I approach financial, operational and product challenges, and what has been built or supported so far.</p></div></div>
+<div class="projects">
+<article class="project"><div class="visual"><img src="practice.jpg" alt="Financial practice and advisory work" loading="lazy" decoding="async"><span class="chip">Professional work</span></div><div class="project-body"><div class="meta">Finance · Reporting · Audit</div><h3>Financial practice & advisory support</h3><p>Work across financial reporting frameworks, first-time adoption for new entities and NPOs, account reconstruction from incomplete records, corporate financing models that supported loan approvals over NPR 1.2 Crore, high-volume verification assignments, and multi-sector statutory and investigative audits.</p><div class="case-details">
+<div class="case-detail"><b>Focus</b><span>Reporting, reconstruction, modelling and audit support</span></div>
+<div class="case-detail"><b>Evidence</b><span>Financing models supporting loan approvals exceeding NPR 1.2 Crore</span></div>
+</div>
+<div class="note">Also involved in NFRS standards review work on a consultancy basis following initial findings during articleship. Client details and confidential engagement information are intentionally not disclosed.</div></div></article>
+<article class="project"><div class="visual"><img src="1pana.jpg" alt="1Pana Accounting product" loading="lazy" decoding="async"><span class="chip">Product exploration</span></div><div class="project-body"><div class="meta">Accounting systems · Product development</div><h3>1Pana Accounting</h3><p>A six-month independent product effort: intensive three-month core build followed by three months of refinement and trial runs. Delivered a functional MVP validated through 3 months of complete data entry across 3 active entities.</p><div class="case-details">
+<div class="case-detail"><b>Build</b><span>Frontend, backend, NoSQL database design, APIs and deployment</span></div>
+<div class="case-detail"><b>Validation</b><span>Three months of complete data entry across three active entities</span></div>
+</div>
+<div class="note">A six-month independent effort, including an intensive three-month core build followed by refinement and trial runs. AI-assisted development tools supported the implementation process.</div><a href="https://1pana.com" target="_blank" rel="noopener" class="link-btn">Visit 1pana.com ↗</a></div></article>
+<article class="project"><div class="visual"><img src="nepalventure.jpg" alt="Nepalventure startup and investor platform" loading="lazy" decoding="async"><span class="chip">Startup ecosystem</span></div><div class="project-body"><div class="meta">Platform · Funding exploration</div><h3>Nepalventure</h3><p>Conceptualisation and deployment of a startup-investor platform. Designed core database architecture and structured reporting logic. Successfully engaged with 15+ fund seekers organically without promotion, leading to 5+ completed profile creations.</p><div class="case-details">
+<div class="case-detail"><b>Build</b><span>Platform concept, database architecture and reporting logic</span></div>
+<div class="case-detail"><b>Early traction</b><span>15+ organically engaged fund seekers and 5+ completed profiles</span></div>
+</div>
+<div class="note">An independent initiative focused on understanding real constraints in the early-stage funding landscape. Early engagement is exploratory, not a claim of completed fundraising transactions.</div><a href="https://nepalventure.com" target="_blank" rel="noopener" class="link-btn">Visit nepalventure.com ↗</a></div></article>
+<article class="project"><div class="visual"><img src="database.jpg" alt="Database architecture and digital workflows" loading="lazy" decoding="async"><span class="chip">Systems & technology</span></div><div class="project-body"><div class="meta">Data · Architecture · Workflows</div><h3>Accounting systems & digital workflows</h3><p>Exploration and development of accounting database architecture and practical digital tools that connect financial processes with structured data. Experience includes Excel data models, relational and NoSQL databases, APIs and modern web deployment environments.</p><div class="note">Tools and technologies worked with include Excel (Power Pivot / Data Model), PostgreSQL, Firebase, Next.js, APIs and deployment platforms.</div></div></article>
+</div></div></section>
 
-        <!-- Mobile Toggle -->
-        <button id="menu-toggle" class="md:hidden p-2 text-slate-700 hover:text-[#1B4D3E] focus:outline-none" aria-label="Toggle Navigation">
-          &#9776;
-        </button>
-      </div>
-    </div>
+<section id="journey" class="section"><div class="wrap"><div class="journey"><div><div class="kicker">Journey</div><h2>A professional foundation, with an expanding field of interest.</h2><p class="intro">The path so far has moved from formal accounting practice into independent work and broader exploration of systems and product development.</p><div class="identity-note">I bring a finance-first perspective to technology and business problems: understand the underlying process, work with the details, then look for a practical way to improve it.</div></div><div>
+<div class="timeline">
+<article><h3>2020–2023 · Articleship</h3><p>M. Khanal & Co., Chartered Accountants, practical experience across financial statement preparation for donor-funded projects, high-volume verification work, account reconstruction, investigative and statutory audits, and multi-sector engagements.</p></article>
+<article><h3>Since 2023 · Independent practice</h3><p>Financial consulting and audit support: financing models (facilitating NPR 1.2 Crore loan approvals), first-time reporting frameworks, account finalisation, audit coordination, and tax/compliance assignments.</p></article>
+<article><h3>2025–2026 · Product development</h3><p>Intensive independent work on accounting platform architecture (1Pana Accounting MVP) and a startup-investor platform (Nepalventure), combining domain knowledge with full-stack and database design.</p></article>
+<article><h3>Ongoing · Expanding interests</h3><p>Continuing to explore opportunities where accounting foundations, systems thinking and practical problem-solving can create lasting value.</p></article>
+</div>
+<div class="journey-note"><div class="kicker">Professional development</div><p>Institute of Chartered Accountants of Nepal (ICAN), CAP-III (Final) in progress (Group 2 cleared). CAP-II completed 2019. CAP-I completed 2015.</p><p>My work continues to develop across disciplines. I am interested in roles and collaborations where I can contribute with the experience I have, take responsibility, and keep learning through practical work.</p></div>
+</div></div></div></section>
 
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden bg-[#EFF4F0] border-b border-gray-200 px-6 py-4 flex-col gap-3 text-sm font-medium">
-      <button onclick="switchTab('home')" class="text-left py-1 text-slate-700 hover:text-[#1B4D3E]">Home</button>
-      <button onclick="switchTab('about')" class="text-left py-1 text-slate-700 hover:text-[#1B4D3E]">About</button>
-      <button onclick="switchTab('services')" class="text-left py-1 text-slate-700 hover:text-[#1B4D3E]">Services</button>
-      <button onclick="switchTab('contact')" class="text-left py-1 text-slate-700 hover:text-[#1B4D3E]">Contact</button>
-    </div>
-  </header>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="band"><div><div class="kicker" style="color:#a9c2ff">Open to possibilities</div><h2>Have a project, challenge or opportunity in mind?</h2><p>I’m open to worthwhile work, new challenges and meaningful collaboration across finance, systems and business.</p></div><a class="btn" href="#contact">Start a conversation ↗</a></div></div></section>
 
-  <!-- MAIN EDITORIAL CONTAINER -->
-  <main class="flex-grow w-full">
+<section class="section" style="padding-top:0">
+<div class="wrap">
+<div class="kicker">Ways to work together</div>
+<h2>Different problems. A practical approach.</h2>
+<p class="intro">If the challenge sits somewhere between finance, operations, technology or a new business idea, there may be a useful way to work together.</p>
+<div class="pathways">
+<article class="pathway"><h3>Professional engagements</h3><p>Financial reporting, audit support, account reconstruction, financial modelling and related advisory assignments.</p></article>
+<article class="pathway"><h3>Business & technology</h3><p>Accounting systems, digital workflows, database thinking and practical product development informed by finance processes.</p></article>
+<article class="pathway"><h3>Strategic collaboration</h3><p>Startup ecosystem initiatives, early-stage ideas, venture exploration and building useful things with capable people.</p></article>
+</div>
+</div>
+</section>
 
-    <!-- ==================== HOME TAB ==================== -->
-    <section id="tab-home" class="tab-content active space-y-12">
-      
-      <!-- 1. FULL WIDTH HERO SECTION -->
-      <div class="bg-[#F2F6F3] border-b border-emerald-950/5 py-14 sm:py-20">
-        <div class="max-w-5xl mx-auto px-6 flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          
-          <!-- Mobile View: Centered Rounded Image placed on TOP -->
-          <div class="w-full lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2">
-            <div class="w-36 h-36 sm:w-44 sm:h-44 lg:w-full lg:max-w-[290px] lg:h-auto lg:aspect-[4/5] rounded-full lg:rounded-2xl overflow-hidden shadow-md bg-slate-200">
-              <img 
-                src="sanjeev.jpg" 
-                alt="Sanjeev Khanal" 
-                class="w-full h-full object-cover object-top"
-              >
-            </div>
-          </div>
-
-          <!-- Left Hero Content -->
-          <div class="w-full lg:col-span-7 space-y-6 text-center lg:text-left order-2 lg:order-1">
-            <div class="space-y-2">
-              <span class="text-xs font-bold uppercase tracking-widest text-[#2D8A68]">Lalitpur, Nepal</span>
-              <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15]">
-                Hi, I am Sanjeev Khanal
-              </h1>
-              <p class="text-base sm:text-lg font-medium text-[#1B4D3E] pt-1">
-                Financial Advisory, Corporate Modelling &amp; Accounting Systems
-              </p>
-            </div>
-
-            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto lg:mx-0">
-              I am a finance and accounting professional with over five years of practice. I help organisations and firms in Nepal prepare NFRS compliant statements, reconstruct incomplete financial records, build robust credit models for bank financing, and design software database architecture.
-            </p>
-
-            <div class="flex items-center justify-center lg:justify-start pt-2">
-              <button onclick="switchTab('services')" class="bg-[#1B4D3E] text-white text-xs font-semibold px-7 py-3 rounded-full hover:bg-[#2D8A68] transition-all shadow-sm">
-                Explore Services &rarr;
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- CONTAINER FOR REMAINING HOME CONTENT -->
-      <div class="max-w-5xl mx-auto px-6 space-y-12 pb-8">
-        
-        <!-- 2. BENTO METRICS BAND -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 bg-transparent">
-          
-          <div class="bg-[#E3EFE7] border border-emerald-950/5 p-7 rounded-2xl space-y-2 hover:border-[#1B4D3E]/20 transition-all">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Credit Modelling</span>
-            <span class="block text-3xl font-bold text-slate-900">NPR 1 Cr+</span>
-            <p class="text-xs text-slate-600 leading-relaxed pt-1">
-              Financial projections and debt capacity models verified for approved credit facilities.
-            </p>
-          </div>
-
-          <div class="bg-[#E3EFE7] border border-emerald-950/5 p-7 rounded-2xl space-y-2 hover:border-[#1B4D3E]/20 transition-all">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Reporting Frameworks</span>
-            <span class="block text-3xl font-bold text-slate-900">NFRS &amp; NAS</span>
-            <p class="text-xs text-slate-600 leading-relaxed pt-1">
-              Financial statements prepared in accordance with standards applicable in Nepal.
-            </p>
-          </div>
-
-          <div class="bg-[#E3EFE7] border border-emerald-950/5 p-7 rounded-2xl space-y-2 hover:border-[#1B4D3E]/20 transition-all">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Practice Experience</span>
-            <span class="block text-3xl font-bold text-slate-900">5+ Years</span>
-            <p class="text-xs text-slate-600 leading-relaxed pt-1">
-              Statutory audit articleship training alongside independent financial advisory.
-            </p>
-          </div>
-
-        </div>
-
-        <!-- 3. FEATURED PRODUCT SHOWCASE -->
-        <div class="bg-[#1B4D3E] text-white p-8 sm:p-10 rounded-3xl shadow-md space-y-6">
-          <div class="flex items-center justify-between border-b border-emerald-800/80 pb-4">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-widest text-emerald-300">Managed Accounting MVP</span>
-              <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">1Pana Accounting</h2>
-            </div>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 text-emerald-200 border border-emerald-700/50">
-              Functional Project
-            </span>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-5 space-y-4">
-              <p class="text-xs sm:text-sm text-emerald-100/90 leading-relaxed">
-                A functional managed accounting MVP developed across six months (three months of active core development followed by three months of operational refinement and testing).
-              </p>
-              <p class="text-xs text-emerald-200/80 leading-relaxed">
-                Demonstrates practical capability bridging accounting standards with modern software system architecture.
-              </p>
-              <div class="pt-2">
-                <a href="https://1pana.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold bg-white text-[#1B4D3E] hover:bg-emerald-50 px-6 py-3 rounded-full transition-all shadow-sm">
-                  <span>Visit 1pana.com</span>
-                  <span>&rarr;</span>
-                </a>
-              </div>
-            </div>
-            <div class="lg:col-span-7 overflow-hidden rounded-2xl border border-emerald-800/80 shadow-md bg-slate-900 max-h-[280px]">
-              <img 
-                src="1pana.png" 
-                alt="1Pana Accounting Dashboard" 
-                class="w-full h-full object-cover object-top"
-              >
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ==================== ABOUT TAB ==================== -->
-    <section id="tab-about" class="tab-content space-y-10">
-      
-      <!-- Page Header -->
-      <div class="bg-[#F2F6F3] border-b border-emerald-950/5 py-12 sm:py-16">
-        <div class="max-w-5xl mx-auto px-6 space-y-3">
-          <span class="text-xs font-bold uppercase tracking-widest text-[#2D8A68]">Profile</span>
-          <h1 class="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">Professional Background</h1>
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl">
-            Finance and accounting professional based in Lalitpur, Nepal, with over five years of practice covering statutory audit, NFRS financial statement preparation, investigative ledger reconstruction, corporate financial modelling, and software database design.
-          </p>
-        </div>
-      </div>
-
-      <div class="max-w-5xl mx-auto px-6 space-y-10 pb-8">
-        
-        <!-- DETAILED TEXT COLUMNS -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-          
-          <div class="md:col-span-7 space-y-6 bg-white border editorial-border p-8 rounded-3xl shadow-sm">
-            <h2 class="text-xl font-bold text-slate-900 border-b border-gray-100 pb-4">Practice &amp; Approach</h2>
-            
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              My work combines formal CA articleship training with direct project engagements. I have prepared financial statements under NFRS frameworks, reconstructed incomplete ledgers from primary source documents, and built corporate models for bank financing.
-            </p>
-
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              All engagements begin directly from verified records including bank statements, tax deduction records, and commercial agreements. The objective is to produce clean, defensible financial data suitable for institutional review.
-            </p>
-          </div>
-
-          <div class="md:col-span-5 space-y-6">
-            <div class="bg-[#E3EFE7] border border-emerald-950/5 p-8 rounded-3xl space-y-4 shadow-sm">
-              <span class="text-xs uppercase font-bold tracking-widest text-[#1B4D3E]">ICAN Education</span>
-              <h3 class="font-bold text-slate-900 text-base">Institute of Chartered Accountants of Nepal</h3>
-              
-              <div class="space-y-3 text-xs sm:text-sm text-slate-700 pt-3 border-t border-emerald-950/10">
-                <div class="flex justify-between py-1.5 border-b border-emerald-950/5">
-                  <span class="font-semibold text-slate-900">CAP III (Final)</span>
-                  <span class="text-slate-600">Group 2 Cleared</span>
-                </div>
-                <div class="flex justify-between py-1.5 border-b border-emerald-950/5">
-                  <span class="font-semibold text-slate-900">CAP II</span>
-                  <span class="text-slate-600">Passed 2019</span>
-                </div>
-                <div class="flex justify-between py-1.5">
-                  <span class="font-semibold text-slate-900">CAP I</span>
-                  <span class="text-slate-600">Passed 2015</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- ACCORDION CAREER TIMELINE CONTAINER -->
-        <div class="bg-white border editorial-border p-8 sm:p-10 rounded-3xl shadow-sm space-y-6">
-          <h2 class="text-2xl font-bold text-slate-900 border-b border-gray-100 pb-4">Career History &amp; Engagement Details</h2>
-
-          <div class="divide-y divide-gray-100">
-            
-            <!-- INDEPENDENT PRACTICE -->
-            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
-              <div class="flex items-center justify-between gap-4">
-                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">2023 - Present</span>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Financial Consultant &amp; Audit Support (Independent Practice)</h3>
-                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
-              </div>
-              <div class="accordion-content pt-4 space-y-3">
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                  Independent advisory focused on financial modelling for bank facilities, financial statement preparation, NFRS/NAS adoption, and audit management:
-                </p>
-                <ul class="text-xs sm:text-sm text-slate-600 space-y-2 list-disc list-inside bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100">
-                  <li><strong>Corporate Financing Engagements</strong>: Built financial projections and financial models supporting credit approvals exceeding NPR 1 Cr in term loan and working capital facilities.</li>
-                  <li><strong>First-time Framework Implementation</strong>: Designed and implemented initial financial reporting frameworks for research and sector organizations.</li>
-                  <li><strong>NPO Audit &amp; NAS Adoption</strong>: Facilitated first-time NAS adoption for non-profit entities, finalized accounting statements, and coordinated external audit procedures.</li>
-                  <li><strong>Tax Compliance Support</strong>: Assisted with complex tax return preparation and statutory filings tailored for software export operations.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- M. KHANAL & CO -->
-            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
-              <div class="flex items-center justify-between gap-4">
-                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">2020 - 2023</span>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Articleship Trainee | M. Khanal &amp; Co., Chartered Accountants</h3>
-                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
-              </div>
-              <div class="accordion-content pt-4 space-y-3">
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                  Executed statutory audits, investigative record reviews, donor project compilations, and internal control evaluations across multiple sectors:
-                </p>
-                <ul class="text-xs sm:text-sm text-slate-600 space-y-2 list-disc list-inside bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100">
-                  <li><strong>Investigative Audit Execution</strong>: Executed investigative audits to examine financial discrepancies and verify transactional records across internal ledgers.</li>
-                  <li><strong>Statutory Audit &amp; Record Reconstruction</strong>: Reconstructed incomplete accounting books by cross-referencing primary documentation, bank statements, and tax records.</li>
-                  <li><strong>Brokerage &amp; Financial Sector Audits</strong>: Conducted statutory audits for licensed capital market brokerages and evaluated internal reporting controls.</li>
-                  <li><strong>Commercial Entity Audits</strong>: Reconciled inter-group balances, verified VAT compliance, and managed statutory audit fieldwork for commercial entities.</li>
-                  <li><strong>Public Sector Department Audits</strong>: Audited branch operations and department records for statutory financial institutions, highlighting reporting gaps and control weaknesses.</li>
-                  <li><strong>Donor-Funded Project Statements</strong>: Compiled and prepared financial reporting packages for 20+ distinct donor-funded development projects.</li>
-                  <li><strong>Internal &amp; Vendor Audits</strong>: Executed large-volume vendor payment verifications and internal audit procedures across hydropower, healthcare, and capital market entities.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- INDEPENDENT PROJECTS & PUBLICATIONS -->
-            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
-              <div class="flex items-center justify-between gap-4">
-                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">Projects</span>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Independent Systems &amp; Publishing Projects</h3>
-                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
-              </div>
-              <div class="accordion-content pt-4 space-y-3">
-                <ul class="text-xs sm:text-sm text-slate-600 space-y-2 list-disc list-inside bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100">
-                  <li><strong>1Pana Accounting (1pana.com)</strong>: Architected and built a functional managed accounting MVP across six months of development (three months of active core building followed by three months of operational refining and test runs). Configured NoSQL database schemas, Firebase backend logic, and full-stack deployment.</li>
-                  <li><strong>Nepal Venture (nepalventure.com)</strong>: Developed a startup-investor platform prototype, structuring core database architecture and reporting flows. Following initial web publication without public advertising, the platform attracted profiles from 15+ early-stage startups.</li>
-                  <li><strong>The Awareness Framework (Manuscript)</strong>: Co-authored a complete book manuscript (ISBN: 9789937192835) prepared for publication.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- ASB ENGAGEMENT -->
-            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
-              <div class="flex items-center justify-between gap-4">
-                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">Standards</span>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Accounting Standards Board (ASB) Engagement</h3>
-                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
-              </div>
-              <div class="accordion-content pt-4 space-y-3">
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Independently engaged by the Accounting Standards Board (ASB) Nepal for technical review and finalization work on NFRS 2018 documentation following initial review assignments.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ==================== SERVICES TAB (ACCORDION BASED WITH FULL DETAILS) ==================== -->
-    <section id="tab-services" class="tab-content space-y-10">
-      
-      <!-- Page Header -->
-      <div class="bg-[#F2F6F3] border-b border-emerald-950/5 py-12 sm:py-16">
-        <div class="max-w-5xl mx-auto px-6 space-y-3">
-          <span class="text-xs font-bold uppercase tracking-widest text-[#2D8A68]">Practice Offerings</span>
-          <h1 class="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">Services &amp; Specialisations</h1>
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-none">
-            Structured advisory and technical support across financial reporting, corporate modelling, audit management, operational accounting, and software systems.
-          </p>
-        </div>
-      </div>
-
-      <div class="max-w-5xl mx-auto px-6 space-y-10 pb-8">
-        
-        <!-- ACCORDION CONTAINER FOR ALL SERVICES OFFERINGS -->
-        <div class="bg-white border editorial-border p-8 sm:p-10 rounded-3xl shadow-sm space-y-6">
-          <h2 class="text-2xl font-bold text-slate-900 border-b border-gray-100 pb-4">Service Offerings &amp; Engagement Scope</h2>
-
-          <div class="divide-y divide-gray-100">
-            
-            <!-- SERVICE OFFERING 1 -->
-            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
-              <div class="flex items-center justify-between gap-4">
-                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">01</span>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Financial Reporting &amp; Compliance</h3>
-                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
-              </div>
-              <div class="accordion-content pt-4 space-y-4">
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                  Preparation of reliable, audit-ready financial statements in accordance with applicable accounting frameworks in Nepal:
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
-                    <strong class="text-xs font-bold text-slate-900 block">Financial Statement Preparation</strong>
-                    <p class="text-xs text-slate-600 leading-relaxed">Preparation of complete financial statements under NFRS, NFRS for SMEs, and NAS for NPOs.</p>
-                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
-                      <li>Full balance sheet, income statement &amp; cash flow compilation</li>
-                      <li>Statement of changes in equity &amp; accounting policy notes</li>
-                      <li>Framework compliance check for statutory filings</li>
-                    </ul>
-                  </div>
-
-                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
-                    <strong class="text-xs font-bold text-slate-900 block">Reconstruction of Incomplete Records</strong>
-                    <p class="text-xs text-slate-600 leading-relaxed">Investigative reconstruction of disordered books of accounts from source documents.</p>
-                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
-                      <li>Bank transaction matching &amp; TDS reconciliation</li>
-                      <li>Ledger rebuilding from bank statements &amp; invoices</li>
-                      <li>Establishing verifiable opening balances for audit</li>
-                    </ul>
-                  </div>
-
-                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
-                    <strong class="text-xs font-bold text-slate-900 block">Audit Support &amp; Coordination</strong>
-                    <p class="text-xs text-slate-600 leading-relaxed">Comprehensive support to prepare for, coordinate, and expedite statutory or donor audits.</p>
-                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
-                      <li>Audit file compilation &amp; supporting schedule preparation</li>
-                      <li>Managing auditor queries and query resolution</li>
-                      <li>Liaison between management and statutory external auditors</li>
-                    </ul>
-                  </div>
-
-                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
-                    <strong class="text-xs font-bold text-slate-900 block">Framework Implementation</strong>
-                    <p class="text-xs text-slate-600 leading-relaxed">Assisting organizations with the initial adoption and practical application of NFRS standards.</p>
-                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
-                      <li>Gap analysis of existing accounting policies</li>
-                      <li>Chart of accounts restructuring for NFRS/NAS alignment</li>
-                      <li>First-time adoption note disclosures and reconciliations</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- SERVICE OFFERING 2 -->
-            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
-              <div class="flex items-center justify-between gap-4">
-                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">02</span>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Financial Planning &amp; Analysis</h3>
-                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
-              </div>
-              <div class="accordion-content pt-4 space-y-4">
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                  Financial models and internal reporting structures designed to support corporate decision-making and institutional lending:
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
-                    <strong class="text-xs font-bold text-slate-900 block">Corporate Financial Modelling</strong>
-                    <p class="text-xs text-slate-600 leading-relaxed">Integrated financial models and projections built for bank financing facilities and management planning.</p>
-                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
-                      <li>3-statement integrated forecast models (P&amp;L, BS, Cash Flow)</li>
-                      <li>Working capital limit justification &amp; term loan debt capacity models</li>
-                      <li>Sensitivity stress testing &amp; DSCR ratio analysis</li>
-                    </ul>
-                  </div>
-
-                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
-                    <strong class="text-xs font-bold text-slate-900 block">Management Reporting &amp; Dashboards</strong>
-                    <p class="text-xs text-slate-600 leading-relaxed">Designing clear internal management reports and executive dashboards from raw ledger data.</p>
-                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
-                      <li>Monthly budget vs. actual variance analysis reporting</li>
-                      <li>Key performance metrics (KPI) tracking templates</li>
-                      <li>Executive summaries for board and leadership review</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- SERVICE OFFERING 3 -->
-            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
-              <div class="flex items-center justify-between gap-4">
-                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">03</span>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Operational Accounting Support</h3>
-                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
-              </div>
-              <div class="accordion-content pt-4 space-y-4">
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                  Hands-on support for core ledger operations, statutory payroll compliance, and standard operating procedures:
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
-                    <strong class="text-xs font-bold text-slate-900 block">Accounts Receivable &amp; Payable Management</strong>
-                    <p class="text-xs text-slate-600 leading-relaxed">Structuring systematically tracked AR/AP ledgers to maintain cash flow control.</p>
-                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
-                      <li>Receivables ageing analysis &amp; overdue follow-up tracking</li>
-                      <li>Payable scheduling &amp; vendor reconciliation verification</li>
-                    </ul>
-                  </div>
-
-                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
-                    <strong class="text-xs font-bold text-slate-900 block">Payroll Calculation &amp; Tax Compliance</strong>
-                    <p class="text-xs text-slate-600 leading-relaxed">Accurate payroll processing and statutory compliance calculations tailored for organisations in Nepal.</p>
-                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
-                      <li>Monthly staff payroll computation &amp; payslip generation</li>
-                      <li>Salary TDS withholding calculations &amp; SSF calculations</li>
-                    </ul>
-                  </div>
-
-                  <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2 md:col-span-2">
-                    <strong class="text-xs font-bold text-slate-900 block">SOPs &amp; Workflow Engineering</strong>
-                    <p class="text-xs text-slate-600 leading-relaxed">Designing standard operating procedures and internal control workflows for accounting departments.</p>
-                    <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
-                      <li>Standard operating procedures (SOPs) for payment authorizations</li>
-                      <li>Inventory &amp; petty cash control workflow documentation</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- SERVICE OFFERING 4 -->
-            <div class="accordion-item py-6 cursor-pointer" onclick="toggleAccordion(this)">
-              <div class="flex items-center justify-between gap-4">
-                <span class="text-xs font-mono font-bold bg-[#E7F2EB] text-[#1B4D3E] px-3 py-1 rounded-full whitespace-nowrap">04</span>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex-1">Systems &amp; Database Structure</h3>
-                <span class="accordion-icon text-xl text-slate-400 transition-transform duration-300">+</span>
-              </div>
-              <div class="accordion-content pt-4 space-y-4">
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                  Technical advisory bridging traditional accounting logic with database schema design and software application architecture:
-                </p>
-                <div class="bg-[#F8FAF8] p-5 rounded-2xl border border-gray-100 space-y-2">
-                  <strong class="text-xs font-bold text-slate-900 block">Database Modelling &amp; Application Planning</strong>
-                  <p class="text-xs text-slate-600 leading-relaxed">Designing relational and document database structures for financial tools, accounting platforms, and reporting applications.</p>
-                  <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 pt-1">
-                    <li>Ledger database architecture (PostgreSQL, Firebase NoSQL)</li>
-                    <li>Double-entry chart of accounts data model planning</li>
-                    <li>Workflow API structure &amp; automated reporting logic design</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==================== CONTACT TAB ==================== -->
-    <section id="tab-contact" class="tab-content space-y-10">
-      <div class="bg-[#F2F6F3] border-b border-emerald-950/5 py-12 sm:py-16">
-        <div class="max-w-5xl mx-auto px-6 space-y-3">
-          <span class="text-xs font-bold uppercase tracking-widest text-[#2D8A68]">Engagement</span>
-          <h1 class="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">Direct Contact</h1>
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-none">
-            Available for financial advisory engagements, audit support assignments, and financial modelling projects.
-          </p>
-        </div>
-      </div>
-
-      <div class="max-w-5xl mx-auto px-6 space-y-10 pb-8">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          
-          <div class="md:col-span-5 bg-white border editorial-border p-8 rounded-3xl shadow-sm space-y-6">
-            <h2 class="text-xl font-bold text-slate-900 border-b border-gray-100 pb-3">Contact Details</h2>
-            
-            <div class="space-y-4 text-xs sm:text-sm">
-              <div>
-                <span class="block text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Location</span>
-                <span class="text-slate-800 font-medium">Satdobato, Lalitpur, Nepal</span>
-              </div>
-              <div>
-                <span class="block text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Email</span>
-                <a href="mailto:mail@sanjeevkhanal.com.np" class="text-slate-800 font-medium hover:text-[#1B4D3E] underline">mail@sanjeevkhanal.com.np</a>
-              </div>
-              <div>
-                <span class="block text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">Phone</span>
-                <a href="tel:+9779705005200" class="text-slate-800 font-medium hover:text-[#1B4D3E] underline">+977-9705005200</a>
-              </div>
-              <div>
-                <span class="block text-[11px] font-bold uppercase tracking-wider text-[#1B4D3E]">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/sanjeev-khanal" target="_blank" rel="noopener" class="text-slate-800 font-medium hover:text-[#1B4D3E] underline">linkedin.com/in/sanjeev-khanal</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="md:col-span-7 bg-white border editorial-border p-4 rounded-3xl shadow-sm space-y-3">
-            <div class="px-2">
-              <span class="text-xs font-bold uppercase tracking-wider text-[#1B4D3E]">Location Map: Satdobato, Lalitpur</span>
-            </div>
-            <div class="w-full h-[320px] rounded-2xl overflow-hidden border border-gray-200">
-              <iframe 
-                title="Location Map Satdobato Lalitpur"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14133.042539151528!2d85.321855!3d27.655243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19cdcc240db7%3A0x6b4020a597a488e!2sSatdobato%2C%20Lalitpur!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-[#1B4D3E] text-white border-t border-emerald-950/20 py-10 mt-12">
-    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-emerald-100/80 gap-4">
-      <div>
-        <strong class="text-white block font-semibold text-sm">Sanjeev Khanal</strong>
-        <span>Financial Advisory &amp; Systems · Satdobato, Lalitpur</span>
-      </div>
-      <div>
-        &copy; <span id="current-year"></span> Sanjeev Khanal. All rights reserved.
-      </div>
-    </div>
-  </footer>
-
-  <!-- JAVASCRIPT FOR TABS & ACCORDION -->
-  <script>
-    function switchTab(tabId) {
-      // Hide all tabs
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => {
-        tab.classList.remove('active');
-      });
-
-      // Reset all nav link styles
-      const navLinks = document.querySelectorAll('.nav-link');
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-      });
-
-      // Activate target tab and button
-      const targetTab = document.getElementById('tab-' + tabId);
-      const targetBtn = document.getElementById('tab-btn-' + tabId);
-
-      if (targetTab) {
-        targetTab.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-
-      if (targetBtn) {
-        targetBtn.classList.add('active');
-      }
-
-      // Close mobile drawer if open
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.add('hidden');
-      }
-    }
-
-    function toggleAccordion(element) {
-      const parent = element.closest('.accordion-item');
-      if (parent) {
-        parent.classList.toggle('active');
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('current-year').textContent = new Date().getFullYear();
-
-      const menuToggle = document.getElementById('menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
-          mobileMenu.classList.toggle('flex');
-        });
-      }
-    });
-  </script>
+<section id="contact" class="section tint"><div class="wrap"><div class="kicker">Contact</div><h2>Let’s connect and see what we can make possible.</h2><p class="intro">For a specific assignment, a potential collaboration or an exchange of ideas, share a little context and I’ll be glad to connect.</p>
+<div class="contactgrid" style="margin-top:26px"><div class="contactbox"><div class="kicker">Get in touch</div><h2>I’d be glad to hear from you.</h2><p>Share a little about what you’re working on or the kind of opportunity you have in mind.</p><a class="contactlink" href="mailto:mail@sanjeevkhanal.com.np"><span>Email</span><span>mail@sanjeevkhanal.com.np ↗</span></a><a class="contactlink" href="https://www.linkedin.com/in/sanjeev-khanal/" target="_blank" rel="noopener"><span>LinkedIn</span><span>Connect on LinkedIn ↗</span></a>
+<div class="privacy-note">🔒 Detailed CV and verified professional references available securely upon request.</div>
+</div>
+<aside class="sidebox"><div class="kicker">Ways to work together</div><div class="op"><b>Professional opportunities</b><span>Employment, roles, assignments and project-based work.</span></div><div class="op"><b>Projects & problem-solving</b><span>Practical challenges where my experience and interests may be useful.</span></div><div class="op"><b>Building together</b><span>Collaborating with people exploring ideas or developing something useful.</span></div><div class="op"><b>Conversations</b><span>Exchanging perspectives and discovering possible ways to contribute.</span></div></aside></div></div></section>
+</main>
+<footer><div class="wrap foot"><div>© <span id="year"></span> Sanjeev Khanal. Built with curiosity.</div><div class="footlinks"><a href="#home">Back to top ↑</a><a href="https://www.linkedin.com/in/sanjeev-khanal/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="mailto:mail@sanjeevkhanal.com.np">Email ↗</a></div></div></footer>
+<script>
+const toggle=document.getElementById('toggle'),links=document.getElementById('links');
+toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'✕':'☰'});
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';toggle.focus()}});
+const nav=[...document.querySelectorAll('.links a[href^="#"]')],sections=[...document.querySelectorAll('main section[id]')];
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)nav.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-25% 0px -65% 0px'});sections.forEach(s=>observer.observe(s))}
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
