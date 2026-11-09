@@ -1,173 +1,714 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f7f8fa">
-<meta name="description" content="Sanjeev Khanal works across finance, accounting, audit and practical technology, turning complex business problems into useful financial systems and products.">
-<meta name="author" content="Sanjeev Khanal">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sanjeev Khanal | Finance, Business & Technology">
-<meta property="og:description" content="Accounting foundations. Systems thinking. Useful outcomes. Explore professional work, independent products and collaboration opportunities.">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://sanjeevkhanal.com.np/">
-<title>Sanjeev Khanal | Finance, Business & Technology</title>
-<link rel="icon" href="favicon.ico" sizes="any">
-<style>
-:root{--bg:#f7f8fa;--paper:#fff;--ink:#17243a;--muted:#647187;--line:#e2e7ef;--blue:#315eca;--soft:#e7efff;--navy:#17243a;--max:1160px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
-.skip-link{position:absolute;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 14px;border-radius:8px}
-.skip-link:focus{top:12px}
-:focus-visible{outline:3px solid #7c9ff5;outline-offset:3px}
-.wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
-header{position:sticky;top:0;z-index:10;background:#f7f8faef;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.04em}.mark{background:var(--ink);color:#fff;border-radius:11px;width:38px;height:38px;display:grid;place-items:center;font-size:.85rem}.links{display:flex;gap:7px;align-items:center}.links a{padding:10px 14px;border-radius:30px;color:var(--muted);font-size:.9rem;font-weight:650}.links a:hover,.links a.active{background:var(--soft);color:var(--blue)}.links .cta{background:var(--blue);color:white}.toggle{display:none;background:white;border:1px solid var(--line);border-radius:10px;padding:9px 12px}
-.hero{padding:82px 0 68px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:stretch}.eyebrow,.tag{display:inline-flex;align-items:center;gap:8px;background:var(--soft);color:var(--blue);border-radius:30px;padding:7px 12px;font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:#36a56c}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2.8rem,6.2vw,5.2rem);line-height:1.03;letter-spacing:-.065em;margin:24px 0}h1 span{color:var(--blue)}.lead{font-size:1.1rem;color:var(--muted);max-width:660px;line-height:1.8}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;padding:13px 19px;border-radius:12px;font-weight:750;font-size:.92rem;transition:.2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--blue);color:white;box-shadow:0 8px 20px #315eca30}.secondary{background:white;border:1px solid var(--line)}.hero-panel{background:var(--navy);color:white;border-radius:25px;padding:30px;min-height:350px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.hero-panel:before,.hero-panel:after{content:"";position:absolute;border:1px solid #ffffff25;border-radius:50%;width:280px;height:280px;right:-100px;top:-100px}.hero-panel:after{width:190px;height:190px;right:-55px;top:-55px}.panel-kicker{color:#aebbd2;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;font-weight:800;position:relative}.panel-big{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:750;line-height:1.22;letter-spacing:-.04em;max-width:350px;position:relative}.panel-foot{display:flex;justify-content:space-between;color:#c4cee0;font-size:.84rem;position:relative}.star{font-size:2rem;color:#a9c2ff}
-section{scroll-margin-top:90px}.section{padding:72px 0}.kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.13em;color:var(--blue);font-weight:850;margin-bottom:10px}h2{font-size:clamp(2rem,4vw,3rem);line-height:1.12;letter-spacing:-.055em;margin-bottom:12px}.intro{color:var(--muted);max-width:690px;margin:0}.grid4{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.card{background:white;border:1px solid var(--line);border-radius:17px;padding:22px;transition:.2s}.card:hover,.project:hover{transform:translateY(-4px);box-shadow:0 15px 40px #17243a12;border-color:#cbd7ec}.icon{width:43px;height:43px;border-radius:12px;background:var(--soft);color:var(--blue);display:grid;place-items:center;font-size:1.25rem;margin-bottom:22px}.card h3{font-size:1.02rem;margin-bottom:7px}.card p{font-size:.88rem;color:var(--muted);margin:0}
-.tint{background:#eef2f8}.heading-row{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}.project{background:white;border:1px solid var(--line);border-radius:19px;overflow:hidden;transition:.2s}.visual{min-height:185px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#e8efff,#d6e3fc)}.visual.dark{background:linear-gradient(135deg,#1b2a45,#304d78)}.visual.green{background:linear-gradient(135deg,#e6f3ec,#cce8d8)}.orbit{position:absolute;width:230px;height:230px;border:1px solid #315eca35;border-radius:50%}.orbit:before,.orbit:after{content:"";position:absolute;inset:25px;border:1px solid #315eca30;border-radius:50%}.orbit:after{inset:58px}.letters{font-size:3.7rem;font-weight:900;letter-spacing:-.1em;color:var(--blue);z-index:1}.dark .letters{color:#c3d4ff}.green .letters{color:#27734d}.chip{position:absolute;right:18px;bottom:17px;background:#ffffffd9;border-radius:30px;padding:6px 10px;font-size:.72rem;font-weight:800}.project-body{padding:22px}.meta{font-size:.73rem;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);font-weight:850}.project h3{margin:7px 0;font-size:1.3rem;letter-spacing:-.03em}.project p{color:var(--muted);font-size:.9rem;margin-bottom:13px}.note{border-top:1px solid var(--line);padding-top:12px;color:var(--muted);font-size:.77rem}.link-btn{display:inline-flex;align-items:center;gap:4px;font-size:.84rem;font-weight:750;color:var(--blue);margin-top:10px}.link-btn:hover{text-decoration:underline}
-.highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}.highlight{background:white;border:1px solid var(--line);border-radius:16px;padding:21px}.highlight strong{display:block;font-size:1.8rem;letter-spacing:-.05em;color:var(--blue);margin-bottom:4px}.highlight span{font-size:.87rem;color:var(--muted)}
-.journey{display:grid;grid-template-columns:.7fr 1.3fr;gap:50px;align-items:start}.timeline{border-left:2px solid var(--line);margin:8px 0 0 8px}.timeline article{padding:0 0 27px 26px;position:relative}.timeline article:before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:3px solid var(--bg)}.timeline h3{font-size:1.05rem;margin:0 0 5px}.timeline p{color:var(--muted);font-size:.9rem;margin:0}.journey-note{background:white;border:1px solid var(--line);border-radius:19px;padding:26px}.journey-note p{color:var(--muted);font-size:.92rem}.journey-note p:last-child{margin-bottom:0}
-.band{background:var(--navy);color:white;border-radius:23px;padding:35px;display:flex;justify-content:space-between;align-items:center;gap:25px}.band h2{max-width:650px}.band p{color:#c4cee0;margin:0}.band .btn{background:white;color:var(--ink);white-space:nowrap}
-.contactgrid{display:grid;grid-template-columns:1fr .8fr;gap:20px}.contactbox,.sidebox{background:white;border:1px solid var(--line);border-radius:20px;padding:28px}.contactbox h2{max-width:570px}.contactbox p,.sidebox p{color:var(--muted)}.contactlink{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-top:1px solid var(--line);font-weight:700}.contactlink span:last-child{color:var(--blue);text-align:right}.op{padding:14px 0;border-bottom:1px solid var(--line)}.op:last-child{border:0}.op b{display:block}.op span{color:var(--muted);font-size:.87rem}
-.thinking-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
-.thinking-card{background:white;border:1px solid var(--line);border-radius:17px;padding:22px}
-.thinking-card .number{font-size:.75rem;color:var(--blue);font-weight:850;letter-spacing:.12em}
-.thinking-card h3{font-size:1rem;margin:12px 0 7px}
-.thinking-card p{font-size:.88rem;color:var(--muted);margin:0}
-.case-details{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
-.case-detail{background:#f7f8fa;border-radius:12px;padding:13px}
-.case-detail b{display:block;font-size:.76rem;color:var(--blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
-.case-detail span{font-size:.84rem;color:var(--muted)}
-.project .visual{min-height:205px}.project .visual img{display:block;width:100%;height:100%;min-height:205px;position:absolute;inset:0;object-fit:cover}.project .visual .chip{z-index:2}
-.visual-label{position:relative;z-index:1;text-align:center}
-.visual-label small{display:block;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:#52698e;margin-top:7px}
-.dark .visual-label small{color:#d4def1}
-.green .visual-label small{color:#27734d}
-.pathways{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}
-.pathway{background:white;border:1px solid var(--line);border-radius:16px;padding:20px}
-.pathway h3{font-size:1rem;margin:0 0 7px}
-.pathway p{font-size:.87rem;color:var(--muted);margin:0}
-.identity-note{max-width:690px;margin-top:22px;padding:18px 20px;border-left:3px solid var(--blue);background:#fff;border-radius:0 12px 12px 0;color:var(--muted)}
-.privacy-note{margin-top:20px;padding:14px 18px;background:var(--soft);border-radius:12px;font-size:.84rem;color:var(--blue);font-weight:600}
-footer{border-top:1px solid var(--line);padding:28px 0 35px;color:var(--muted);font-size:.84rem}.foot{display:flex;justify-content:space-between;gap:15px}.footlinks{display:flex;gap:17px}
-@media(max-width:900px){.hero-grid,.journey,.contactgrid{grid-template-columns:1fr}.grid4{grid-template-columns:1fr}.thinking-grid{grid-template-columns:repeat(2,1fr)}.pathways{grid-template-columns:1fr}}
-@media(max-width:640px){.thinking-grid,.case-details{grid-template-columns:1fr}.wrap{width:calc(100% - 30px)}.toggle{display:block}.links{display:none;position:absolute;top:68px;left:0;right:0;padding:12px 15px 17px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}.links.open{display:flex}.links a{padding:12px}.hero{padding:52px 0 45px}h1{font-size:clamp(2.55rem,13vw,4rem)}.hero-panel{min-height:255px;padding:24px}.section{padding:50px 0}.grid4,.projects,.highlights{grid-template-columns:1fr}.heading-row{display:block}.band{display:block;padding:26px}.band .btn{margin-top:20px}.contactbox,.sidebox{padding:22px}.foot{display:block}.footlinks{margin-top:12px}.contactlink{display:block}.contactlink span{display:block}.contactlink span:last-child{text-align:left;margin-top:4px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-</style>
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Person",
- "name": "Sanjeev Khanal",
- "url": "https://sanjeevkhanal.com.np/",
- "email": "mailto:mail@sanjeevkhanal.com.np",
- "sameAs": ["https://www.linkedin.com/in/sanjeev-khanal/"],
- "knowsAbout": [
- "Financial reporting",
- "Audit support",
- "Financial modelling",
- "Accounting systems",
- "Database architecture",
- "Product development"
- ]
-}
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sanjeev Khanal — Semi-Qualified CA">
+  <title>Sanjeev Khanal — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650&display=swap" rel="stylesheet">
+  <script>
+    (() => {
+      const saved = localStorage.getItem("sanjeev-site-theme");
+      const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+      document.documentElement.dataset.theme = saved || (systemPrefersLight ? "light" : "dark");
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101112;
+      --panel: #151718;
+      --text: #e9e9e5;
+      --muted: #929692;
+      --line: #2a2e2c;
+      --accent: #c6b99e;
+      --width: 1040px;
+      --soft-line: #222725;
+      --hover: #1b1f1d;
+      --copy: #c4c8c3;
+      --list: #b9beb9;
+      --strong: #c9cdc8;
+      --portrait-bg: #191c1b;
+      --cover-bg: #25231f;
+      --cover-border: #514b40;
+      --cover-text: #d7cbb3;
+      --link-line: #625b4d;
+      --panel-border: #292e2c;
+    }
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --bg: #ffffff;
+      --panel: #f8f9fa;
+      --text: #202321;
+      --muted: #6c757d;
+      --line: #e2e8f0;
+      --accent: #82745b;
+      --soft-line: #edf2f7;
+      --hover: #f1f5f9;
+      --copy: #4a5568;
+      --list: #4a5568;
+      --strong: #2d3748;
+      --portrait-bg: #f1f5f9;
+      --cover-bg: #f7fafc;
+      --cover-border: #cbd5e0;
+      --cover-text: #4a5568;
+      --link-line: #cbd5e0;
+      --panel-border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    button { font: inherit; }
+
+    .page {
+      width: min(var(--width), calc(100% - 64px));
+      margin: 0 auto;
+      padding: 76px 0 48px;
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      grid-template-areas:
+        "identity intro"
+        "sections sections"
+        "footer footer";
+      column-gap: clamp(56px, 7vw, 92px);
+      row-gap: 54px;
+      align-content: start;
+      align-items: center;
+    }
+    .identity {
+      grid-area: identity;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 0;
+      align-self: center;
+      min-width: 0;
+    }
+    .identity > div:nth-child(2) { min-width: 0; }
+    .portrait {
+      width: 88px;
+      height: 88px;
+      flex: 0 0 88px;
+      display: block;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--portrait-bg);
+      object-fit: cover;
+      object-position: center;
+    }
+    .name {
+      margin: 0;
+      font-size: clamp(25px, 5vw, 34px);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: 1.2;
+    }
+    .tagline {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .theme-toggle {
+      margin-left: 8px;
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .theme-toggle svg { width: 16px; height: 16px; }
+    .theme-toggle .icon-sun { display: none; }
+    .theme-toggle .icon-moon { display: block; }
+    :root[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+    :root[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+    .theme-toggle:hover { background: var(--hover); color: var(--text); }
+    .intro {
+      grid-area: intro;
+      width: 100%;
+      max-width: 520px;
+      margin: 0;
+      padding: 0;
+      border-bottom: 0;
+      align-self: center;
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .intro h2 {
+      max-width: 560px;
+      margin: 0;
+      font-size: clamp(23px, 4vw, 31px);
+      font-weight: 450;
+      letter-spacing: -.045em;
+      line-height: 1.35;
+    }
+    .intro p:last-child {
+      max-width: 520px;
+      margin: 15px 0 0;
+      color: var(--muted);
+    }
+
+    .sections {
+      grid-area: sections;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      align-self: start;
+    }
+    .section { display: contents; }
+    .section-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      grid-row: 1;
+      padding: 17px 12px 17px 2px;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+    }
+    .section-toggle:hover .section-name { color: var(--accent); }
+    .section-name {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -.02em;
+      transition: color .2s;
+    }
+    .section-number {
+      margin-right: 12px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .08em;
+    }
+    .section-icon {
+      display: inline-block;
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 400;
+      flex-shrink: 0;
+    }
+    .section-toggle[aria-expanded="true"] .section-icon { color: var(--accent); }
+    .section-toggle[aria-expanded="true"] {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .section-content {
+      grid-row: 2;
+      grid-column: 1 / -1;
+      display: none;
+      margin: 0;
+      padding: 25px 27px 28px;
+      border: 1px solid var(--panel-border);
+      border-radius: 9px;
+      background: var(--panel);
+      animation: reveal .22s ease-out;
+    }
+    .section-content.is-open { display: block; }
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .body-copy { max-width: 620px; color: var(--copy); }
+    .body-copy p { margin: 0 0 12px; }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .meta span::before {
+      content: "·";
+      margin-right: 8px;
+      color: var(--accent);
+    }
+    .subheading {
+      margin: 25px 0 9px;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 550;
+    }
+    .plain-list {
+      margin: 0;
+      padding-left: 17px;
+      color: var(--list);
+    }
+    .plain-list li { padding: 2px 0; }
+    .work-group {
+      border-top: 1px solid var(--line);
+    }
+    .work-group:first-child { border-top: 0; }
+    .work-group summary {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+      cursor: pointer;
+      list-style: none;
+    }
+    .work-group summary::-webkit-details-marker { display: none; }
+    .work-group summary::after {
+      content: "+";
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.2;
+    }
+    .work-group[open] summary::after { content: "−"; }
+    .group-title { display: block; font-weight: 500; }
+    .group-summary {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .work-items {
+      margin: 0 0 12px 2px;
+      padding: 0 0 4px 15px;
+      border-left: 1px solid var(--line);
+    }
+    .work-item {
+      border-top: 1px solid var(--soft-line);
+    }
+    .work-item:first-child { border-top: 0; }
+    .work-item summary {
+      padding: 11px 0;
+      font-size: 12px;
+      cursor: pointer;
+      list-style: none;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .work-item summary::-webkit-details-marker { display: none; }
+    .work-item summary::after {
+      content: "+";
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .work-item[open] summary::after { content: "−"; }
+    .work-item .detail {
+      max-width: 570px;
+      padding: 0 20px 13px 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .work-item .detail p { margin: 0 0 7px; }
+    .work-item .detail strong { color: var(--strong); font-weight: 500; }
+
+    .book {
+      display: grid;
+      grid-template-columns: 104px 1fr;
+      gap: 22px;
+      max-width: 590px;
+      align-items: start;
+    }
+    .book-cover {
+      display: block;
+      width: 116px;
+      aspect-ratio: 3 / 4;
+      border: 1px solid var(--cover-border);
+      background: var(--cover-bg);
+      object-fit: cover;
+      object-position: center;
+      box-shadow: 0 8px 22px rgb(0 0 0 / .12);
+    }
+    .book h3 {
+      margin: 0 0 5px;
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: -.035em;
+      line-height: 1.35;
+    }
+    .book .byline { margin: 0 0 13px; color: var(--muted); font-size: 11px; }
+    .book p { margin: 0 0 12px; color: var(--copy); font-size: 12px; }
+    .text-link {
+      display: inline-block;
+      margin-top: 3px;
+      color: var(--accent);
+      font-size: 11px;
+      border-bottom: 1px solid var(--link-line);
+    }
+    .contact-lines { display: grid; gap: 5px; color: var(--copy); }
+    .contact-lines span { color: var(--muted); }
+    footer {
+      grid-area: footer;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 58px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        display: block;
+        width: min(100% - 34px, 620px);
+        padding: 42px 0 36px;
+      }
+      .identity { margin-bottom: 38px; gap: 16px; }
+      .portrait { width: 68px; height: 68px; flex-basis: 68px; }
+      .intro {
+        max-width: 590px;
+        margin: 0 0 42px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid var(--line);
+      }
+      .sections { display: block; border-top: 1px solid var(--line); }
+      .section { display: block; border-bottom: 1px solid var(--line); }
+      .section-toggle {
+        justify-content: space-between;
+        padding: 20px 2px;
+        border-bottom: 0;
+      }
+      .section-toggle[aria-expanded="true"] { border-bottom-color: transparent; }
+      .section-content {
+        margin: 0 0 18px;
+        padding: 18px 16px 20px;
+      }
+      footer { margin-top: 42px; }
+    }
+    @media (max-width: 430px) {
+      .theme-toggle { width: 34px; height: 34px; }
+      .book { grid-template-columns: 82px 1fr; gap: 15px; }
+      .book-cover { width: 82px; }
+      footer { flex-direction: column; gap: 4px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+    }
+  </style>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to content</a>
-<header><div class="wrap"><nav aria-label="Main navigation">
-<a class="brand" href="#home"><span class="mark">SK.</span><span>Sanjeev Khanal</span></a>
-<button class="toggle" id="toggle" type="button" aria-label="Toggle navigation" aria-controls="links" aria-expanded="false">☰</button>
-<div class="links" id="links"><a href="#home" class="active">Home</a><a href="#capabilities">Capabilities</a><a href="#approach">My Approach</a><a href="#work">Selected Work</a><a href="#journey">Journey</a><a class="cta" href="#contact">Let's Connect ↗</a></div>
-</nav></div></header>
-<main id="main-content">
-<section id="home"><div class="wrap hero"><div class="hero-grid"><div>
-<div class="eyebrow"><span class="dot"></span> Finance · Audit · Systems</div>
-<h1>Bridging accounting practice<br><span>with practical technology.</span></h1>
-<p class="lead">Finance and accounting professional with 5+ years of experience in financial reporting, audit, modelling and consulting. I work at the intersection of traditional practice and modern systems, understanding business problems, structuring the numbers and building practical tools that help work get done.</p>
-<div class="actions"><a class="btn primary" href="#work">Explore selected work ↗</a><a class="btn secondary" href="#contact">Get in touch</a></div>
-</div><aside class="hero-panel"><div class="panel-kicker">A practical, multidisciplinary approach</div><div class="panel-big">Accounting foundations.<br>Systems thinking.<br>Useful outcomes.</div><div class="panel-foot"><span>Curious by nature. Practical by approach.</span><span class="star">✳</span></div></aside></div></div></section>
+  <main class="page">
+    <header class="identity">
+      <img class="portrait" src="sanjeev.jpg" alt="Portrait of Sanjeev Khanal">
+      <div>
+        <h1 class="name">Sanjeev Khanal</h1>
+        <p class="tagline">Semi-Qualified CA</p>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.8 13.2A8.5 8.5 0 0 1 10.8 3.2 8.5 8.5 0 1 0 20.8 13.2Z"></path>
+        </svg>
+      </button>
+    </header>
 
-<section id="capabilities" class="section"><div class="wrap"><div class="kicker">Capabilities</div><h2>Where I can contribute.</h2><p class="intro">A combination of professional experience, practical skills and areas I continue to develop. Depth varies across these domains, I prefer to be clear about what I know and what I am still learning.</p>
-<div class="grid4">
-<article class="card"><div class="icon">⌁</div><h3>Financial Reporting & Audit</h3><p>Financial statement preparation, first-time framework adoption, account reconstruction, investigative work, audit support and coordination across NPOs, SMEs and commercial entities.</p></article>
-<article class="card"><div class="icon">⌘</div><h3>Modelling & Analysis</h3><p>Corporate financing models, financial projections, Excel-based analysis (including Power Pivot and data models), and structured approaches to complex financial questions.</p></article>
-<article class="card"><div class="icon">↗</div><h3>Systems & Product Work</h3><p>Database architecture, application workflows, AI-assisted full-stack development, and connecting financial processes with practical digital tools.</p></article>
-</div></div></section>
+    <section class="intro" aria-labelledby="intro-title">
+      <p class="eyebrow">01. Introduction</p>
+      <h2 id="intro-title">Understanding businesses. Building better systems. Creating value.</h2>
+      <p>I’m Sanjeev Khanal, with an interest in understanding how businesses work, how technology can make them better, and how good ideas become meaningful enterprises.</p>
+      <p>My work and interests span three connected areas: finance, technology and business.</p>
+    </section>
 
-<section id="approach" class="section">
-<div class="wrap">
-<div class="kicker">How I think & work</div>
-<h2>Understand the problem. Make the solution useful.</h2>
-<p class="intro">My approach combines financial discipline with curiosity about how systems work. I value clear thinking, practical execution and honest learning.</p>
-<div class="thinking-grid">
-<article class="thinking-card"><div class="number">01 / UNDERSTAND</div><h3>Start with the real problem</h3><p>Understand the context, constraints, records and people involved before deciding what needs to change.</p></article>
-<article class="thinking-card"><div class="number">02 / STRUCTURE</div><h3>Make complexity workable</h3><p>Bring structure to financial information, workflows and decisions so that the next step becomes clearer.</p></article>
-<article class="thinking-card"><div class="number">03 / BUILD</div><h3>Prefer practical outcomes</h3><p>Turn analysis into usable models, better processes or working tools rather than stopping at recommendations.</p></article>
-<article class="thinking-card"><div class="number">04 / IMPROVE</div><h3>Learn through execution</h3><p>Test ideas, pay attention to feedback and keep improving. Be clear about what is proven and what is still developing.</p></article>
-</div>
-</div>
-</section>
+    <nav class="sections" aria-label="Main sections">
 
-<section id="work" class="section tint"><div class="wrap"><div class="heading-row"><div><div class="kicker">Selected Work</div><h2>Some things I’ve worked on.</h2><p class="intro">A selection of professional contributions and independent explorations. These examples show how I approach financial, operational and product challenges, and what has been built or supported so far.</p></div></div>
-<div class="projects">
-<article class="project"><div class="visual"><img src="practice.jpg" alt="Financial practice and advisory work" loading="lazy" decoding="async"><span class="chip">Professional work</span></div><div class="project-body"><div class="meta">Finance · Reporting · Audit</div><h3>Financial practice & advisory support</h3><p>Work across financial reporting frameworks, first-time adoption for new entities and NPOs, account reconstruction from incomplete records, corporate financing models that supported loan approvals over NPR 1.2 Crore, high-volume verification assignments, and multi-sector statutory and investigative audits.</p><div class="case-details">
-<div class="case-detail"><b>Focus</b><span>Reporting, reconstruction, modelling and audit support</span></div>
-<div class="case-detail"><b>Evidence</b><span>Financing models supporting loan approvals exceeding NPR 1.2 Crore</span></div>
-</div>
-<div class="note">Also involved in NFRS standards review work on a consultancy basis following initial findings during articleship. Client details and confidential engagement information are intentionally not disclosed.</div></div></article>
-<article class="project"><div class="visual"><img src="1pana.jpg" alt="1Pana Accounting product" loading="lazy" decoding="async"><span class="chip">Product exploration</span></div><div class="project-body"><div class="meta">Accounting systems · Product development</div><h3>1Pana Accounting</h3><p>A six-month independent product effort: intensive three-month core build followed by three months of refinement and trial runs. Delivered a functional MVP validated through 3 months of complete data entry across 3 active entities.</p><div class="case-details">
-<div class="case-detail"><b>Build</b><span>Frontend, backend, NoSQL database design, APIs and deployment</span></div>
-<div class="case-detail"><b>Validation</b><span>Three months of complete data entry across three active entities</span></div>
-</div>
-<div class="note">A six-month independent effort, including an intensive three-month core build followed by refinement and trial runs. AI-assisted development tools supported the implementation process.</div><a href="https://1pana.com" target="_blank" rel="noopener" class="link-btn">Visit 1pana.com ↗</a></div></article>
-<article class="project"><div class="visual"><img src="nepalventure.jpg" alt="Nepalventure startup and investor platform" loading="lazy" decoding="async"><span class="chip">Startup ecosystem</span></div><div class="project-body"><div class="meta">Platform · Funding exploration</div><h3>Nepalventure</h3><p>Conceptualisation and deployment of a startup-investor platform. Designed core database architecture and structured reporting logic. Successfully engaged with 15+ fund seekers organically without promotion, leading to 5+ completed profile creations.</p><div class="case-details">
-<div class="case-detail"><b>Build</b><span>Platform concept, database architecture and reporting logic</span></div>
-<div class="case-detail"><b>Early traction</b><span>15+ organically engaged fund seekers and 5+ completed profiles</span></div>
-</div>
-<div class="note">An independent initiative focused on understanding real constraints in the early-stage funding landscape. Early engagement is exploratory, not a claim of completed fundraising transactions.</div><a href="https://nepalventure.com" target="_blank" rel="noopener" class="link-btn">Visit nepalventure.com ↗</a></div></article>
-<article class="project"><div class="visual"><img src="database.jpg" alt="Database architecture and digital workflows" loading="lazy" decoding="async"><span class="chip">Systems & technology</span></div><div class="project-body"><div class="meta">Data · Architecture · Workflows</div><h3>Accounting systems & digital workflows</h3><p>Exploration and development of accounting database architecture and practical digital tools that connect financial processes with structured data. Experience includes Excel data models, relational and NoSQL databases, APIs and modern web deployment environments.</p><div class="note">Tools and technologies worked with include Excel (Power Pivot / Data Model), PostgreSQL, Firebase, Next.js, APIs and deployment platforms.</div></div></article>
-</div></div></section>
+      <!-- 01. ABOUT -->
+      <section class="section">
+        <button class="section-toggle" type="button" aria-expanded="false" aria-controls="about-panel">
+          <span><span class="section-number">01</span><span class="section-name">About</span></span>
+          <span class="section-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="section-content" id="about-panel">
+          <div class="body-copy">
+            <p>My professional background is in accounting, audit and financial advisory. Alongside professional practice, I have explored how technology and structured systems can improve the way businesses operate.</p>
+            <p>I’m interested in building practical solutions, understanding business challenges and turning ideas into workable initiatives.</p>
+            <h3 class="subheading">Education</h3>
+            <ul class="plain-list">
+              <li>CAP-III, ICAN — In progress</li>
+              <li>CAP-II, ICAN — Completed 2019</li>
+              <li>CAP-I, ICAN — Completed 2015</li>
+              <li>+2 Science, NEB — Completed 2015</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-<section id="journey" class="section"><div class="wrap"><div class="journey"><div><div class="kicker">Journey</div><h2>A professional foundation, with an expanding field of interest.</h2><p class="intro">The path so far has moved from formal accounting practice into independent work and broader exploration of systems and product development.</p><div class="identity-note">I bring a finance-first perspective to technology and business problems: understand the underlying process, work with the details, then look for a practical way to improve it.</div></div><div>
-<div class="timeline">
-<article><h3>2020–2023 · Articleship</h3><p>M. Khanal & Co., Chartered Accountants, practical experience across financial statement preparation for donor-funded projects, high-volume verification work, account reconstruction, investigative and statutory audits, and multi-sector engagements.</p></article>
-<article><h3>Since 2023 · Independent practice</h3><p>Financial consulting and audit support: financing models (facilitating NPR 1.2 Crore loan approvals), first-time reporting frameworks, account finalisation, audit coordination, and tax/compliance assignments.</p></article>
-<article><h3>2025–2026 · Product development</h3><p>Intensive independent work on accounting platform architecture (1Pana Accounting MVP) and a startup-investor platform (Nepalventure), combining domain knowledge with full-stack and database design.</p></article>
-<article><h3>Ongoing · Expanding interests</h3><p>Continuing to explore opportunities where accounting foundations, systems thinking and practical problem-solving can create lasting value.</p></article>
-</div>
-<div class="journey-note"><div class="kicker">Professional development</div><p>Institute of Chartered Accountants of Nepal (ICAN), CAP-III (Final) in progress (Group 2 cleared). CAP-II completed 2019. CAP-I completed 2015.</p><p>My work continues to develop across disciplines. I am interested in roles and collaborations where I can contribute with the experience I have, take responsibility, and keep learning through practical work.</p></div>
-</div></div></div></section>
+      <!-- 02. WORK -->
+      <section class="section">
+        <button class="section-toggle" type="button" aria-expanded="false" aria-controls="work-panel">
+          <span><span class="section-number">02</span><span class="section-name">Work</span></span>
+          <span class="section-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="section-content" id="work-panel">
+          
+          <!-- Category 1: Accounting -->
+          <details class="work-group">
+            <summary>
+              <span>
+                <span class="group-title">Accounting</span>
+              </span>
+            </summary>
+            <div class="work-items">
+              <details class="work-item">
+                <summary>Financial Reporting</summary>
+                <div class="detail"><p>Preparation and presentation of financial statements under applicable reporting standards.</p></div>
+              </details>
+              <details class="work-item">
+                <summary>NFRS Implementation</summary>
+                <div class="detail"><p>Guidance and implementation support for Nepal Financial Reporting Standards.</p></div>
+              </details>
+              <details class="work-item">
+                <summary>Tax Return Preparation and Filing</summary>
+                <div class="detail"><p>Tax computations, statutory filings and compliance-related work.</p></div>
+              </details>
+              <details class="work-item">
+                <summary>Statutory Reports Preparation and Filing</summary>
+                <div class="detail"><p>Preparation of required statutory documentation and filings.</p></div>
+              </details>
+            </div>
+          </details>
 
-<section class="section" style="padding-top:0"><div class="wrap"><div class="band"><div><div class="kicker" style="color:#a9c2ff">Open to possibilities</div><h2>Have a project, challenge or opportunity in mind?</h2><p>I’m open to worthwhile work, new challenges and meaningful collaboration across finance, systems and business.</p></div><a class="btn" href="#contact">Start a conversation ↗</a></div></div></section>
+          <!-- Category 2: Audit -->
+          <details class="work-group">
+            <summary>
+              <span>
+                <span class="group-title">Audit</span>
+              </span>
+            </summary>
+            <div class="work-items">
+              <details class="work-item">
+                <summary>Statutory Audit</summary>
+                <div class="detail"><p>Independent examination of financial statements and records.</p></div>
+              </details>
+              <details class="work-item">
+                <summary>Internal Audit</summary>
+                <div class="detail"><p>Review of internal controls, processes, and operational efficiency.</p></div>
+              </details>
+              <details class="work-item">
+                <summary>Component Audit</summary>
+                <div class="detail"><p>Audit work concerning specific segments, branches or components of an entity.</p></div>
+              </details>
+              <details class="work-item">
+                <summary>Compliance Audit</summary>
+                <div class="detail"><p>Verification of adherence to applicable laws, regulations, and internal policies.</p></div>
+              </details>
+              <details class="work-item">
+                <summary>Review Engagements</summary>
+                <div class="detail"><p>Limited assurance reviews of financial information.</p></div>
+              </details>
+            </div>
+          </details>
 
-<section class="section" style="padding-top:0">
-<div class="wrap">
-<div class="kicker">Ways to work together</div>
-<h2>Different problems. A practical approach.</h2>
-<p class="intro">If the challenge sits somewhere between finance, operations, technology or a new business idea, there may be a useful way to work together.</p>
-<div class="pathways">
-<article class="pathway"><h3>Professional engagements</h3><p>Financial reporting, audit support, account reconstruction, financial modelling and related advisory assignments.</p></article>
-<article class="pathway"><h3>Business & technology</h3><p>Accounting systems, digital workflows, database thinking and practical product development informed by finance processes.</p></article>
-<article class="pathway"><h3>Strategic collaboration</h3><p>Startup ecosystem initiatives, early-stage ideas, venture exploration and building useful things with capable people.</p></article>
-</div>
-</div>
-</section>
+          <!-- Category 3: Advisory -->
+          <details class="work-group">
+            <summary>
+              <span>
+                <span class="group-title">Advisory</span>
+              </span>
+            </summary>
+            <div class="work-items">
+              <details class="work-item">
+                <summary>Financial Modelling</summary>
+                <div class="detail"><p>Development of financial models and projections to support business decisions.</p></div>
+              </details>
+              <details class="work-item">
+                <summary>SOPs and Code of Conduct Preparation</summary>
+                <div class="detail"><p>Drafting standard operating procedures and governance frameworks.</p></div>
+              </details>
+              <details class="work-item">
+                <summary>Management Reports Preparation</summary>
+                <div class="detail"><p>Designing custom reports for management insight and strategic planning.</p></div>
+              </details>
+              <details class="work-item">
+                <summary>Institutional Workflows and Control System Design</summary>
+                <div class="detail"><p>Structuring internal workflows and robust control systems.</p></div>
+              </details>
+            </div>
+          </details>
 
-<section id="contact" class="section tint"><div class="wrap"><div class="kicker">Contact</div><h2>Let’s connect and see what we can make possible.</h2><p class="intro">For a specific assignment, a potential collaboration or an exchange of ideas, share a little context and I’ll be glad to connect.</p>
-<div class="contactgrid" style="margin-top:26px"><div class="contactbox"><div class="kicker">Get in touch</div><h2>I’d be glad to hear from you.</h2><p>Share a little about what you’re working on or the kind of opportunity you have in mind.</p><a class="contactlink" href="mailto:mail@sanjeevkhanal.com.np"><span>Email</span><span>mail@sanjeevkhanal.com.np ↗</span></a><a class="contactlink" href="https://www.linkedin.com/in/sanjeev-khanal/" target="_blank" rel="noopener"><span>LinkedIn</span><span>Connect on LinkedIn ↗</span></a>
-<div class="privacy-note">🔒 Detailed CV and verified professional references available securely upon request.</div>
-</div>
-<aside class="sidebox"><div class="kicker">Ways to work together</div><div class="op"><b>Professional opportunities</b><span>Employment, roles, assignments and project-based work.</span></div><div class="op"><b>Projects & problem-solving</b><span>Practical challenges where my experience and interests may be useful.</span></div><div class="op"><b>Building together</b><span>Collaborating with people exploring ideas or developing something useful.</span></div><div class="op"><b>Conversations</b><span>Exchanging perspectives and discovering possible ways to contribute.</span></div></aside></div></div></section>
-</main>
-<footer><div class="wrap foot"><div>© <span id="year"></span> Sanjeev Khanal. Built with curiosity.</div><div class="footlinks"><a href="#home">Back to top ↑</a><a href="https://www.linkedin.com/in/sanjeev-khanal/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="mailto:mail@sanjeevkhanal.com.np">Email ↗</a></div></div></footer>
-<script>
-const toggle=document.getElementById('toggle'),links=document.getElementById('links');
-toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'✕':'☰'});
-document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';toggle.focus()}});
-const nav=[...document.querySelectorAll('.links a[href^="#"]')],sections=[...document.querySelectorAll('main section[id]')];
-if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)nav.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-25% 0px -65% 0px'});sections.forEach(s=>observer.observe(s))}
-document.getElementById('year').textContent=new Date().getFullYear();
-</script>
+          <!-- Category 4: Project & Venture Initiatives -->
+          <details class="work-group">
+            <summary>
+              <span>
+                <span class="group-title">Project &amp; Venture Initiatives</span>
+              </span>
+            </summary>
+            <div class="work-items">
+              <details class="work-item">
+                <summary>1Pana Accounting</summary>
+                <div class="detail">
+                  <p>A managed accounting solution designed for small and medium-sized enterprises.</p>
+                  <p><strong>Purpose:</strong> To make structured accounting and financial reporting more accessible to SMEs through a managed solution.</p>
+                  <p><strong>Development:</strong> Six months of effort, including three months of core development followed by three months of refinement and trial runs.</p>
+                  <p><strong>Current Stage:</strong> MVP ready.</p>
+                  <p><a href="https://1pana.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline; font-size: 11.5px;">1pana.com ↗</a></p>
+                </div>
+              </details>
+              <details class="work-item">
+                <summary>Nepalventure</summary>
+                <div class="detail">
+                  <p>An initiative to connect startups with funding opportunities and support the growth of Nepal’s startup ecosystem.</p>
+                  <p><strong>Purpose:</strong> To connect startups with funding sources, with the broader ambition of mobilising national funds to support entrepreneurship and expand the startup ecosystem.</p>
+                  <p><strong>Traction:</strong> 15+ startups joined the platform, with 5+ completing their profiles.</p>
+                  <p><strong>Current Stage:</strong> The proposed funding model faced limitations under the existing legal framework, restricting the initiative from proceeding as originally envisioned.</p>
+                  <p><a href="https://nepalventure.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline; font-size: 11.5px;">nepalventure.com ↗</a></p>
+                </div>
+              </details>
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- 03. WRITING -->
+      <section class="section">
+        <button class="section-toggle" type="button" aria-expanded="false" aria-controls="writing-panel">
+          <span><span class="section-number">03</span><span class="section-name">Writing</span></span>
+          <span class="section-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="section-content" id="writing-panel">
+          <div class="book">
+            <img class="book-cover" src="book.jpg" alt="The Awareness Framework book cover">
+            <div>
+              <p class="eyebrow">Featured publication</p>
+              <h3>The Awareness Framework</h3>
+              <p class="byline">Co-authored manuscript, bringing together long-form writing, research and structured ideas.</p>
+              <p class="byline">ISBN: 9789937192835</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04. CONTACT -->
+      <section class="section">
+        <button class="section-toggle" type="button" aria-expanded="false" aria-controls="contact-panel">
+          <span><span class="section-number">04</span><span class="section-name">Contact</span></span>
+          <span class="section-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="section-content" id="contact-panel">
+          <div class="body-copy">
+            <p>Open to thoughtful conversations, professional collaboration and opportunities across finance, technology and business.</p>
+            <div class="contact-lines">
+              <div><span>Name</span> · Sanjeev Khanal</div>
+              <div><span>Location</span> · Satdobato, Lalitpur, Nepal</div>
+              <div><span>Email</span> · <a href="mailto:mail@sanjeevkhanal.com.np">mail@sanjeevkhanal.com.np</a></div>
+              <div><span>Website</span> · <a href="https://sanjeevkhanal.com.np" target="_blank" rel="noopener noreferrer">sanjeevkhanal.com.np ↗</a></div>
+              <div><span>LinkedIn</span> · <a href="https://linkedin.com/in/sanjeev-khanal" target="_blank" rel="noopener noreferrer">linkedin.com/in/sanjeev-khanal ↗</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </nav>
+
+    <footer>
+      <span>© <span id="year"></span> Sanjeev Khanal</span>
+      <span>Satdobato, Lalitpur, Nepal</span>
+    </footer>
+  </main>
+
+  <script>
+    const sectionButtons = [...document.querySelectorAll(".section-toggle")];
+    const mobileLayout = window.matchMedia("(max-width: 760px)");
+
+    function setSection(button, open) {
+      const panel = document.getElementById(button.getAttribute("aria-controls"));
+      button.setAttribute("aria-expanded", String(open));
+      panel.classList.toggle("is-open", open);
+      const icon = button.querySelector(".section-icon");
+      if (icon) {
+        icon.textContent = open ? "−" : "+";
+      }
+    }
+
+    sectionButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const isOpen = button.getAttribute("aria-expanded") === "true";
+
+        if (mobileLayout.matches) {
+          sectionButtons.forEach((other) => setSection(other, false));
+          if (!isOpen) setSection(button, true);
+        } else {
+          sectionButtons.forEach((other) => setSection(other, other === button));
+        }
+      });
+    });
+
+    function syncLayout() {
+      const active = sectionButtons.find((button) =>
+        button.getAttribute("aria-expanded") === "true"
+      );
+      if (!mobileLayout.matches && !active) {
+        sectionButtons.forEach((button) => setSection(button, false));
+      } else if (mobileLayout.matches && active) {
+        sectionButtons.forEach((button) => setSection(button, button === active));
+      }
+    }
+    mobileLayout.addEventListener("change", syncLayout);
+    syncLayout();
+
+    const themeButton = document.getElementById("theme-toggle");
+    const root = document.documentElement;
+    const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
+
+    function applyTheme(theme) {
+      root.dataset.theme = theme;
+      const nextThemeLabel = theme === "light" ? "Switch to dark theme" : "Switch to light theme";
+      themeButton.setAttribute("aria-label", nextThemeLabel);
+      themeButton.setAttribute("title", nextThemeLabel);
+    }
+
+    const savedTheme = localStorage.getItem("sanjeev-site-theme");
+    if (!savedTheme) {
+      applyTheme(systemTheme.matches ? "light" : "dark");
+      systemTheme.addEventListener("change", (event) => {
+        if (!localStorage.getItem("sanjeev-site-theme")) {
+          applyTheme(event.matches ? "light" : "dark");
+        }
+      });
+    } else {
+      applyTheme(savedTheme);
+    }
+
+    themeButton.addEventListener("click", () => {
+      const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+      applyTheme(nextTheme);
+      localStorage.setItem("sanjeev-site-theme", nextTheme);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
