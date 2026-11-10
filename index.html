@@ -1,714 +1,559 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sanjeev Khanal — Semi-Qualified CA">
-  <title>Sanjeev Khanal — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650&display=swap" rel="stylesheet">
-  <script>
-    (() => {
-      const saved = localStorage.getItem("sanjeev-site-theme");
-      const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-      document.documentElement.dataset.theme = saved || (systemPrefersLight ? "light" : "dark");
-    })();
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sanjeev Khanal — Finance, technology, business and venture development." />
+  <meta name="theme-color" content="#f5f7fa" />
+  <title>Sanjeev Khanal — Personal Portfolio</title>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #101112;
-      --panel: #151718;
-      --text: #e9e9e5;
-      --muted: #929692;
-      --line: #2a2e2c;
-      --accent: #c6b99e;
-      --width: 1040px;
-      --soft-line: #222725;
-      --hover: #1b1f1d;
-      --copy: #c4c8c3;
-      --list: #b9beb9;
-      --strong: #c9cdc8;
-      --portrait-bg: #191c1b;
-      --cover-bg: #25231f;
-      --cover-border: #514b40;
-      --cover-text: #d7cbb3;
-      --link-line: #625b4d;
-      --panel-border: #292e2c;
+      --ink: #20242b;
+      --muted: #68717d;
+      --soft: #f5f6f8;
+      --line: #e8eaee;
+      --white: #fff;
+      --accent: #586b8d;
+      --accent-soft: #edf1f8;
+      --shadow: 0 24px 80px rgba(41, 51, 68, .10);
+      --radius: 22px;
     }
-    :root[data-theme="light"] {
-      color-scheme: light;
-      --bg: #ffffff;
-      --panel: #f8f9fa;
-      --text: #202321;
-      --muted: #6c757d;
-      --line: #e2e8f0;
-      --accent: #82745b;
-      --soft-line: #edf2f7;
-      --hover: #f1f5f9;
-      --copy: #4a5568;
-      --list: #4a5568;
-      --strong: #2d3748;
-      --portrait-bg: #f1f5f9;
-      --cover-bg: #f7fafc;
-      --cover-border: #cbd5e0;
-      --cover-text: #4a5568;
-      --link-line: #cbd5e0;
-      --panel-border: #e2e8f0;
-    }
-
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 14px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
+      padding: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
     }
     a { color: inherit; text-decoration: none; }
-    a:hover { color: var(--accent); }
     button { font: inherit; }
-
-    .page {
-      width: min(var(--width), calc(100% - 64px));
+    .site-shell {
+      width: min(1180px, 100%);
       margin: 0 auto;
-      padding: 76px 0 48px;
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-      grid-template-areas:
-        "identity intro"
-        "sections sections"
-        "footer footer";
-      column-gap: clamp(56px, 7vw, 92px);
-      row-gap: 54px;
-      align-content: start;
-      align-items: center;
+      padding: 0 7.2%;
+      background: #fff;
+      overflow: hidden;
     }
-    .identity {
-      grid-area: identity;
+    .topbar {
+      min-height: 88px;
       display: flex;
       align-items: center;
-      gap: 18px;
-      margin-bottom: 0;
-      align-self: center;
-      min-width: 0;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid transparent;
     }
-    .identity > div:nth-child(2) { min-width: 0; }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 750;
+      font-size: 14px;
+      letter-spacing: -.35px;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      width: 31px; height: 31px;
+      display: grid; place-items: center;
+      color: white; background: var(--ink);
+      border-radius: 9px;
+      font-size: 14px; font-weight: 800;
+      letter-spacing: -1px;
+    }
+    .nav { display: flex; align-items: center; gap: 27px; font-size: 12px; font-weight: 650; color: #505864; }
+    .nav a { transition: color .2s ease; }
+    .nav a:hover, .nav a.active { color: var(--accent); }
+    .nav .nav-cta {
+      padding: 11px 17px;
+      color: #fff; background: #20242b;
+      border-radius: 9px;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .nav .nav-cta:hover { color: #fff; background: var(--accent); transform: translateY(-1px); }
+    .menu-toggle { display: none; border: 0; background: transparent; color: var(--ink); font-size: 23px; cursor: pointer; }
+    main { padding-bottom: 15px; }
+    section { scroll-margin-top: 24px; }
+    .hero {
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      align-items: center;
+      gap: 46px;
+      padding: 86px 0 92px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .portrait-wrap { position: relative; width: 100%; max-width: 330px; justify-self: center; }
     .portrait {
-      width: 88px;
-      height: 88px;
-      flex: 0 0 88px;
-      display: block;
+      min-height: 310px;
+      border-radius: 13px;
       overflow: hidden;
-      border: 1px solid var(--line);
+      position: relative;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 25% 25%, rgba(160,220,232,.95), transparent 34%),
+        radial-gradient(circle at 78% 30%, rgba(242,161,185,.90), transparent 37%),
+        linear-gradient(145deg, #e8edf3, #f5e9eb 70%, #e6e9f1);
+    }
+    .portrait::before {
+      content: "";
+      position: absolute;
+      width: 190px; height: 190px;
+      top: 35px; left: 50%;
+      transform: translateX(-50%);
       border-radius: 50%;
-      background: var(--portrait-bg);
-      object-fit: cover;
-      object-position: center;
+      background: rgba(255,255,255,.42);
+      filter: blur(1px);
     }
-    .name {
-      margin: 0;
-      font-size: clamp(25px, 5vw, 34px);
-      font-weight: 500;
-      letter-spacing: -.055em;
-      line-height: 1.2;
+    .portrait-monogram {
+      position: relative;
+      width: 178px; height: 220px;
+      border-radius: 90px 90px 16px 16px;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.94);
+      background: linear-gradient(155deg, #687b98, #303c52);
+      box-shadow: 0 18px 35px rgba(37,50,70,.22);
+      font-size: 43px; font-weight: 750; letter-spacing: -4px;
+      margin-bottom: -10px;
     }
-    .tagline {
-      margin: 7px 0 0;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-    }
-
-    .theme-toggle {
-      margin-left: 8px;
-      width: 36px;
-      height: 36px;
-      display: inline-grid;
-      place-items: center;
-      padding: 0;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-    }
-    .theme-toggle svg { width: 16px; height: 16px; }
-    .theme-toggle .icon-sun { display: none; }
-    .theme-toggle .icon-moon { display: block; }
-    :root[data-theme="light"] .theme-toggle .icon-sun { display: block; }
-    :root[data-theme="light"] .theme-toggle .icon-moon { display: none; }
-    .theme-toggle:hover { background: var(--hover); color: var(--text); }
-    .intro {
-      grid-area: intro;
-      width: 100%;
-      max-width: 520px;
-      margin: 0;
-      padding: 0;
-      border-bottom: 0;
-      align-self: center;
+    .portrait-note {
+      position: absolute; bottom: 13px; right: 13px;
+      padding: 6px 10px; border-radius: 20px;
+      background: rgba(255,255,255,.78); backdrop-filter: blur(8px);
+      color: #596270; font-size: 9px; font-weight: 700;
+      letter-spacing: .35px; text-transform: uppercase;
     }
     .eyebrow {
-      margin: 0 0 12px;
-      color: var(--accent);
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: .15em;
+      margin: 0 0 12px; color: var(--accent);
+      font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
       text-transform: uppercase;
     }
-    .intro h2 {
-      max-width: 560px;
-      margin: 0;
-      font-size: clamp(23px, 4vw, 31px);
-      font-weight: 450;
-      letter-spacing: -.045em;
-      line-height: 1.35;
+    h1 { margin: 0 0 18px; font-size: clamp(35px, 4.5vw, 53px); line-height: 1.13; letter-spacing: -2.3px; font-weight: 750; }
+    .hero-copy { max-width: 530px; color: var(--muted); font-size: 15px; line-height: 1.85; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 25px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 42px; padding: 0 17px;
+      border: 1px solid var(--ink); border-radius: 9px;
+      background: var(--ink); color: #fff;
+      font-size: 11px; font-weight: 700; cursor: pointer;
+      transition: all .2s ease;
     }
-    .intro p:last-child {
-      max-width: 520px;
-      margin: 15px 0 0;
-      color: var(--muted);
+    .button:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+    .button.secondary { color: var(--ink); background: #fff; border-color: #dfe3e8; }
+    .button.secondary:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+    .section-block { padding: 56px 0; border-top: 1px solid var(--line); }
+    .section-heading { margin-bottom: 25px; }
+    .section-heading h2 { margin: 0 0 7px; font-size: clamp(25px, 3vw, 31px); line-height: 1.2; letter-spacing: -.9px; }
+    .section-heading p { margin: 0; max-width: 660px; color: var(--muted); font-size: 13px; }
+    .career-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 54px; align-items: start; }
+    .body-copy { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.9; }
+    .chips { display: flex; flex-wrap: wrap; align-content: start; gap: 9px; }
+    .chip {
+      padding: 7px 11px; border: 1px solid #e5e8ed;
+      border-radius: 7px; background: #fbfcfd;
+      color: #434b56; font-size: 10px; font-weight: 750;
+      letter-spacing: .35px; text-transform: uppercase;
     }
-
-    .sections {
-      grid-area: sections;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      border-top: 1px solid var(--line);
-      align-self: start;
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 30px; }
+    .fact { padding: 17px 18px; background: #f7f8fa; border: 1px solid #eef0f3; border-radius: 12px; }
+    .fact strong { display: block; font-size: 17px; letter-spacing: -.4px; }
+    .fact span { display: block; color: var(--muted); font-size: 10px; margin-top: 2px; }
+    .work-toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 23px; }
+    .filter {
+      border: 1px solid #e5e8ed; background: white; color: #59616c;
+      padding: 8px 12px; border-radius: 7px; font-size: 10px; font-weight: 700; cursor: pointer;
     }
-    .section { display: contents; }
-    .section-toggle {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      grid-row: 1;
-      padding: 17px 12px 17px 2px;
-      border: 0;
-      border-bottom: 1px solid var(--line);
-      background: transparent;
-      color: var(--text);
-      text-align: left;
-      cursor: pointer;
+    .filter.active, .filter:hover { background: #20242b; color: white; border-color: #20242b; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 17px; }
+    .project {
+      border: 1px solid #e9ebef; border-radius: 13px; overflow: hidden;
+      background: #fff; transition: transform .2s ease, box-shadow .2s ease;
     }
-    .section-toggle:hover .section-name { color: var(--accent); }
-    .section-name {
-      font-size: 15px;
-      font-weight: 500;
-      letter-spacing: -.02em;
-      transition: color .2s;
+    .project:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(31,43,61,.08); }
+    .project-visual {
+      height: 178px; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden; background: #eef1f5;
     }
-    .section-number {
-      margin-right: 12px;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: .08em;
+    .project-visual img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .35s ease;
     }
-    .section-icon {
-      display: inline-block;
-      margin-left: auto;
-      color: var(--muted);
-      font-size: 15px;
-      font-weight: 400;
-      flex-shrink: 0;
-    }
-    .section-toggle[aria-expanded="true"] .section-icon { color: var(--accent); }
-    .section-toggle[aria-expanded="true"] {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-    .section-content {
-      grid-row: 2;
-      grid-column: 1 / -1;
-      display: none;
-      margin: 0;
-      padding: 25px 27px 28px;
-      border: 1px solid var(--panel-border);
-      border-radius: 9px;
-      background: var(--panel);
-      animation: reveal .22s ease-out;
-    }
-    .section-content.is-open { display: block; }
-    @keyframes reveal {
-      from { opacity: 0; transform: translateY(-4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .body-copy { max-width: 620px; color: var(--copy); }
-    .body-copy p { margin: 0 0 12px; }
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 18px;
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-    .meta span::before {
-      content: "·";
-      margin-right: 8px;
-      color: var(--accent);
-    }
-    .subheading {
-      margin: 25px 0 9px;
-      color: var(--text);
-      font-size: 12px;
-      font-weight: 550;
-    }
-    .plain-list {
-      margin: 0;
-      padding-left: 17px;
-      color: var(--list);
-    }
-    .plain-list li { padding: 2px 0; }
-    .work-group {
-      border-top: 1px solid var(--line);
-    }
-    .work-group:first-child { border-top: 0; }
-    .work-group summary {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 16px 0;
-      cursor: pointer;
-      list-style: none;
-    }
-    .work-group summary::-webkit-details-marker { display: none; }
-    .work-group summary::after {
-      content: "+";
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.2;
-    }
-    .work-group[open] summary::after { content: "−"; }
-    .group-title { display: block; font-weight: 500; }
-    .group-summary {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.6;
-    }
-    .work-items {
-      margin: 0 0 12px 2px;
-      padding: 0 0 4px 15px;
-      border-left: 1px solid var(--line);
-    }
-    .work-item {
-      border-top: 1px solid var(--soft-line);
-    }
-    .work-item:first-child { border-top: 0; }
-    .work-item summary {
-      padding: 11px 0;
-      font-size: 12px;
-      cursor: pointer;
-      list-style: none;
-      color: var(--text);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .work-item summary::-webkit-details-marker { display: none; }
-    .work-item summary::after {
-      content: "+";
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .work-item[open] summary::after { content: "−"; }
-    .work-item .detail {
-      max-width: 570px;
-      padding: 0 20px 13px 0;
-      color: var(--muted);
-      font-size: 12px;
-    }
-    .work-item .detail p { margin: 0 0 7px; }
-    .work-item .detail strong { color: var(--strong); font-weight: 500; }
-
-    .book {
-      display: grid;
-      grid-template-columns: 104px 1fr;
-      gap: 22px;
-      max-width: 590px;
-      align-items: start;
+    .project:hover .project-visual img { transform: scale(1.035); }
+    .project-visual::before, .project-visual::after { pointer-events: none; }
+    .project-visual.has-image::before, .project-visual.has-image::after { display: none; }
+    .project-visual::before, .project-visual::after { content: ""; position: absolute; border-radius: 50%; }
+    .project-visual::before { width: 170px; height: 170px; background: rgba(255,255,255,.48); top: -75px; right: -20px; }
+    .project-visual::after { width: 110px; height: 110px; background: rgba(105,126,158,.13); bottom: -55px; left: 30px; }
+    .project-visual.finance { background: linear-gradient(135deg,#e8edf4,#dce4ef); }
+    .project-visual.systems { background: linear-gradient(135deg,#e8f0ee,#dce9e6); }
+    .project-visual.business { background: linear-gradient(135deg,#f3eee7,#e9e1d7); }
+    .project-visual.ventures { background: linear-gradient(135deg,#f0eaf2,#e5ddeb); }
+    .visual-symbol { position: relative; z-index: 1; width: 62px; height: 62px; border-radius: 17px; display: grid; place-items: center; background: rgba(255,255,255,.75); color: #4d5f7b; font-size: 25px; font-weight: 800; box-shadow: 0 8px 20px rgba(50,60,80,.08); }
+    .project-content { padding: 18px 19px 19px; }
+    .project-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; }
+    .project h3 { margin: 0 0 6px; font-size: 16px; letter-spacing: -.3px; }
+    .project p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
+    details { margin-top: 13px; border-top: 1px solid #edf0f3; padding-top: 10px; }
+    summary { color: #4d5d78; font-size: 10px; font-weight: 750; cursor: pointer; }
+    details p { padding-top: 9px; }
+    .profile-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; }
+    .profile-card { padding: 22px; border: 1px solid var(--line); border-radius: 13px; background: #fafbfc; }
+    .profile-card h3 { margin: 0 0 13px; font-size: 14px; }
+    .timeline { border-left: 1px solid #dfe4eb; margin-left: 6px; padding-left: 22px; }
+    .timeline-item { position: relative; padding: 0 0 23px; }
+    .timeline-item::before { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: #7185a4; left: -27px; top: 6px; box-shadow: 0 0 0 4px #edf1f6; }
+    .timeline-item strong { display: block; font-size: 13px; }
+    .timeline-item span { display: block; color: var(--accent); font-size: 10px; font-weight: 700; margin: 2px 0 5px; }
+    .timeline-item p { margin: 0; color: var(--muted); font-size: 11px; }
+    .publication {
+      display: grid; grid-template-columns: 155px 1fr; gap: 25px; align-items: center;
+      padding: 22px; border: 1px solid var(--line); border-radius: 14px; background: #fbfcfd;
     }
     .book-cover {
-      display: block;
-      width: 116px;
-      aspect-ratio: 3 / 4;
-      border: 1px solid var(--cover-border);
-      background: var(--cover-bg);
-      object-fit: cover;
-      object-position: center;
-      box-shadow: 0 8px 22px rgb(0 0 0 / .12);
+      min-height: 190px; border-radius: 7px; padding: 17px 13px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      color: #fff; background: linear-gradient(145deg,#34435b,#7586a2);
+      box-shadow: 0 8px 20px rgba(35,48,70,.16);
     }
-    .book h3 {
-      margin: 0 0 5px;
-      font-size: 19px;
-      font-weight: 500;
-      letter-spacing: -.035em;
-      line-height: 1.35;
+    .book-cover strong { font-size: 15px; line-height: 1.25; letter-spacing: -.4px; }
+    .book-cover span { font-size: 8px; letter-spacing: 1px; text-transform: uppercase; opacity: .8; }
+    .book-cover-image { padding: 0; overflow: hidden; background: #f1f2f4; }
+    .book-cover-image img { display: block; width: 100%; height: 100%; min-height: 190px; object-fit: cover; object-position: center; border-radius: 7px; }
+    .publication h3 { margin: 0 0 7px; font-size: 19px; }
+    .publication p { margin: 0 0 12px; color: var(--muted); font-size: 12px; }
+    .text-link { color: var(--accent); font-size: 11px; font-weight: 750; }
+    .contact-panel {
+      display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px;
+      padding: 30px; border-radius: 15px; background: #f1f3f7; border: 1px solid #e9edf3;
     }
-    .book .byline { margin: 0 0 13px; color: var(--muted); font-size: 11px; }
-    .book p { margin: 0 0 12px; color: var(--copy); font-size: 12px; }
-    .text-link {
-      display: inline-block;
-      margin-top: 3px;
-      color: var(--accent);
-      font-size: 11px;
-      border-bottom: 1px solid var(--link-line);
-    }
-    .contact-lines { display: grid; gap: 5px; color: var(--copy); }
-    .contact-lines span { color: var(--muted); }
-    footer {
-      grid-area: footer;
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      margin-top: 58px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 10px;
-    }
-
+    .contact-panel h2 { margin: 0 0 7px; font-size: 25px; letter-spacing: -.8px; }
+    .contact-panel p { margin: 0; color: var(--muted); font-size: 12px; max-width: 550px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    footer { display: flex; justify-content: space-between; gap: 15px; padding: 25px 0 30px; border-top: 1px solid var(--line); color: #858d98; font-size: 10px; }
+    footer a { color: #586b8d; font-weight: 700; }
+    .hidden { display: none !important; }
     @media (max-width: 760px) {
-      .page {
-        display: block;
-        width: min(100% - 34px, 620px);
-        padding: 42px 0 36px;
+      body { padding: 12px; }
+      .site-shell { padding: 0 6%; }
+      .topbar { min-height: 72px; }
+      .menu-toggle { display: block; }
+      .nav {
+        display: none; position: absolute; z-index: 10; top: 72px; left: 6%; right: 6%;
+        padding: 17px; background: white; border: 1px solid var(--line); border-radius: 12px;
+        box-shadow: 0 14px 35px rgba(30,40,55,.12); flex-direction: column; align-items: stretch; gap: 15px;
       }
-      .identity { margin-bottom: 38px; gap: 16px; }
-      .portrait { width: 68px; height: 68px; flex-basis: 68px; }
-      .intro {
-        max-width: 590px;
-        margin: 0 0 42px;
-        padding-bottom: 30px;
-        border-bottom: 1px solid var(--line);
-      }
-      .sections { display: block; border-top: 1px solid var(--line); }
-      .section { display: block; border-bottom: 1px solid var(--line); }
-      .section-toggle {
-        justify-content: space-between;
-        padding: 20px 2px;
-        border-bottom: 0;
-      }
-      .section-toggle[aria-expanded="true"] { border-bottom-color: transparent; }
-      .section-content {
-        margin: 0 0 18px;
-        padding: 18px 16px 20px;
-      }
-      footer { margin-top: 42px; }
-    }
-    @media (max-width: 430px) {
-      .theme-toggle { width: 34px; height: 34px; }
-      .book { grid-template-columns: 82px 1fr; gap: 15px; }
-      .book-cover { width: 82px; }
-      footer { flex-direction: column; gap: 4px; }
+      .nav.open { display: flex; }
+      .nav .nav-cta { text-align: center; }
+      .hero { grid-template-columns: 1fr; gap: 29px; padding: 48px 0 57px; }
+      .portrait-wrap { max-width: 270px; }
+      .portrait { min-height: 245px; }
+      .portrait img { min-height: 245px !important; }
+      .portrait-monogram { width: 145px; height: 180px; font-size: 36px; }
+      .hero-text { text-align: center; }
+      .hero-actions { justify-content: center; }
+      h1 { font-size: 39px; letter-spacing: -1.7px; }
+      .career-grid, .profile-layout { grid-template-columns: 1fr; gap: 25px; }
+      .facts { gap: 7px; }
+      .fact { padding: 12px 10px; }
+      .fact strong { font-size: 14px; }
+      .fact span { font-size: 9px; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project-visual { min-height: 135px; }
+      .publication { grid-template-columns: 105px 1fr; gap: 16px; padding: 15px; }
+      .book-cover { min-height: 150px; padding: 12px 9px; }
+      .book-cover strong { font-size: 12px; }
+      .contact-panel { grid-template-columns: 1fr; padding: 23px; }
+      footer { flex-direction: column; }
     }
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <header class="identity">
-      <img class="portrait" src="sanjeev.jpg" alt="Portrait of Sanjeev Khanal">
-      <div>
-        <h1 class="name">Sanjeev Khanal</h1>
-        <p class="tagline">Semi-Qualified CA</p>
-      </div>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
-        </svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M20.8 13.2A8.5 8.5 0 0 1 10.8 3.2 8.5 8.5 0 1 0 20.8 13.2Z"></path>
-        </svg>
-      </button>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Sanjeev Khanal home">
+        <span class="brand-mark">SK</span>
+        <span>Sanjeev Khanal</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#profile">Profile</a>
+        <a href="#perspective">Perspective</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#work">View Work</a>
+      </nav>
     </header>
 
-    <section class="intro" aria-labelledby="intro-title">
-      <p class="eyebrow">01. Introduction</p>
-      <h2 id="intro-title">Understanding businesses. Building better systems. Creating value.</h2>
-      <p>I’m Sanjeev Khanal, with an interest in understanding how businesses work, how technology can make them better, and how good ideas become meaningful enterprises.</p>
-      <p>My work and interests span three connected areas: finance, technology and business.</p>
-    </section>
-
-    <nav class="sections" aria-label="Main sections">
-
-      <!-- 01. ABOUT -->
-      <section class="section">
-        <button class="section-toggle" type="button" aria-expanded="false" aria-controls="about-panel">
-          <span><span class="section-number">01</span><span class="section-name">About</span></span>
-          <span class="section-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="section-content" id="about-panel">
-          <div class="body-copy">
-            <p>My professional background is in accounting, audit and financial advisory. Alongside professional practice, I have explored how technology and structured systems can improve the way businesses operate.</p>
-            <p>I’m interested in building practical solutions, understanding business challenges and turning ideas into workable initiatives.</p>
-            <h3 class="subheading">Education</h3>
-            <ul class="plain-list">
-              <li>CAP-III, ICAN — In progress</li>
-              <li>CAP-II, ICAN — Completed 2019</li>
-              <li>CAP-I, ICAN — Completed 2015</li>
-              <li>+2 Science, NEB — Completed 2015</li>
-            </ul>
+    <main>
+      <section class="hero" id="home">
+        <div class="portrait-wrap">
+          <div class="portrait">
+            <img src="sanjeev.jpg" alt="Sanjeev Khanal" style="width:100%;height:100%;min-height:310px;object-fit:cover;object-position:center 25%;display:block;" />
+          </div>
+        </div>
+        <div class="hero-text">
+          <p class="eyebrow">Finance · Technology · Business · Ventures</p>
+          <h1>Hi, I'm Sanjeev.</h1>
+          <p class="hero-copy">I'm a finance and accounting professional interested in how businesses work, how technology improves them, and how ideas develop into viable ventures. My work brings together financial analysis, systems thinking and practical business problem-solving.</p>
+          <div class="hero-actions">
+            <a class="button" href="#work">Explore my work <span aria-hidden="true">&nbsp;↗</span></a>
+            <a class="button secondary" href="#profile">More about me</a>
           </div>
         </div>
       </section>
 
-      <!-- 02. WORK -->
-      <section class="section">
-        <button class="section-toggle" type="button" aria-expanded="false" aria-controls="work-panel">
-          <span><span class="section-number">02</span><span class="section-name">Work</span></span>
-          <span class="section-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="section-content" id="work-panel">
-          
-          <!-- Category 1: Accounting -->
-          <details class="work-group">
-            <summary>
-              <span>
-                <span class="group-title">Accounting</span>
-              </span>
-            </summary>
-            <div class="work-items">
-              <details class="work-item">
-                <summary>Financial Reporting</summary>
-                <div class="detail"><p>Preparation and presentation of financial statements under applicable reporting standards.</p></div>
-              </details>
-              <details class="work-item">
-                <summary>NFRS Implementation</summary>
-                <div class="detail"><p>Guidance and implementation support for Nepal Financial Reporting Standards.</p></div>
-              </details>
-              <details class="work-item">
-                <summary>Tax Return Preparation and Filing</summary>
-                <div class="detail"><p>Tax computations, statutory filings and compliance-related work.</p></div>
-              </details>
-              <details class="work-item">
-                <summary>Statutory Reports Preparation and Filing</summary>
-                <div class="detail"><p>Preparation of required statutory documentation and filings.</p></div>
-              </details>
+      <section class="section-block" aria-labelledby="career-title">
+        <div class="career-grid">
+          <div>
+            <div class="section-heading">
+              <h2 id="career-title">My Career So Far</h2>
             </div>
-          </details>
-
-          <!-- Category 2: Audit -->
-          <details class="work-group">
-            <summary>
-              <span>
-                <span class="group-title">Audit</span>
-              </span>
-            </summary>
-            <div class="work-items">
-              <details class="work-item">
-                <summary>Statutory Audit</summary>
-                <div class="detail"><p>Independent examination of financial statements and records.</p></div>
-              </details>
-              <details class="work-item">
-                <summary>Internal Audit</summary>
-                <div class="detail"><p>Review of internal controls, processes, and operational efficiency.</p></div>
-              </details>
-              <details class="work-item">
-                <summary>Component Audit</summary>
-                <div class="detail"><p>Audit work concerning specific segments, branches or components of an entity.</p></div>
-              </details>
-              <details class="work-item">
-                <summary>Compliance Audit</summary>
-                <div class="detail"><p>Verification of adherence to applicable laws, regulations, and internal policies.</p></div>
-              </details>
-              <details class="work-item">
-                <summary>Review Engagements</summary>
-                <div class="detail"><p>Limited assurance reviews of financial information.</p></div>
-              </details>
+            <p class="body-copy">My professional foundation is in accounting and finance, with experience across financial reporting, financial analysis, business financing and advisory-related work. Alongside my professional work, I've explored accounting technology, business systems and independent venture initiatives. I'm continuing to build the experience and judgment needed to work on more complex business challenges.</p>
+            <div class="facts">
+              <div class="fact"><strong>ICAN</strong><span>Semi-Qualified CA</span></div>
+              <div class="fact"><strong>5+ years</strong><span>Professional experience</span></div>
+              <div class="fact"><strong>Nepal</strong><span>Based in Lalitpur</span></div>
             </div>
-          </details>
-
-          <!-- Category 3: Advisory -->
-          <details class="work-group">
-            <summary>
-              <span>
-                <span class="group-title">Advisory</span>
-              </span>
-            </summary>
-            <div class="work-items">
-              <details class="work-item">
-                <summary>Financial Modelling</summary>
-                <div class="detail"><p>Development of financial models and projections to support business decisions.</p></div>
-              </details>
-              <details class="work-item">
-                <summary>SOPs and Code of Conduct Preparation</summary>
-                <div class="detail"><p>Drafting standard operating procedures and governance frameworks.</p></div>
-              </details>
-              <details class="work-item">
-                <summary>Management Reports Preparation</summary>
-                <div class="detail"><p>Designing custom reports for management insight and strategic planning.</p></div>
-              </details>
-              <details class="work-item">
-                <summary>Institutional Workflows and Control System Design</summary>
-                <div class="detail"><p>Structuring internal workflows and robust control systems.</p></div>
-              </details>
-            </div>
-          </details>
-
-          <!-- Category 4: Project & Venture Initiatives -->
-          <details class="work-group">
-            <summary>
-              <span>
-                <span class="group-title">Project &amp; Venture Initiatives</span>
-              </span>
-            </summary>
-            <div class="work-items">
-              <details class="work-item">
-                <summary>1Pana Accounting</summary>
-                <div class="detail">
-                  <p>A managed accounting solution designed for small and medium-sized enterprises.</p>
-                  <p><strong>Purpose:</strong> To make structured accounting and financial reporting more accessible to SMEs through a managed solution.</p>
-                  <p><strong>Development:</strong> Six months of effort, including three months of core development followed by three months of refinement and trial runs.</p>
-                  <p><strong>Current Stage:</strong> MVP ready.</p>
-                  <p><a href="https://1pana.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline; font-size: 11.5px;">1pana.com ↗</a></p>
-                </div>
-              </details>
-              <details class="work-item">
-                <summary>Nepalventure</summary>
-                <div class="detail">
-                  <p>An initiative to connect startups with funding opportunities and support the growth of Nepal’s startup ecosystem.</p>
-                  <p><strong>Purpose:</strong> To connect startups with funding sources, with the broader ambition of mobilising national funds to support entrepreneurship and expand the startup ecosystem.</p>
-                  <p><strong>Traction:</strong> 15+ startups joined the platform, with 5+ completing their profiles.</p>
-                  <p><strong>Current Stage:</strong> The proposed funding model faced limitations under the existing legal framework, restricting the initiative from proceeding as originally envisioned.</p>
-                  <p><a href="https://nepalventure.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline; font-size: 11.5px;">nepalventure.com ↗</a></p>
-                </div>
-              </details>
-            </div>
-          </details>
-
-        </div>
-      </section>
-
-      <!-- 03. WRITING -->
-      <section class="section">
-        <button class="section-toggle" type="button" aria-expanded="false" aria-controls="writing-panel">
-          <span><span class="section-number">03</span><span class="section-name">Writing</span></span>
-          <span class="section-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="section-content" id="writing-panel">
-          <div class="book">
-            <img class="book-cover" src="book.png" alt="Book Cover">
-            <div>
-              <p class="eyebrow">Featured publication</p>
-              <h3>The Awareness Framework</h3>
-              <p class="byline">Co-authored manuscript, bringing together long-form writing, research and structured ideas.</p>
-              <p class="byline">ISBN: 9789937192835</p>
+          </div>
+          <div>
+            <div class="section-heading"><h2>Areas I Work In</h2></div>
+            <div class="chips">
+              <span class="chip">Accounting</span><span class="chip">Financial Reporting</span>
+              <span class="chip">Financial Modelling</span><span class="chip">Credit Analysis</span>
+              <span class="chip">Business Finance</span><span class="chip">Database Architecture</span>
+              <span class="chip">Accounting Systems</span><span class="chip">Process Design</span>
+              <span class="chip">Business Analysis</span><span class="chip">Venture Development</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 04. CONTACT -->
-      <section class="section">
-        <button class="section-toggle" type="button" aria-expanded="false" aria-controls="contact-panel">
-          <span><span class="section-number">04</span><span class="section-name">Contact</span></span>
-          <span class="section-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="section-content" id="contact-panel">
-          <div class="body-copy">
-            <p>Open to thoughtful conversations, professional collaboration and opportunities across finance, technology and business.</p>
-            <div class="contact-lines">
-              <div><span>Name</span> · Sanjeev Khanal</div>
-              <div><span>Location</span> · Satdobato, Lalitpur, Nepal</div>
-              <div><span>Email</span> · <a href="mailto:mail@sanjeevkhanal.com.np">mail@sanjeevkhanal.com.np</a></div>
-              <div><span>Website</span> · <a href="https://sanjeevkhanal.com.np" target="_blank" rel="noopener noreferrer">sanjeevkhanal.com.np ↗</a></div>
-              <div><span>LinkedIn</span> · <a href="https://linkedin.com/in/sanjeev-khanal" target="_blank" rel="noopener noreferrer">linkedin.com/in/sanjeev-khanal ↗</a></div>
+      <section class="section-block" id="work">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2>Projects & Professional Work</h2>
+          <p>A selection of professional assignments, independent initiatives and practical explorations.</p>
+        </div>
+        <div class="work-toolbar" role="group" aria-label="Filter projects">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="finance">Accounting & Finance</button>
+          <button class="filter" data-filter="systems">Technology & Systems</button>
+          <button class="filter" data-filter="business">Business</button>
+          <button class="filter" data-filter="ventures">Ventures</button>
+        </div>
+        <div class="project-grid">
+          <article class="project" data-category="finance">
+            <div class="project-visual has-image"><img src="https://cdn.prod.website-files.com/621d41df6da9f0dcc7cb5eeb/6863b2b31a5e64fb2582d62a_686391845559d477e77026ec-1751363685735.jpeg" alt="Financial analysis workspace with spreadsheet charts and reports" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-meta"><span>Accounting & Finance</span><span>Professional work</span></div>
+              <h3>Financial Reporting & Accounting</h3>
+              <p>Preparation and organization of financial information, reporting, accounting records and compliance-related work for organizations.</p>
+              <details>
+                <summary>Scope of work</summary>
+                <p><strong>Financial reporting:</strong> preparation and review of financial statements and supporting schedules, with attention to consistency, completeness and applicable reporting requirements.</p>
+                <p><strong>Accounting:</strong> organizing transaction records, reconciliations, ledger reviews and supporting documentation to improve the reliability of financial information.</p>
+                <p><strong>Records and compliance:</strong> helping businesses structure incomplete or fragmented records and maintain information needed for statutory and management reporting.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="project" data-category="finance">
+            <div class="project-visual has-image"><img src="https://www.planarmory.com/marketing/blog/pro-forma-financial-statements/pro-forma-financial-statements-overview.webp" alt="Financial statements and spreadsheet analysis workspace" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.remove('has-image');this.parentElement.classList.add('finance');"></div>
+            <div class="project-content">
+              <div class="project-meta"><span>Financial Advisory</span><span>Professional work</span></div>
+              <h3>Financial Modelling & Credit Analysis</h3>
+              <p>Building financial models and evaluating business funding requirements to support financing discussions and informed decisions.</p>
+              <details>
+                <summary>Scope of work</summary>
+                <p><strong>Model development:</strong> translating business assumptions into integrated projections, including revenue, operating costs, working capital, cash flow and financing requirements.</p>
+                <p><strong>Credit analysis:</strong> examining historical performance, repayment capacity, projected cash flows and key financial indicators relevant to bank financing.</p>
+                <p><strong>Decision support:</strong> preparing structured analysis and supporting schedules that help explain the business case, funding need and financial feasibility.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="project" data-category="finance">
+            <div class="project-visual has-image"><img src="https://images.tely.ai/telyai/efficient-accounting-with-xero-rneflanz.webp" alt="Cloud accounting dashboard on a laptop" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-meta"><span>Business Finance</span><span>Professional work</span></div>
+              <h3>Business Analysis & Advisory Support</h3>
+              <p>Using financial and operational information to understand business conditions, identify issues and develop practical analysis.</p>
+              <details>
+                <summary>Scope of work</summary>
+                <p><strong>Business understanding:</strong> reviewing business activities, operating context and financial information to understand how an organization generates and uses resources.</p>
+                <p><strong>Problem analysis:</strong> identifying financial and process-related questions that need attention, then organizing available information into a usable picture.</p>
+                <p><strong>Practical outputs:</strong> developing analysis, reports, models and presentation materials to support management discussions and business decisions.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="project" data-category="systems">
+            <div class="project-visual has-image"><img src="https://media.licdn.com/dms/image/v2/D4D22AQFgww7KRHAyDw/feedshare-shrink_800/B4DZro_Yr0IgAg-/0/1764845521831?e=2147483647&t=N3miuSeNe9I148lF2CuzcWbYoJCN99uZkgSDgIs7GpU&v=beta" alt="Cloud accounting software dashboard" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-meta"><span>Technology & Systems</span><span>Independent initiative</span></div>
+              <h3>1Pana — Managed Accounting Solution</h3>
+              <p>A managed accounting solution concept for SMEs, combining accounting operations with a structured software and reporting system.</p>
+              <details>
+                <summary>Project details</summary>
+                <p><strong>Why it was developed:</strong> to explore a more organized and technology-enabled way for small and medium-sized businesses to manage accounting, reporting and recurring tax workflows.</p>
+                <p><strong>What was built:</strong> a working product concept supported by database architecture, automated double-entry logic, reporting structures and tax-related workflows.</p>
+                <p><strong>Development:</strong> approximately six months of effort, comprising three months of core development followed by three months of operational refinement and testing.</p>
+                <p><strong>Stage:</strong> developed as an MVP and refined through practical testing. The project demonstrates applied work across accounting, product thinking and systems design.</p>
+              </details>
+              <a class="text-link" href="https://1pana.com" target="_blank" rel="noopener noreferrer">Visit 1pana.com ↗</a>
+            </div>
+          </article>
+
+          <article class="project" data-category="ventures">
+            <div class="project-visual has-image"><img src="https://csuxjmfbwmkxiegfpljm.supabase.co/storage/v1/object/public/blog-images/organization-7414/1775878498700_Founders-collaborating-in-open-workspace.jpeg" alt="Startup founders collaborating around a table" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-meta"><span>Ventures</span><span>Independent initiative</span></div>
+              <h3>Nepalventure — Startup & Capital Initiative</h3>
+              <p>An initiative exploring how early-stage and growing businesses could connect with potential sources of investment.</p>
+              <details>
+                <summary>Project details</summary>
+                <p><strong>Why it was developed:</strong> to address the gap between promising business ideas and access to capital, and to create a structured point of connection between emerging ventures and potential investors.</p>
+                <p><strong>What was explored:</strong> the platform concept, startup and investor journeys, venture information requirements and possible models for connecting businesses with eligible investors.</p>
+                <p><strong>Key consideration:</strong> the model was reconsidered in light of Nepal's securities and investment regulatory environment, with attention to a more appropriate and compliant structure.</p>
+                <p><strong>Stage:</strong> concept and model exploration. It represents an early practical expression of an ongoing interest in venture development and capital allocation, rather than an operating investment platform.</p>
+              </details>
+              <a class="text-link" href="https://nepalventure.com" target="_blank" rel="noopener noreferrer">Visit nepalventure.com ↗</a>
+            </div>
+          </article>
+
+          <article class="project" data-category="systems">
+            <div class="project-visual has-image"><img src="https://erpin.com.tr/assets/img/integrations/accounting.png" alt="Accounting software and integrated business systems dashboard" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-meta"><span>Technology & Systems</span><span>Applied exploration</span></div>
+              <h3>Database Architecture & Process Design</h3>
+              <p>Designing the information structures and workflows that connect accounting logic, operational processes and useful reporting.</p>
+              <details>
+                <summary>Scope of work</summary>
+                <p><strong>Data structure:</strong> mapping entities, transactions and relationships into a coherent database design that supports accurate and traceable records.</p>
+                <p><strong>Accounting logic:</strong> translating double-entry principles and reporting requirements into system rules and data relationships.</p>
+                <p><strong>Workflow design:</strong> considering how users enter, review and use information, with the aim of reducing repetitive work and improving consistency.</p>
+              </details>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block" id="profile">
+        <div class="section-heading">
+          <p class="eyebrow">Profile</p>
+          <h2>A foundation in finance. An expanding interest in building.</h2>
+          <p>My professional background, experience and the direction in which I'm developing.</p>
+        </div>
+        <div class="profile-layout">
+          <div>
+            <div class="profile-card">
+              <h3>Professional focus</h3>
+              <p class="body-copy">I am pursuing the Chartered Accountancy qualification through the Institute of Chartered Accountants of Nepal. My experience has provided a foundation in accounting, financial reporting and business finance. My interests have since expanded into technology, business systems and venture development.</p>
+              <div style="height:16px"></div>
+              <h3>How I approach work</h3>
+              <p class="body-copy">I prefer to understand the underlying problem before deciding on a solution. I organize the available information, examine the constraints, develop a practical approach and improve it through execution.</p>
+            </div>
+          </div>
+          <div>
+            <h3 style="font-size:14px;margin:0 0 19px">Experience & development</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <strong>Accounting & Finance</strong>
+                <span>Professional foundation</span>
+                <p>Experience across accounting, financial reporting, financial analysis and business financing.</p>
+              </div>
+              <div class="timeline-item">
+                <strong>Financial Consulting & Analysis</strong>
+                <span>Applied professional work</span>
+                <p>Working with financial information, models and analysis to support business decisions.</p>
+              </div>
+              <div class="timeline-item">
+                <strong>Accounting Technology & Systems</strong>
+                <span>Independent product exploration</span>
+                <p>Developing and refining accounting system concepts, database logic and operational workflows.</p>
+              </div>
+              <div class="timeline-item">
+                <strong>Business & Venture Development</strong>
+                <span>Continuing area of interest</span>
+                <p>Exploring business opportunities, operating models and the path from ideas to viable enterprises.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-    </nav>
+
+      <section class="section-block" id="perspective">
+        <div class="section-heading">
+          <p class="eyebrow">Perspective</p>
+          <h2>Learning, exploring and documenting.</h2>
+          <p>Selected publications and work that reflect interests beyond day-to-day professional responsibilities.</p>
+        </div>
+        <div class="publication">
+          <div class="book-cover book-cover-image">
+            <img src="book.jpg" alt="The Awareness Framework book cover" loading="lazy" />
+          </div>
+          <div>
+            <div class="project-meta"><span>Publication · Book</span></div>
+            <h3>The Awareness Framework</h3>
+            <p>A co-authored exploration of observation, memory and pattern across awareness, biological life, technology and collective systems.</p>
+            <a class="text-link" href="#contact">Ask about the publication ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="contact">
+        <div class="contact-panel">
+          <div>
+            <p class="eyebrow">Get in touch</p>
+            <h2>Have something worth building?</h2>
+            <p>I'm interested in meaningful problems, thoughtful collaborations and opportunities around finance, technology, business and venture development.</p>
+          </div>
+          <div class="contact-links">
+            <a class="button" href="mailto:mail@sanjeevkhanal.com.np">Email me ↗</a>
+            <a class="button secondary" href="https://linkedin.com/in/sanjeev-khanal" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
-      <span>© <span id="year"></span> Sanjeev Khanal</span>
-      <span>Satdobato, Lalitpur, Nepal</span>
+      <span>© <span id="year"></span> Sanjeev Khanal. All rights reserved.</span>
+      <span>Finance · Technology · Business · Ventures</span>
+      <a href="#home">Back to top ↑</a>
     </footer>
-  </main>
-
+  </div>
   <script>
-    const sectionButtons = [...document.querySelectorAll(".section-toggle")];
-    const mobileLayout = window.matchMedia("(max-width: 760px)");
-
-    function setSection(button, open) {
-      const panel = document.getElementById(button.getAttribute("aria-controls"));
-      button.setAttribute("aria-expanded", String(open));
-      panel.classList.toggle("is-open", open);
-      const icon = button.querySelector(".section-icon");
-      if (icon) {
-        icon.textContent = open ? "−" : "+";
-      }
-    }
-
-    sectionButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const isOpen = button.getAttribute("aria-expanded") === "true";
-
-        if (mobileLayout.matches) {
-          sectionButtons.forEach((other) => setSection(other, false));
-          if (!isOpen) setSection(button, true);
-        } else {
-          sectionButtons.forEach((other) => setSection(other, other === button));
-        }
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('mainNav');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    }));
+    document.querySelectorAll('.filter').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        document.querySelectorAll('.project').forEach(project => {
+          project.classList.toggle('hidden', filter !== 'all' && project.dataset.category !== filter);
+        });
       });
     });
-
-    function syncLayout() {
-      const active = sectionButtons.find((button) =>
-        button.getAttribute("aria-expanded") === "true"
-      );
-      if (!mobileLayout.matches && !active) {
-        sectionButtons.forEach((button) => setSection(button, false));
-      } else if (mobileLayout.matches && active) {
-        sectionButtons.forEach((button) => setSection(button, button === active));
-      }
-    }
-    mobileLayout.addEventListener("change", syncLayout);
-    syncLayout();
-
-    const themeButton = document.getElementById("theme-toggle");
-    const root = document.documentElement;
-    const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
-
-    function applyTheme(theme) {
-      root.dataset.theme = theme;
-      const nextThemeLabel = theme === "light" ? "Switch to dark theme" : "Switch to light theme";
-      themeButton.setAttribute("aria-label", nextThemeLabel);
-      themeButton.setAttribute("title", nextThemeLabel);
-    }
-
-    const savedTheme = localStorage.getItem("sanjeev-site-theme");
-    if (!savedTheme) {
-      applyTheme(systemTheme.matches ? "light" : "dark");
-      systemTheme.addEventListener("change", (event) => {
-        if (!localStorage.getItem("sanjeev-site-theme")) {
-          applyTheme(event.matches ? "light" : "dark");
-        }
-      });
-    } else {
-      applyTheme(savedTheme);
-    }
-
-    themeButton.addEventListener("click", () => {
-      const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-      applyTheme(nextTheme);
-      localStorage.setItem("sanjeev-site-theme", nextTheme);
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
